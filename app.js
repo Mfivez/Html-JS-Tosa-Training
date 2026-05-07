@@ -190,8 +190,8 @@ function renderHome() {
   els.content.innerHTML = `
     <section class="home-hero" aria-labelledby="homeTitle">
       <p class="eyebrow">Pr&eacute;paration certification</p>
-      <h1 id="homeTitle">TOSA HTML / CSS</h1>
-      <p class="hero-copy">Entra&icirc;nement statique pour GitHub Pages : QCM simples ou multi-r&eacute;ponses, corrections de code et associations comme dans un test technique.</p>
+      <h1 id="homeTitle">TOSA Web</h1>
+      <p class="hero-copy">Entra&icirc;nement statique pour GitHub Pages : HTML, CSS, JavaScript, QCM simples ou multi-r&eacute;ponses, corrections de code et associations comme dans un test technique.</p>
       <label class="home-search" for="homeSearchInput">
         <span>Recherche rapide</span>
         <input id="homeSearchInput" type="search" placeholder="Rechercher un th&egrave;me, une balise, un exercice..." autocomplete="off" value="${escapeHtml(state.search)}" />

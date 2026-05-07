@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-07T12:09:11.661Z",
+  "generatedAt": "2026-05-07T12:27:23.858Z",
   "courses": [
     {
       "id": "html-css",
-      "title": "Prépa TOSA HTML / CSS",
-      "description": "Entraînement au format test : QCM, multi-réponses, code à corriger et associations de balises, attributs et propriétés.",
+      "title": "Prépa TOSA Web - HTML / CSS / JS",
+      "description": "Entraînement au format test : QCM, multi-réponses, code à corriger, associations et banque de questions en 5 niveaux.",
       "order": 2,
       "chapters": [
         {
@@ -42,6 +42,12 @@
           "title": "Mini-examen mixte",
           "file": "courses/html-css/06_mini_examen_mixte.md",
           "order": 6
+        },
+        {
+          "id": "07_banque_questions_html_css_js_5_niveaux",
+          "title": "Banque de questions HTML / CSS / JS - 5 niveaux",
+          "file": "courses/html-css/07_banque_questions_html_css_js_5_niveaux.md",
+          "order": 7
         }
       ]
     }

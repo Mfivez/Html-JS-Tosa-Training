@@ -96,3 +96,32 @@
 }
 ```
 
+## Liste de navigation
+
+```tosa-code
+{
+  "level": "HTML",
+  "title": "Corrige la syntaxe de cette navigation.",
+  "instructions": "Chaque élément de liste doit être correctement fermé dans le menu.",
+  "codeLines": [
+    "<ul class=\"navbar\">",
+    "  <li><a href=\"index.html\">Accueil</a>",
+    "  <li><a href=\"history.html\">Histoire</a>",
+    "  <li><a href=\"fav.html\">Favoris</a>",
+    "</ul>"
+  ],
+  "checks": [
+    { "label": "Le lien Accueil est dans un <li> fermé.", "contains": "<li><a href=\"index.html\">Accueil</a></li>" },
+    { "label": "Le lien Histoire est dans un <li> fermé.", "contains": "<li><a href=\"history.html\">Histoire</a></li>" },
+    { "label": "Le lien Favoris est dans un <li> fermé.", "contains": "<li><a href=\"fav.html\">Favoris</a></li>" }
+  ],
+  "solutionLines": [
+    "<ul class=\"navbar\">",
+    "  <li><a href=\"index.html\">Accueil</a></li>",
+    "  <li><a href=\"history.html\">Histoire</a></li>",
+    "  <li><a href=\"fav.html\">Favoris</a></li>",
+    "</ul>"
+  ],
+  "explanation": "Les navigateurs réparent souvent le HTML, mais le TOSA teste la capacité à repérer une structure incorrecte."
+}
+```

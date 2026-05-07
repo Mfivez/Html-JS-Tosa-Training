@@ -1,11 +1,12 @@
-# Prépa TOSA HTML / CSS
+# Prépa TOSA Web - HTML / CSS / JS
 
-Application statique pour entraîner des apprenants au TOSA HTML / CSS sur GitHub Pages.
+Application statique pour entraîner des apprenants au TOSA Web HTML / CSS / JavaScript sur GitHub Pages.
 
 ## Ce qu’il fait
 
 - Affiche un parcours d'entraînement depuis `courses/`.
 - Propose des QCM simples et multi-réponses.
+- Propose une banque de questions en 5 niveaux de difficulté.
 - Propose des zones de code modifiables pour trouver et corriger des erreurs.
 - Propose des exercices d'association : balise, attribut, propriété, rôle.
 - Reste 100 % statique : aucun backend, aucune base de données, compatible GitHub Pages public.

@@ -69,3 +69,71 @@
 }
 ```
 
+## Attributs de formulaire
+
+```tosa-match
+{
+  "level": "Formulaires",
+  "prompt": "Associe chaque attribut de formulaire à sa définition.",
+  "choices": [
+    "Définit la méthode HTTP utilisée pour envoyer les données du formulaire.",
+    "Spécifie comment les données du formulaire doivent être encodées.",
+    "Spécifie qu'un input ne doit pas être validé lorsqu'il est soumis.",
+    "Spécifie que toutes les données du formulaire ne doivent pas être validées lors de la soumission."
+  ],
+  "items": [
+    { "label": "formmethod", "answer": "Définit la méthode HTTP utilisée pour envoyer les données du formulaire." },
+    { "label": "formenctype", "answer": "Spécifie comment les données du formulaire doivent être encodées." },
+    { "label": "formnovalidate", "answer": "Spécifie qu'un input ne doit pas être validé lorsqu'il est soumis." },
+    { "label": "novalidate", "answer": "Spécifie que toutes les données du formulaire ne doivent pas être validées lors de la soumission." }
+  ],
+  "explanation": "Les attributs qui commencent par form peuvent souvent être placés sur un bouton de soumission pour surcharger le comportement du formulaire."
+}
+```
+
+## Couleurs CSS
+
+```tosa-match
+{
+  "level": "CSS",
+  "prompt": "Associe chaque notation CSS à la couleur correspondante.",
+  "choices": [
+    "Rouge",
+    "Bleu",
+    "Vert",
+    "Blanc",
+    "Noir",
+    "Transparent"
+  ],
+  "items": [
+    { "label": "rgb(255, 0, 0)", "answer": "Rouge" },
+    { "label": "blue", "answer": "Bleu" },
+    { "label": "rgb(0, 0, 0)", "answer": "Noir" },
+    { "label": "rgba(255, 255, 255, 0)", "answer": "Transparent" }
+  ],
+  "explanation": "Le dernier paramètre de rgba est l'opacité : 0 signifie totalement transparent."
+}
+```
+
+## Structure de page
+
+```tosa-match
+{
+  "level": "HTML",
+  "prompt": "Place mentalement chaque élément standard dans sa zone habituelle d'une page.",
+  "choices": [
+    "Zone d'en-tête ou navigation",
+    "Contenu principal",
+    "Section de contenu",
+    "Contenu complémentaire",
+    "Pied de page"
+  ],
+  "items": [
+    { "label": "header ou nav", "answer": "Zone d'en-tête ou navigation" },
+    { "label": "main", "answer": "Contenu principal" },
+    { "label": "section", "answer": "Section de contenu" },
+    { "label": "aside", "answer": "Contenu complémentaire" },
+    { "label": "footer", "answer": "Pied de page" }
+  ]
+}
+```
