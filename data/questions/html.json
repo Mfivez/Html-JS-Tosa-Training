@@ -1,0 +1,308 @@
+[
+  {
+    "id": "html-doctype-001",
+    "domain": "html",
+    "topic": "document",
+    "level": 1,
+    "type": "single",
+    "question": "Quelle declaration place un document en mode standard HTML5 ?",
+    "options": ["<!doctype html>", "<html5>", "<doctype>", "<?html version=\"5\">"],
+    "answers": [0],
+    "explanation": "<!doctype html> indique au navigateur d'utiliser le mode standard HTML5.",
+    "references": ["doctype", "html5"]
+  },
+  {
+    "id": "html-body-001",
+    "domain": "html",
+    "topic": "structure",
+    "level": 1,
+    "type": "single",
+    "question": "Dans quelle balise place-t-on le contenu visible par l'utilisateur ?",
+    "options": ["<head>", "<body>", "<meta>", "<title>"],
+    "answers": [1],
+    "explanation": "Le contenu affiche dans la page se place dans <body>.",
+    "references": ["body", "structure"]
+  },
+  {
+    "id": "html-label-001",
+    "domain": "html",
+    "topic": "forms",
+    "level": 2,
+    "type": "single",
+    "question": "Comment relier un label au champ <input id=\"email\"> ?",
+    "options": ["<label name=\"email\">Email</label>", "<label for=\"email\">Email</label>", "<label target=\"email\">Email</label>", "<label input=\"email\">Email</label>"],
+    "answers": [1],
+    "explanation": "L'attribut for du label doit correspondre a l'id du champ.",
+    "references": ["label", "forms", "accessibility"]
+  },
+  {
+    "id": "html-semantics-001",
+    "domain": "html",
+    "topic": "semantics",
+    "level": 2,
+    "type": "multiple",
+    "question": "Quelles balises sont semantiques pour structurer les grandes zones d'une page ?",
+    "options": ["<header>", "<main>", "<div>", "<footer>"],
+    "answers": [0, 1, 3],
+    "explanation": "<div> est neutre. Les autres balises decrivent une zone de page.",
+    "references": ["semantics", "landmarks"]
+  },
+  {
+    "id": "html-form-validation-001",
+    "domain": "html",
+    "topic": "forms",
+    "level": 3,
+    "type": "single",
+    "question": "Quel attribut desactive la validation HTML5 sur tout un formulaire ?",
+    "options": ["disabled", "readonly", "novalidate", "formnovalidate"],
+    "answers": [2],
+    "explanation": "novalidate se place sur <form> et desactive la validation native du formulaire.",
+    "references": ["forms", "validation"]
+  },
+  {
+    "id": "html-table-001",
+    "domain": "html",
+    "topic": "tables",
+    "level": 4,
+    "type": "match",
+    "question": "Associe chaque balise de tableau a son role.",
+    "items": [
+      { "prompt": "<thead>", "answer": "Groupe les en-tetes" },
+      { "prompt": "<tbody>", "answer": "Groupe les lignes de donnees" },
+      { "prompt": "<caption>", "answer": "Donne un titre au tableau" }
+    ],
+    "choices": ["Groupe les lignes de donnees", "Donne un titre au tableau", "Groupe les en-tetes"],
+    "explanation": "Ces balises ameliorent la structure et la comprehension des tableaux.",
+    "references": ["tables", "semantics"]
+  },
+  {
+    "id": "html-accessibility-001",
+    "domain": "html",
+    "topic": "accessibility",
+    "level": 5,
+    "type": "multiple",
+    "question": "Quelles pratiques ameliorent l'accessibilite d'un formulaire ?",
+    "options": ["Associer chaque label a son champ", "Utiliser un placeholder comme seul nom de champ", "Grouper des radios avec fieldset et legend", "Conserver un ordre de tabulation logique"],
+    "answers": [0, 2, 3],
+    "explanation": "Le placeholder ne remplace pas un nom accessible persistant.",
+    "references": ["forms", "accessibility"]
+  },
+  {
+    "id": "html-media-001",
+    "domain": "html",
+    "topic": "media",
+    "level": 2,
+    "type": "single",
+    "question": "Quel attribut fournit une alternative textuelle a une image informative ?",
+    "options": ["title", "alt", "href", "aria-hidden"],
+    "answers": [1],
+    "explanation": "alt donne une alternative textuelle utile quand l'image porte une information.",
+    "references": ["images", "accessibility"]
+  },
+  {
+    "id": "html-link-target-001",
+    "domain": "html",
+    "topic": "links",
+    "level": 3,
+    "type": "multiple",
+    "question": "Quelles affirmations sont correctes pour un lien ouvrant un nouvel onglet ?",
+    "options": ["target=\"_blank\" ouvre un nouvel onglet ou une nouvelle fenetre", "rel=\"noopener\" limite l'acces a la page d'origine", "href est inutile avec target", "Le texte du lien doit rester explicite"],
+    "answers": [0, 1, 3],
+    "explanation": "Un lien externe en nouvel onglet doit garder une destination claire et limiter les risques avec rel.",
+    "references": ["links", "security", "accessibility"]
+  },
+  {
+    "id": "html-button-type-001",
+    "domain": "html",
+    "topic": "forms",
+    "level": 4,
+    "type": "single",
+    "question": "Pourquoi definir type=\"button\" sur un bouton place dans un formulaire ?",
+    "options": ["Pour eviter une soumission implicite", "Pour desactiver le bouton", "Pour transformer le bouton en lien", "Pour rendre le CSS obligatoire"],
+    "answers": [0],
+    "explanation": "Dans un formulaire, un bouton sans type explicite agit souvent comme submit.",
+    "references": ["forms", "buttons"]
+  },
+  {
+    "id": "html-form-attributes-match-001",
+    "domain": "html",
+    "topic": "forms",
+    "level": 4,
+    "type": "match",
+    "question": "Associe chaque attribut de formulaire a son role.",
+    "items": [
+      { "prompt": "formmethod", "answer": "Definit la methode d'envoi pour un bouton" },
+      { "prompt": "formenctype", "answer": "Definit l'encodage d'envoi pour un bouton" },
+      { "prompt": "formnovalidate", "answer": "Desactive la validation pour ce bouton" }
+    ],
+    "choices": [
+      "Definit l'encodage d'envoi pour un bouton",
+      "Desactive la validation pour ce bouton",
+      "Definit la methode d'envoi pour un bouton"
+    ],
+    "explanation": "Ces attributs peuvent surcharger le comportement du formulaire depuis un bouton de soumission.",
+    "references": ["forms", "validation"]
+  },
+  {
+    "id": "html-section-article-001",
+    "domain": "html",
+    "topic": "semantics",
+    "level": 3,
+    "type": "single",
+    "question": "Quand choisir plutot <article> qu'une simple <section> ?",
+    "options": [
+      "Quand le contenu peut etre compris ou reutilise independamment",
+      "Quand on veut uniquement ajouter une marge",
+      "Quand on veut rendre le texte rouge",
+      "Quand la zone ne contient aucun titre"
+    ],
+    "answers": [0],
+    "explanation": "<article> represente un contenu autonome, comme une carte d'actualite ou un billet.",
+    "references": ["semantics", "article", "section"]
+  },
+  {
+    "id": "html-video-controls-001",
+    "domain": "html",
+    "topic": "media",
+    "level": 2,
+    "type": "single",
+    "question": "Quel attribut affiche les controles natifs d'une video HTML ?",
+    "options": ["controls", "autoplay", "poster", "preload"],
+    "answers": [0],
+    "explanation": "controls affiche les controles de lecture fournis par le navigateur.",
+    "references": ["media", "video"]
+  },
+  {
+    "id": "html-input-required-001",
+    "domain": "html",
+    "topic": "forms",
+    "level": 1,
+    "type": "single",
+    "question": "Quel attribut rend un champ obligatoire avant soumission ?",
+    "options": ["required", "checked", "selected", "autofocus"],
+    "answers": [0],
+    "explanation": "required active une contrainte de validation native sur le champ.",
+    "references": ["forms", "validation"]
+  },
+  {
+    "id": "html-table-scope-001",
+    "domain": "html",
+    "topic": "tables",
+    "level": 3,
+    "type": "single",
+    "question": "Quel attribut precise qu'un <th> est l'en-tete d'une colonne ?",
+    "options": ["scope=\"col\"", "headers=\"row\"", "role=\"cell\"", "axis=\"column\""],
+    "answers": [0],
+    "explanation": "scope=\"col\" relie l'en-tete aux cellules de sa colonne.",
+    "references": ["tables", "accessibility"]
+  },
+  {
+    "id": "html-icon-button-001",
+    "domain": "html",
+    "topic": "accessibility",
+    "level": 3,
+    "type": "single",
+    "question": "Quel attribut donne un nom accessible a un bouton compose seulement d'une icone ?",
+    "options": ["aria-label", "alt", "href", "placeholder"],
+    "answers": [0],
+    "explanation": "aria-label fournit un nom accessible quand le texte visible est absent.",
+    "references": ["accessibility", "aria"]
+  },
+  {
+    "id": "html-picture-match-001",
+    "domain": "html",
+    "topic": "media",
+    "level": 4,
+    "type": "match",
+    "question": "Associe chaque element image responsive a son role.",
+    "items": [
+      { "prompt": "<picture>", "answer": "Conteneur de sources alternatives" },
+      { "prompt": "<source>", "answer": "Propose une source selon une condition" },
+      { "prompt": "<img>", "answer": "Image de repli obligatoire" }
+    ],
+    "choices": [
+      "Image de repli obligatoire",
+      "Conteneur de sources alternatives",
+      "Propose une source selon une condition"
+    ],
+    "explanation": "picture permet de proposer plusieurs sources, mais img reste necessaire comme repli.",
+    "references": ["media", "responsive", "images"]
+  },
+  {
+    "id": "archive-html-href-001",
+    "domain": "html",
+    "topic": "links",
+    "level": 1,
+    "type": "single",
+    "question": "Quel attribut indique l'adresse cible d'un lien <a> ?",
+    "options": ["src", "href", "alt", "target"],
+    "answers": [1],
+    "explanation": "href contient l'URL ou l'ancre vers laquelle le lien pointe.",
+    "references": ["links", "href"]
+  },
+  {
+    "id": "archive-html-lang-001",
+    "domain": "html",
+    "topic": "document",
+    "level": 1,
+    "type": "single",
+    "question": "Quel attribut de <html> indique la langue principale de la page ?",
+    "options": ["lang", "language", "charset", "locale"],
+    "answers": [0],
+    "explanation": "Exemple : <html lang=\"fr\"> indique que la page est en francais.",
+    "references": ["lang", "accessibility"]
+  },
+  {
+    "id": "archive-html-charset-001",
+    "domain": "html",
+    "topic": "document",
+    "level": 1,
+    "type": "single",
+    "question": "Quelle balise definit l'encodage des caracteres en UTF-8 ?",
+    "options": ["<meta charset=\"utf-8\">", "<html charset=\"utf-8\">", "<encoding utf=\"8\">", "<title charset=\"utf-8\">"],
+    "answers": [0],
+    "explanation": "La balise meta charset se place dans <head>.",
+    "references": ["meta", "charset"]
+  },
+  {
+    "id": "archive-html-list-001",
+    "domain": "html",
+    "topic": "lists",
+    "level": 1,
+    "type": "single",
+    "question": "Quelle balise HTML cree une liste non ordonnee ?",
+    "options": ["<ol>", "<ul>", "<li>", "<list>"],
+    "answers": [1],
+    "explanation": "<ul> cree une liste a puces. Les elements de liste sont des <li>.",
+    "references": ["lists", "ul"]
+  },
+  {
+    "id": "archive-html-nav-001",
+    "domain": "html",
+    "topic": "semantics",
+    "level": 4,
+    "type": "single",
+    "question": "Quelle balise fournit une zone de navigation principale dans une page ?",
+    "options": ["<navigation>", "<nav>", "<menu-main>", "<links>"],
+    "answers": [1],
+    "explanation": "<nav> represente une section de navigation.",
+    "references": ["semantics", "navigation"]
+  },
+  {
+    "id": "archive-html-navigation-fix-001",
+    "domain": "html",
+    "topic": "lists",
+    "level": 3,
+    "type": "code-fix",
+    "question": "Corrige la navigation pour que chaque element de liste soit ferme.",
+    "code": "<nav>\n  <ul>\n    <li><a href=\"index.html\">Accueil</a>\n    <li><a href=\"about.html\">A propos</a>\n    <li><a href=\"contact.html\">Contact</a>\n  </ul>\n</nav>",
+    "solution": "<nav>\n  <ul>\n    <li><a href=\"index.html\">Accueil</a></li>\n    <li><a href=\"about.html\">A propos</a></li>\n    <li><a href=\"contact.html\">Contact</a></li>\n  </ul>\n</nav>",
+    "checks": [
+      { "label": "Accueil est dans un li ferme.", "contains": "<li><a href=\"index.html\">Accueil</a></li>" },
+      { "label": "A propos est dans un li ferme.", "contains": "<li><a href=\"about.html\">A propos</a></li>" },
+      { "label": "Contact est dans un li ferme.", "contains": "<li><a href=\"contact.html\">Contact</a></li>" }
+    ],
+    "explanation": "Les navigateurs tolerent parfois les <li> non fermes, mais l'examen teste la rigueur de la syntaxe.",
+    "references": ["lists", "navigation", "html"]
+  }
+]

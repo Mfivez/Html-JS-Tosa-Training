@@ -68,6 +68,7 @@ const courses = fs
       chapters
     };
   })
+  .filter((course) => course.chapters.length > 0)
   .sort((a, b) => {
     if (a.order !== b.order) return a.order - b.order;
     return a.title.localeCompare(b.title, "fr", { numeric: true, sensitivity: "base" });

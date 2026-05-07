@@ -1,0 +1,298 @@
+[
+  {
+    "id": "integration-card-fix-001",
+    "domain": "integration",
+    "topic": "html-css",
+    "level": 3,
+    "type": "code-fix",
+    "question": "Corrige ce composant carte : image accessible, lien valide, selecteur CSS de classe et unite sur le padding.",
+    "code": "<article class=\"card\">\n  <img href=\"produit.jpg\">\n  <h2>Produit</h2>\n  <a src=\"produit.html\">Voir</a>\n</article>\n\n#card {\n  padding: 16;\n  background-color: #fff;\n}",
+    "solution": "<article class=\"card\">\n  <img src=\"produit.jpg\" alt=\"Photo du produit\">\n  <h2>Produit</h2>\n  <a href=\"produit.html\">Voir</a>\n</article>\n\n.card {\n  padding: 16px;\n  background-color: #fff;\n}",
+    "checks": [
+      { "label": "L'image utilise src.", "contains": "src=\"produit.jpg\"", "absent": "img href" },
+      { "label": "L'image possede alt.", "contains": "alt=" },
+      { "label": "Le lien utilise href.", "contains": "href=\"produit.html\"", "absent": "a src" },
+      { "label": "Le CSS cible la classe .card.", "contains": ".card", "absent": "#card" },
+      { "label": "Le padding possede une unite.", "contains": "padding: 16px;" }
+    ],
+    "explanation": "Les attributs src/href doivent etre sur les bons elements et le CSS doit cibler .card.",
+    "references": ["integration", "debug"]
+  },
+  {
+    "id": "integration-responsive-001",
+    "domain": "integration",
+    "topic": "responsive",
+    "level": 3,
+    "type": "single",
+    "question": "Quel choix rend une grille de cartes plus robuste sur mobile sans media query complexe ?",
+    "options": ["grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));", "width: 1200px;", "float: left sur toutes les cartes", "position: absolute sur chaque carte"],
+    "answers": [0],
+    "explanation": "auto-fit et minmax permettent a la grille de s'adapter a la largeur disponible.",
+    "references": ["responsive", "grid"]
+  },
+  {
+    "id": "integration-form-order-001",
+    "domain": "integration",
+    "topic": "forms",
+    "level": 4,
+    "type": "order",
+    "question": "Remets dans l'ordre une validation de formulaire cote client.",
+    "options": ["Ecouter l'evenement submit", "Empêcher l'envoi par defaut si les donnees sont invalides", "Afficher un message d'erreur accessible", "Envoyer les donnees quand elles sont valides"],
+    "answers": [0, 1, 2, 3],
+    "explanation": "On intercepte submit, on valide, on explique les erreurs, puis on laisse partir les donnees valides.",
+    "references": ["forms", "dom"]
+  },
+  {
+    "id": "integration-bug-001",
+    "domain": "integration",
+    "topic": "debug",
+    "level": 4,
+    "type": "code-output",
+    "question": "Pourquoi ce code ne modifie-t-il pas le texte attendu ?",
+    "code": "const status = document.querySelector('#status');\nstatus.value = 'Envoye';",
+    "options": ["Un element de texte utilise plutot textContent", "querySelector ne fonctionne jamais avec un id", "value est reserve aux balises <script>", "Il manque une media query"],
+    "answers": [0],
+    "explanation": "Pour un paragraphe ou un span, on met a jour textContent plutot que value.",
+    "references": ["dom", "debug"]
+  },
+  {
+    "id": "integration-accessibility-001",
+    "domain": "integration",
+    "topic": "accessibility",
+    "level": 5,
+    "type": "multiple",
+    "question": "Quelles corrections sont prioritaires sur une page de contact accessible ?",
+    "options": ["Associer les labels aux champs", "Afficher les erreurs uniquement par la couleur", "Donner un texte alternatif utile aux images informatives", "Garder un contraste lisible"],
+    "answers": [0, 2, 3],
+    "explanation": "Les erreurs ne doivent pas dependre uniquement de la couleur.",
+    "references": ["accessibility", "forms"]
+  },
+  {
+    "id": "integration-form-fix-001",
+    "domain": "integration",
+    "topic": "forms",
+    "level": 3,
+    "type": "code-fix",
+    "question": "Corrige ce formulaire pour que le label soit associe et que le bouton ne soumette pas automatiquement.",
+    "code": "<form>\n  <label>Email</label>\n  <input name=\"email\">\n  <button>Verifier</button>\n</form>",
+    "solution": "<form>\n  <label for=\"email\">Email</label>\n  <input id=\"email\" name=\"email\" type=\"email\">\n  <button type=\"button\">Verifier</button>\n</form>",
+    "checks": [
+      { "label": "Le label utilise for.", "contains": "for=\"email\"" },
+      { "label": "Le champ possede l'id correspondant.", "contains": "id=\"email\"" },
+      { "label": "Le champ est de type email.", "contains": "type=\"email\"" },
+      { "label": "Le bouton ne soumet pas par defaut.", "contains": "type=\"button\"" }
+    ],
+    "tests": [
+      {
+        "type": "html",
+        "label": "Le formulaire est associe et le bouton reste neutre.",
+        "assertions": [
+          { "selector": "label", "attribute": "for", "equals": "email" },
+          { "selector": "input#email", "attribute": "type", "equals": "email" },
+          { "selector": "button", "attribute": "type", "equals": "button" }
+        ]
+      }
+    ],
+    "explanation": "Le label doit pointer vers un id, et type=\"button\" evite une soumission non voulue.",
+    "references": ["forms", "accessibility"]
+  },
+  {
+    "id": "integration-css-js-001",
+    "domain": "integration",
+    "topic": "state",
+    "level": 4,
+    "type": "single",
+    "question": "Quel enchainement est le plus propre pour ouvrir un menu via JavaScript ?",
+    "options": ["Ajouter une classe d'etat et laisser CSS gerer l'affichage", "Modifier directement toutes les couleurs en JS", "Recreer toute la page avec innerHTML", "Utiliser alert pour afficher le menu"],
+    "answers": [0],
+    "explanation": "JavaScript pilote l'etat, CSS garde la responsabilite de la presentation.",
+    "references": ["dom", "css", "integration"]
+  },
+  {
+    "id": "integration-performance-001",
+    "domain": "integration",
+    "topic": "assets",
+    "level": 5,
+    "type": "multiple",
+    "question": "Quelles actions ameliorent une page contenant beaucoup d'images ?",
+    "options": ["Renseigner width et height", "Utiliser loading=\"lazy\" pour les images hors ecran", "Servir des images gigantesques puis les reduire en CSS", "Prevoir un alt adapte"],
+    "answers": [0, 1, 3],
+    "explanation": "Dimensions, chargement differe et alternatives textuelles ameliorent stabilite, performance et accessibilite.",
+    "references": ["images", "performance", "accessibility"]
+  },
+  {
+    "id": "integration-menu-fix-001",
+    "domain": "integration",
+    "topic": "components",
+    "level": 5,
+    "type": "code-fix",
+    "question": "Corrige ce bouton de menu pour qu'il soit accessible et pilote un etat CSS.",
+    "code": "<button id=\"menuBtn\">☰</button>\n<nav id=\"menu\" class=\"menu\"></nav>\n\nmenuBtn.addEventListener('click', () => {\n  menu.style.display = 'block';\n});",
+    "solution": "<button id=\"menuBtn\" aria-label=\"Ouvrir le menu\" aria-expanded=\"false\">☰</button>\n<nav id=\"menu\" class=\"menu\"></nav>\n\nmenuBtn.addEventListener('click', () => {\n  menu.classList.toggle('is-open');\n  menuBtn.setAttribute('aria-expanded', menu.classList.contains('is-open'));\n});",
+    "checks": [
+      { "label": "Le bouton a un nom accessible.", "contains": "aria-label" },
+      { "label": "aria-expanded est gere.", "contains": "aria-expanded" },
+      { "label": "L'etat CSS passe par classList.", "contains": "classList.toggle", "absent": "style.display" }
+    ],
+    "explanation": "Le bouton doit etre nomme pour les lecteurs d'ecran et JavaScript doit piloter un etat CSS.",
+    "references": ["accessibility", "dom", "components"]
+  },
+  {
+    "id": "integration-responsive-bug-001",
+    "domain": "integration",
+    "topic": "responsive",
+    "level": 4,
+    "type": "code-fix",
+    "question": "Corrige cette grille pour eviter le debordement horizontal sur mobile.",
+    "code": ".cards {\n  display: grid;\n  grid-template-columns: 400px 400px 400px;\n  gap: 24px;\n}",
+    "solution": ".cards {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));\n  gap: 24px;\n}",
+    "checks": [
+      { "label": "La grille utilise repeat.", "contains": "repeat(" },
+      { "label": "La grille utilise minmax.", "contains": "minmax(" },
+      { "label": "Les trois colonnes fixes sont retirees.", "absent": "400px 400px 400px" }
+    ],
+    "explanation": "auto-fit et minmax creent des colonnes adaptatives qui evitent le debordement.",
+    "references": ["responsive", "grid", "integration"]
+  },
+  {
+    "id": "integration-form-debug-001",
+    "domain": "integration",
+    "topic": "forms",
+    "level": 3,
+    "type": "code-output",
+    "question": "Pourquoi ce formulaire continue-t-il a recharger la page ?",
+    "code": "form.addEventListener('submit', () => {\n  showMessage('Envoye');\n});",
+    "options": [
+      "Le gestionnaire ne recoit pas event et n'appelle pas preventDefault()",
+      "submit n'est pas un evenement",
+      "showMessage recharge toujours la page",
+      "Il manque obligatoirement une classe CSS"
+    ],
+    "answers": [0],
+    "explanation": "Pour empecher la soumission native, le handler doit recevoir event et appeler event.preventDefault().",
+    "references": ["forms", "events", "debug"]
+  },
+  {
+    "id": "integration-fetch-fix-001",
+    "domain": "integration",
+    "topic": "fetch",
+    "level": 5,
+    "type": "code-fix",
+    "question": "Corrige cette fonction pour lire du JSON avec fetch.",
+    "code": "async function loadUsers() {\n  const response = fetch('/users.json');\n  const users = response.json;\n  return users;\n}",
+    "solution": "async function loadUsers() {\n  const response = await fetch('/users.json');\n  if (!response.ok) throw new Error('Erreur de chargement');\n  const users = await response.json();\n  return users;\n}",
+    "checks": [
+      { "label": "fetch est attendu avec await.", "contains": "await fetch" },
+      { "label": "response.json() est appele.", "contains": "await response.json()" },
+      { "label": "Le statut est verifie.", "contains": "response.ok" }
+    ],
+    "explanation": "fetch et response.json() retournent des Promises, et le statut HTTP doit etre verifie.",
+    "references": ["fetch", "async-await", "debug"]
+  },
+  {
+    "id": "integration-progressive-001",
+    "domain": "integration",
+    "topic": "forms",
+    "level": 4,
+    "type": "single",
+    "question": "Quelle approche respecte le mieux l'amelioration progressive d'un formulaire ?",
+    "options": ["Garder une action HTML valide puis enrichir avec JavaScript", "Supprimer l'attribut action et tout faire en alert", "Rendre tous les champs disabled", "Remplacer le formulaire par une image"],
+    "answers": [0],
+    "explanation": "Le formulaire reste utilisable sans JavaScript, puis l'interface peut etre enrichie.",
+    "references": ["forms", "progressive-enhancement"]
+  },
+  {
+    "id": "integration-css-dom-order-001",
+    "domain": "integration",
+    "topic": "components",
+    "level": 4,
+    "type": "order",
+    "question": "Remets dans l'ordre une interaction de composant propre.",
+    "options": ["Selectionner les elements utiles", "Ecouter l'evenement utilisateur", "Modifier une classe d'etat", "Laisser CSS afficher l'etat"],
+    "answers": [0, 1, 2, 3],
+    "explanation": "JavaScript gere l'etat, CSS gere l'apparence.",
+    "references": ["dom", "css", "components"]
+  },
+  {
+    "id": "integration-error-message-001",
+    "domain": "integration",
+    "topic": "accessibility",
+    "level": 3,
+    "type": "multiple",
+    "question": "Quelles pratiques rendent un message d'erreur de formulaire plus accessible ?",
+    "options": ["Texte explicite pres du champ", "Couleur seule sans texte", "Association via aria-describedby", "Message annonce dans une zone aria-live si necessaire"],
+    "answers": [0, 2, 3],
+    "explanation": "Une erreur doit etre lisible, associee au champ et perceptible sans dependre uniquement de la couleur.",
+    "references": ["accessibility", "forms", "errors"]
+  },
+  {
+    "id": "archive-integration-card-problems-match-001",
+    "domain": "integration",
+    "topic": "debug",
+    "level": 3,
+    "type": "match",
+    "question": "Associe le probleme CSS/HTML a la correction la plus probable.",
+    "items": [
+      { "prompt": "<link href=\"style.css\">", "answer": "Ajouter rel=\"stylesheet\"" },
+      { "prompt": ".card { width: 300; }", "answer": "Ajouter l'unite px ou rem" },
+      { "prompt": "HTML : class=\"alert\" / CSS : #alert", "answer": "Remplacer # par ." },
+      { "prompt": "<img src=\"photo.jpg\">", "answer": "Ajouter alt a l'image" }
+    ],
+    "choices": ["Ajouter alt a l'image", "Ajouter l'unite px ou rem", "Remplacer # par .", "Ajouter rel=\"stylesheet\""],
+    "explanation": "Ces erreurs melangent integration HTML, CSS et accessibilite.",
+    "references": ["debug", "html", "css", "accessibility"]
+  },
+  {
+    "id": "archive-integration-form-field-fix-001",
+    "domain": "integration",
+    "topic": "forms",
+    "level": 3,
+    "type": "code-fix",
+    "question": "Corrige ce champ de formulaire e-mail.",
+    "code": "<form>\n  <label>Email</label>\n  <input name=\"email\" placeholder=\"Votre e-mail\">\n  <button>Envoyer</button>\n</form>",
+    "solution": "<form>\n  <label for=\"email\">Email</label>\n  <input id=\"email\" name=\"email\" type=\"email\" placeholder=\"Votre e-mail\" required>\n  <button type=\"submit\">Envoyer</button>\n</form>",
+    "checks": [
+      { "label": "Le label cible l'id email.", "regex": "<label\\s+for=\"email\">" },
+      { "label": "Le champ possede id=\"email\".", "contains": "id=\"email\"" },
+      { "label": "Le type du champ est email.", "contains": "type=\"email\"" },
+      { "label": "Le champ est obligatoire.", "contains": "required" }
+    ],
+    "tests": [
+      {
+        "type": "html",
+        "label": "Le champ e-mail est type, requis et relie au label.",
+        "assertions": [
+          { "selector": "label", "attribute": "for", "equals": "email" },
+          { "selector": "input#email", "attribute": "type", "equals": "email" },
+          { "selector": "input#email", "attribute": "required", "equals": "" }
+        ]
+      }
+    ],
+    "explanation": "Le champ e-mail doit etre type, obligatoire et correctement associe a son label.",
+    "references": ["forms", "accessibility", "validation"]
+  },
+  {
+    "id": "archive-integration-csp-001",
+    "domain": "integration",
+    "topic": "security",
+    "level": 5,
+    "type": "single",
+    "question": "Dans une Content Security Policy, quel est l'objectif principal de script-src ?",
+    "options": ["Limiter les sources autorisees pour les scripts.", "Definir la taille des fichiers JS.", "Choisir la version de JavaScript.", "Creer automatiquement des modules."],
+    "answers": [0],
+    "explanation": "script-src indique quelles sources de scripts le navigateur peut charger ou executer.",
+    "references": ["security", "csp", "scripts"]
+  },
+  {
+    "id": "archive-integration-aria-multiple-001",
+    "domain": "integration",
+    "topic": "accessibility",
+    "level": 5,
+    "type": "multiple",
+    "question": "Quelles affirmations sur ARIA sont correctes ?",
+    "options": ["ARIA peut completer la semantique quand le HTML natif ne suffit pas.", "ARIA remplace toujours l'utilisation de vraies balises HTML semantiques.", "Un element role=\"button\" doit aussi etre utilisable au clavier.", "Un aria-label peut donner un nom accessible a un bouton icone."],
+    "answers": [0, 2, 3],
+    "explanation": "On privilegie le HTML natif. ARIA complete, mais ne corrige pas automatiquement les comportements clavier.",
+    "references": ["accessibility", "aria", "html"]
+  }
+]

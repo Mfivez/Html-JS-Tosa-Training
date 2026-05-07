@@ -1,0 +1,285 @@
+[
+  {
+    "id": "dom-query-001",
+    "domain": "dom",
+    "topic": "selection",
+    "level": 1,
+    "type": "single",
+    "question": "Quelle methode selectionne le premier element correspondant a un selecteur CSS ?",
+    "options": ["document.querySelector()", "document.selectAll()", "document.findFirst()", "document.getStyle()"],
+    "answers": [0],
+    "explanation": "querySelector() retourne le premier element correspondant au selecteur fourni.",
+    "references": ["dom", "selectors"]
+  },
+  {
+    "id": "dom-listener-001",
+    "domain": "dom",
+    "topic": "events",
+    "level": 2,
+    "type": "single",
+    "question": "Quelle syntaxe ecoute un clic sur un bouton stocke dans button ?",
+    "options": ["button.on(\"click\", run)", "button.addEventListener(\"click\", run)", "button.clickEvent(run)", "button.listen(\"click\", run)"],
+    "answers": [1],
+    "explanation": "addEventListener() associe une fonction a un evenement.",
+    "references": ["events"]
+  },
+  {
+    "id": "dom-prevent-default-001",
+    "domain": "dom",
+    "topic": "events",
+    "level": 3,
+    "type": "single",
+    "question": "A quoi sert event.preventDefault() dans un gestionnaire d'evenement ?",
+    "options": ["A arreter JavaScript", "A empecher le comportement par defaut du navigateur", "A supprimer l'element clique", "A creer un nouvel evenement"],
+    "answers": [1],
+    "explanation": "On l'utilise par exemple pour empecher l'envoi automatique d'un formulaire.",
+    "references": ["events", "forms"]
+  },
+  {
+    "id": "dom-textcontent-001",
+    "domain": "dom",
+    "topic": "manipulation",
+    "level": 4,
+    "type": "single",
+    "question": "Quelle propriete modifie le texte sans interpreter de HTML ?",
+    "options": ["innerHTML", "textContent", "outerHTML", "styleText"],
+    "answers": [1],
+    "explanation": "textContent remplace du texte brut. innerHTML interprete la chaine comme du HTML.",
+    "references": ["dom", "security"]
+  },
+  {
+    "id": "dom-delegation-001",
+    "domain": "dom",
+    "topic": "events",
+    "level": 5,
+    "type": "multiple",
+    "question": "Quelles affirmations decrivent correctement la delegation d'evenements ?",
+    "options": ["On place un listener sur un ancetre", "On inspecte event.target pour identifier l'element source", "Elle oblige a ajouter un listener sur chaque enfant", "Elle aide avec les elements ajoutes dynamiquement"],
+    "answers": [0, 1, 3],
+    "explanation": "La delegation exploite la propagation des evenements vers un ancetre commun.",
+    "references": ["events", "delegation"]
+  },
+  {
+    "id": "dom-classlist-001",
+    "domain": "dom",
+    "topic": "manipulation",
+    "level": 2,
+    "type": "single",
+    "question": "Quelle methode ajoute une classe CSS a un element ?",
+    "options": ["element.classList.add(\"active\")", "element.style.add(\"active\")", "element.className.add(\"active\")", "document.addClass(element)"],
+    "answers": [0],
+    "explanation": "classList.add() ajoute une classe sans ecraser les autres classes.",
+    "references": ["dom", "classList"]
+  },
+  {
+    "id": "dom-stop-propagation-001",
+    "domain": "dom",
+    "topic": "events",
+    "level": 4,
+    "type": "single",
+    "question": "A quoi sert event.stopPropagation() ?",
+    "options": ["A empecher l'evenement de remonter aux ancetres", "A annuler le comportement par defaut", "A supprimer le listener", "A recharger la page"],
+    "answers": [0],
+    "explanation": "stopPropagation limite la propagation dans l'arbre DOM, sans remplacer preventDefault.",
+    "references": ["events", "propagation"]
+  },
+  {
+    "id": "dom-dataset-001",
+    "domain": "dom",
+    "topic": "data-attributes",
+    "level": 3,
+    "type": "single",
+    "question": "Comment lire data-user-id=\"42\" sur un element stocke dans item ?",
+    "options": ["item.dataset.userId", "item.data.user-id", "item.getData(\"user-id\")", "item.attr.dataset"],
+    "answers": [0],
+    "explanation": "dataset convertit data-user-id en propriete camelCase userId.",
+    "references": ["dataset", "dom"]
+  },
+  {
+    "id": "dom-event-flow-match-001",
+    "domain": "dom",
+    "topic": "events",
+    "level": 4,
+    "type": "match",
+    "question": "Associe chaque notion d'evenement DOM a sa definition.",
+    "items": [
+      { "prompt": "target", "answer": "Element source de l'evenement" },
+      { "prompt": "currentTarget", "answer": "Element qui execute le listener" },
+      { "prompt": "bubbling", "answer": "Remontee vers les ancetres" }
+    ],
+    "choices": [
+      "Remontee vers les ancetres",
+      "Element source de l'evenement",
+      "Element qui execute le listener"
+    ],
+    "explanation": "Ces notions sont essentielles pour comprendre la delegation d'evenements.",
+    "references": ["events", "delegation"]
+  },
+  {
+    "id": "dom-getelementbyid-001",
+    "domain": "dom",
+    "topic": "selection",
+    "level": 1,
+    "type": "single",
+    "question": "Quelle methode selectionne un element par son identifiant exact ?",
+    "options": ["document.getElementById()", "document.getElementsByClassName()", "document.queryAll()", "document.id()"],
+    "answers": [0],
+    "explanation": "getElementById() retourne l'element qui porte l'id donne.",
+    "references": ["dom", "selection"]
+  },
+  {
+    "id": "dom-innerhtml-risk-001",
+    "domain": "dom",
+    "topic": "security",
+    "level": 4,
+    "type": "single",
+    "question": "Pourquoi eviter innerHTML avec du contenu saisi par l'utilisateur ?",
+    "options": [
+      "Cela peut interpreter du HTML ou du script injecte",
+      "Cela rend toujours le site hors ligne",
+      "Cela empeche tous les styles CSS",
+      "Cela supprime automatiquement le DOM"
+    ],
+    "answers": [0],
+    "explanation": "innerHTML interprete la chaine comme du HTML ; textContent est plus sur pour du texte brut.",
+    "references": ["dom", "innerHTML", "security"]
+  },
+  {
+    "id": "dom-create-element-001",
+    "domain": "dom",
+    "topic": "manipulation",
+    "level": 2,
+    "type": "single",
+    "question": "Quelle methode cree un nouvel element <li> en JavaScript ?",
+    "options": ["document.createElement('li')", "document.new('li')", "document.makeElement('li')", "li.create()"],
+    "answers": [0],
+    "explanation": "createElement cree un element DOM qui peut ensuite etre insere dans la page.",
+    "references": ["dom", "createElement"]
+  },
+  {
+    "id": "dom-closest-001",
+    "domain": "dom",
+    "topic": "selection",
+    "level": 3,
+    "type": "single",
+    "question": "Que fait element.closest('.card') ?",
+    "options": ["Cherche l'ancetre le plus proche correspondant au selecteur", "Selectionne tous les enfants .card", "Cree une nouvelle carte", "Supprime la classe card"],
+    "answers": [0],
+    "explanation": "closest remonte dans les ancetres jusqu'au premier element qui correspond au selecteur.",
+    "references": ["dom", "selectors", "delegation"]
+  },
+  {
+    "id": "dom-remove-listener-001",
+    "domain": "dom",
+    "topic": "events",
+    "level": 4,
+    "type": "single",
+    "question": "Quelle condition est necessaire pour retirer un listener avec removeEventListener ?",
+    "options": ["Utiliser la meme reference de fonction que lors de l'ajout", "Utiliser toujours une fonction flechee inline", "Supprimer l'element du DOM", "Ajouter preventDefault"],
+    "answers": [0],
+    "explanation": "removeEventListener doit recevoir la meme fonction que addEventListener.",
+    "references": ["events", "listeners"]
+  },
+  {
+    "id": "dom-formdata-001",
+    "domain": "dom",
+    "topic": "forms",
+    "level": 3,
+    "type": "single",
+    "question": "A quoi sert new FormData(form) ?",
+    "options": ["A lire les donnees d'un formulaire", "A styliser automatiquement les champs", "A creer une media query", "A desactiver JavaScript"],
+    "answers": [0],
+    "explanation": "FormData permet de recuperer les paires nom/valeur d'un formulaire.",
+    "references": ["forms", "dom"]
+  },
+  {
+    "id": "archive-dom-aria-live-001",
+    "domain": "dom",
+    "topic": "accessibility",
+    "level": 4,
+    "type": "single",
+    "question": "A quoi sert aria-live ?",
+    "options": ["A annoncer des mises a jour dynamiques aux technologies d'assistance.", "A rendre un element cliquable.", "A charger une video en direct.", "A rendre une image responsive."],
+    "answers": [0],
+    "explanation": "aria-live signale qu'une zone peut etre annoncee lorsqu'elle change.",
+    "references": ["aria", "accessibility", "dynamic-content"]
+  },
+  {
+    "id": "archive-dom-remove-event-001",
+    "domain": "dom",
+    "topic": "events",
+    "level": 4,
+    "type": "single",
+    "question": "Quelle methode supprime un ecouteur ajoute avec addEventListener ?",
+    "options": ["removeEventListener()", "deleteEvent()", "offEventListener()", "clearListener()"],
+    "answers": [0],
+    "explanation": "Il faut passer a removeEventListener la meme reference de fonction que celle ajoutee.",
+    "references": ["events", "listeners"]
+  },
+  {
+    "id": "archive-dom-stop-propagation-risk-001",
+    "domain": "dom",
+    "topic": "events",
+    "level": 5,
+    "type": "single",
+    "question": "Pourquoi event.stopPropagation() doit-il etre utilise avec prudence ?",
+    "options": ["Il empeche l'evenement de remonter vers les ancetres, ce qui peut casser d'autres gestionnaires.", "Il supprime l'element du DOM.", "Il bloque tous les evenements du site definitivement.", "Il force le rechargement de la page."],
+    "answers": [0],
+    "explanation": "stopPropagation() interrompt la phase de propagation, ce qui peut gener la delegation d'evenements.",
+    "references": ["events", "propagation", "delegation"]
+  },
+  {
+    "id": "archive-dom-shadow-dom-001",
+    "domain": "dom",
+    "topic": "web-components",
+    "level": 5,
+    "type": "single",
+    "question": "Quelle affirmation decrit le mieux le Shadow DOM ?",
+    "options": ["Un DOM encapsule attache a un composant.", "Une copie automatique de toute la page.", "Une facon de cacher JavaScript au navigateur.", "Une alternative a HTTP."],
+    "answers": [0],
+    "explanation": "Le Shadow DOM encapsule une structure et des styles dans certains composants web.",
+    "references": ["shadow-dom", "web-components"]
+  },
+  {
+    "id": "archive-dom-textcontent-xss-001",
+    "domain": "dom",
+    "topic": "security",
+    "level": 5,
+    "type": "single",
+    "question": "Quelle pratique reduit le risque XSS lors de l'insertion de texte utilisateur ?",
+    "options": ["Utiliser textContent quand on insere du texte brut.", "Toujours utiliser innerHTML.", "Mettre le texte dans un commentaire CSS.", "Changer la couleur du texte."],
+    "answers": [0],
+    "explanation": "textContent n'interprete pas la chaine comme du HTML.",
+    "references": ["security", "xss", "textContent"]
+  },
+  {
+    "id": "archive-dom-event-listener-fix-001",
+    "domain": "dom",
+    "topic": "events",
+    "level": 3,
+    "type": "code-fix",
+    "question": "Corrige cet ecouteur d'evenement.",
+    "code": "const btn = document.querySelector(\"#submit\");\nconst status = document.querySelector(\"#status\");\n\nbtn.on(\"click\", () => {\n  status.value = \"Envoye !\";\n});",
+    "solution": "const btn = document.querySelector(\"#submit\");\nconst status = document.querySelector(\"#status\");\n\nbtn.addEventListener(\"click\", () => {\n  status.textContent = \"Envoye !\";\n});",
+    "checks": [
+      { "label": "addEventListener est utilise.", "contains": "addEventListener" },
+      { "label": "btn.on n'est plus utilise.", "absent": "btn.on(" },
+      { "label": "textContent ou innerHTML met a jour le statut.", "regex": "status\\.(textContent|innerHTML)" }
+    ],
+    "tests": [
+      {
+        "type": "dom",
+        "label": "Le clic met a jour le statut dans le DOM.",
+        "fixture": "<button id=\"submit\">Envoyer</button><p id=\"status\"></p>",
+        "actions": [
+          { "click": "#submit" }
+        ],
+        "assertions": [
+          { "selector": "#status", "property": "textContent", "equals": "Envoye !" }
+        ]
+      }
+    ],
+    "explanation": "Les elements <p> ou <span> n'ont pas de propriete value. On utilise textContent.",
+    "references": ["events", "textContent", "debug"]
+  }
+]
