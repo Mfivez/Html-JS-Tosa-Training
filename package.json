@@ -1,0 +1,9 @@
+{
+  "name": "cours-md-github-pages-starter",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-manifest.mjs"
+  }
+}

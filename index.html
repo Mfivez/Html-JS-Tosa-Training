@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Préparation statique au TOSA HTML CSS sur GitHub Pages" />
+  <title>Prépa TOSA HTML / CSS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="is-home">
+  <a class="skip-link" href="#content">Aller au contenu</a>
+
+  <button id="navToggle" class="nav-toggle" type="button" aria-label="Fermer la navigation du cours" aria-controls="courseSidebar" aria-expanded="true">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div id="navOverlay" class="nav-overlay" hidden></div>
+
+  <aside id="courseSidebar" class="sidebar" aria-label="Navigation du cours">
+    <header class="brand-block">
+      <a class="brand" href="#/">Prépa TOSA</a>
+      <p id="sidebarSubtitle" class="brand-subtitle">HTML / CSS sur GitHub Pages</p>
+    </header>
+
+    <section class="nav-section">
+      <h2>Accueil</h2>
+      <nav id="courseList" class="nav-list"></nav>
+    </section>
+
+    <section class="nav-section">
+      <h2>Chapitres</h2>
+      <nav id="chapterList" class="nav-list compact"></nav>
+    </section>
+  </aside>
+
+  <main id="main" class="main">
+    <div id="breadcrumb" class="breadcrumb" aria-label="Fil d'Ariane"></div>
+    <article id="content" class="content" tabindex="-1"></article>
+    <nav id="pager" class="pager" aria-label="Navigation entre chapitres"></nav>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

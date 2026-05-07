@@ -1,0 +1,49 @@
+{
+  "generatedAt": "2026-05-07T12:09:11.661Z",
+  "courses": [
+    {
+      "id": "html-css",
+      "title": "Prépa TOSA HTML / CSS",
+      "description": "Entraînement au format test : QCM, multi-réponses, code à corriger et associations de balises, attributs et propriétés.",
+      "order": 2,
+      "chapters": [
+        {
+          "id": "01_mode_examen_tosa",
+          "title": "Mode examen TOSA HTML / CSS",
+          "file": "courses/html-css/01_mode_examen_tosa.md",
+          "order": 1
+        },
+        {
+          "id": "02_qcm_html_css",
+          "title": "QCM HTML / CSS",
+          "file": "courses/html-css/02_qcm_html_css.md",
+          "order": 2
+        },
+        {
+          "id": "03_corriger_erreurs_html",
+          "title": "Trouver et corriger des erreurs HTML",
+          "file": "courses/html-css/03_corriger_erreurs_html.md",
+          "order": 3
+        },
+        {
+          "id": "04_corriger_erreurs_css",
+          "title": "Trouver et corriger des erreurs CSS",
+          "file": "courses/html-css/04_corriger_erreurs_css.md",
+          "order": 4
+        },
+        {
+          "id": "05_associer_balises_attributs",
+          "title": "Associer balises, attributs et propriétés",
+          "file": "courses/html-css/05_associer_balises_attributs.md",
+          "order": 5
+        },
+        {
+          "id": "06_mini_examen_mixte",
+          "title": "Mini-examen mixte",
+          "file": "courses/html-css/06_mini_examen_mixte.md",
+          "order": 6
+        }
+      ]
+    }
+  ]
+}
