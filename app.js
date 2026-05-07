@@ -270,7 +270,6 @@ async function renderContent(course, chapter, route) {
 }
 
 function renderHome() {
-  const courses = getFilteredCourses();
   const activeSearch = document.activeElement?.id === "homeSearchInput";
   const cursor = activeSearch ? document.activeElement.selectionStart : null;
 
@@ -291,14 +290,6 @@ function renderHome() {
         <span>Recherche rapide</span>
         <input id="homeSearchInput" type="search" placeholder="Rechercher un th&egrave;me, une balise, un exercice..." autocomplete="off" value="${escapeHtml(state.search)}" />
       </label>
-    </section>
-
-    <section class="catalog-section" aria-labelledby="catalogTitle">
-      <div class="section-heading">
-        <h2 id="catalogTitle">Parcours disponible</h2>
-        ${state.search ? `<p>${courses.length} r&eacute;sultat${courses.length > 1 ? "s" : ""} pour "${escapeHtml(state.search)}"</p>` : ""}
-      </div>
-      ${courses.length ? renderCourseCards(courses) : renderEmptyCatalog()}
     </section>
   `;
 
