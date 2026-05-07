@@ -6,10 +6,19 @@
     "level": 1,
     "type": "single",
     "question": "Quelle propriete CSS modifie la couleur du texte ?",
-    "options": ["background-color", "font-style", "color", "text-size"],
-    "answers": [2],
+    "options": [
+      "background-color",
+      "font-style",
+      "color",
+      "text-size"
+    ],
+    "answers": [
+      2
+    ],
     "explanation": "color definit la couleur du texte.",
-    "references": ["color"]
+    "references": [
+      "color"
+    ]
   },
   {
     "id": "css-padding-001",
@@ -18,10 +27,19 @@
     "level": 2,
     "type": "single",
     "question": "Quelle propriete ajoute de l'espace entre le contenu et la bordure ?",
-    "options": ["margin", "padding", "gap", "outline"],
-    "answers": [1],
+    "options": [
+      "margin",
+      "padding",
+      "gap",
+      "outline"
+    ],
+    "answers": [
+      1
+    ],
     "explanation": "padding ajoute de l'espace interne. margin ajoute de l'espace externe.",
-    "references": ["box-model"]
+    "references": [
+      "box-model"
+    ]
   },
   {
     "id": "css-hover-001",
@@ -30,10 +48,19 @@
     "level": 2,
     "type": "single",
     "question": "Quelle pseudo-classe cible un lien au survol de la souris ?",
-    "options": [":focus", ":active", ":hover", ":visited"],
-    "answers": [2],
+    "options": [
+      ":focus",
+      ":active",
+      ":hover",
+      ":visited"
+    ],
+    "answers": [
+      2
+    ],
     "explanation": ":hover s'applique lorsque le pointeur survole l'element.",
-    "references": ["pseudo-classes"]
+    "references": [
+      "pseudo-classes"
+    ]
   },
   {
     "id": "css-specificity-001",
@@ -42,10 +69,19 @@
     "level": 3,
     "type": "single",
     "question": "Quel selecteur est generalement le plus specifique ?",
-    "options": ["p", ".intro", "#intro", "*"],
-    "answers": [2],
+    "options": [
+      "p",
+      ".intro",
+      "#intro",
+      "*"
+    ],
+    "answers": [
+      2
+    ],
     "explanation": "Un identifiant a une specificite superieure a une classe et a une balise.",
-    "references": ["specificity"]
+    "references": [
+      "specificity"
+    ]
   },
   {
     "id": "css-grid-001",
@@ -54,10 +90,19 @@
     "level": 3,
     "type": "single",
     "question": "Quelle declaration cree trois colonnes de meme largeur dans CSS Grid ?",
-    "options": ["grid-template-columns: repeat(3, 1fr);", "grid-columns: 3 equal;", "display-columns: 3;", "grid-template-rows: repeat(3, 1fr);"],
-    "answers": [0],
+    "options": [
+      "grid-template-columns: repeat(3, 1fr);",
+      "grid-columns: 3 equal;",
+      "display-columns: 3;",
+      "grid-template-rows: repeat(3, 1fr);"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "repeat(3, 1fr) cree trois pistes de grille egales.",
-    "references": ["grid"]
+    "references": [
+      "grid"
+    ]
   },
   {
     "id": "css-border-box-001",
@@ -66,10 +111,19 @@
     "level": 4,
     "type": "single",
     "question": "Que change box-sizing: border-box sur un element ?",
-    "options": ["La largeur inclut contenu, padding et bordure", "La marge est incluse dans la largeur", "La bordure disparait", "Le contenu devient responsive automatiquement"],
-    "answers": [0],
+    "options": [
+      "La largeur inclut contenu, padding et bordure",
+      "La marge est incluse dans la largeur",
+      "La bordure disparait",
+      "Le contenu devient responsive automatiquement"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "border-box inclut padding et bordure dans width et height. La marge reste exterieure.",
-    "references": ["box-model"]
+    "references": [
+      "box-model"
+    ]
   },
   {
     "id": "css-responsive-order-001",
@@ -78,10 +132,23 @@
     "level": 4,
     "type": "order",
     "question": "Remets dans l'ordre une demarche responsive mobile-first.",
-    "options": ["Ecrire les styles de base pour mobile", "Ajouter une media query min-width", "Elargir la grille pour les ecrans plus grands", "Tester le comportement sur plusieurs largeurs"],
-    "answers": [0, 1, 2, 3],
+    "options": [
+      "Ecrire les styles de base pour mobile",
+      "Ajouter une media query min-width",
+      "Elargir la grille pour les ecrans plus grands",
+      "Tester le comportement sur plusieurs largeurs"
+    ],
+    "answers": [
+      0,
+      1,
+      2,
+      3
+    ],
     "explanation": "En mobile-first, les styles de base ciblent les petits ecrans, puis les media queries enrichissent les grands ecrans.",
-    "references": ["responsive", "media-queries"]
+    "references": [
+      "responsive",
+      "media-queries"
+    ]
   },
   {
     "id": "css-grid-minmax-001",
@@ -90,10 +157,20 @@
     "level": 5,
     "type": "single",
     "question": "Dans CSS Grid, a quoi sert minmax(240px, 1fr) ?",
-    "options": ["Definir une piste avec minimum et maximum flexible", "Limiter uniquement la taille de police", "Creer une animation entre deux tailles", "Remplacer toutes les media queries"],
-    "answers": [0],
+    "options": [
+      "Definir une piste avec minimum et maximum flexible",
+      "Limiter uniquement la taille de police",
+      "Creer une animation entre deux tailles",
+      "Remplacer toutes les media queries"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "minmax() donne une borne minimale et une borne maximale a une piste de grille.",
-    "references": ["grid", "responsive"]
+    "references": [
+      "grid",
+      "responsive"
+    ]
   },
   {
     "id": "css-display-001",
@@ -102,10 +179,19 @@
     "level": 1,
     "type": "single",
     "question": "Quelle valeur de display place les elements les uns sous les autres par defaut ?",
-    "options": ["inline", "block", "contents", "none"],
-    "answers": [1],
+    "options": [
+      "inline",
+      "block",
+      "contents",
+      "none"
+    ],
+    "answers": [
+      1
+    ],
     "explanation": "Un element block occupe la largeur disponible et commence sur une nouvelle ligne.",
-    "references": ["display"]
+    "references": [
+      "display"
+    ]
   },
   {
     "id": "css-flex-center-001",
@@ -114,10 +200,21 @@
     "level": 3,
     "type": "multiple",
     "question": "Quelles proprietes centrent les enfants dans un conteneur flex sur les deux axes ?",
-    "options": ["display: flex;", "justify-content: center;", "align-items: center;", "text-align: center;"],
-    "answers": [0, 1, 2],
+    "options": [
+      "display: flex;",
+      "justify-content: center;",
+      "align-items: center;",
+      "text-align: center;"
+    ],
+    "answers": [
+      0,
+      1,
+      2
+    ],
     "explanation": "Flexbox centre avec justify-content sur l'axe principal et align-items sur l'axe secondaire.",
-    "references": ["flexbox"]
+    "references": [
+      "flexbox"
+    ]
   },
   {
     "id": "css-position-sticky-001",
@@ -126,10 +223,19 @@
     "level": 4,
     "type": "single",
     "question": "Quelle valeur permet a un element de rester colle apres un seuil de defilement ?",
-    "options": ["position: absolute;", "position: fixed;", "position: sticky;", "position: float;"],
-    "answers": [2],
+    "options": [
+      "position: absolute;",
+      "position: fixed;",
+      "position: sticky;",
+      "position: float;"
+    ],
+    "answers": [
+      2
+    ],
     "explanation": "sticky combine un comportement relatif puis colle selon top, right, bottom ou left.",
-    "references": ["position"]
+    "references": [
+      "position"
+    ]
   },
   {
     "id": "css-cascade-order-001",
@@ -138,10 +244,23 @@
     "level": 3,
     "type": "order",
     "question": "Remets dans l'ordre les criteres principaux de resolution de la cascade CSS.",
-    "options": ["Importance", "Specificite", "Ordre d'apparition", "Valeur heritee ou initiale"],
-    "answers": [0, 1, 2, 3],
+    "options": [
+      "Importance",
+      "Specificite",
+      "Ordre d'apparition",
+      "Valeur heritee ou initiale"
+    ],
+    "answers": [
+      0,
+      1,
+      2,
+      3
+    ],
     "explanation": "A importance comparable, la specificite puis l'ordre d'apparition departagent les declarations.",
-    "references": ["cascade", "specificity"]
+    "references": [
+      "cascade",
+      "specificity"
+    ]
   },
   {
     "id": "css-inheritance-001",
@@ -150,10 +269,20 @@
     "level": 3,
     "type": "single",
     "question": "Quelle propriete est naturellement heritee par les enfants ?",
-    "options": ["color", "margin", "border", "display"],
-    "answers": [0],
+    "options": [
+      "color",
+      "margin",
+      "border",
+      "display"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "La couleur du texte est heritee, contrairement aux marges, bordures et display.",
-    "references": ["inheritance", "cascade"]
+    "references": [
+      "inheritance",
+      "cascade"
+    ]
   },
   {
     "id": "css-pseudo-element-001",
@@ -162,10 +291,19 @@
     "level": 3,
     "type": "single",
     "question": "Quel selecteur ajoute du contenu avant le contenu d'un element ?",
-    "options": ["::before", ":hover", "::after-only", ":first"],
-    "answers": [0],
+    "options": [
+      "::before",
+      ":hover",
+      "::after-only",
+      ":first"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "::before cree un pseudo-element avant le contenu de l'element cible.",
-    "references": ["pseudo-elements"]
+    "references": [
+      "pseudo-elements"
+    ]
   },
   {
     "id": "css-animation-001",
@@ -174,10 +312,20 @@
     "level": 4,
     "type": "single",
     "question": "Quel bloc definit les etapes d'une animation CSS nommee fade ?",
-    "options": ["@keyframes fade { ... }", "@animation fade { ... }", "@frames fade { ... }", "@transition fade { ... }"],
-    "answers": [0],
+    "options": [
+      "@keyframes fade { ... }",
+      "@animation fade { ... }",
+      "@frames fade { ... }",
+      "@transition fade { ... }"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "@keyframes declare les etapes d'une animation CSS.",
-    "references": ["animations", "keyframes"]
+    "references": [
+      "animations",
+      "keyframes"
+    ]
   },
   {
     "id": "css-media-query-min-001",
@@ -186,10 +334,20 @@
     "level": 2,
     "type": "single",
     "question": "Quelle media query applique des styles a partir de 900px ?",
-    "options": ["@media (min-width: 900px)", "@media min 900px", "@screen (width >= 900)", "@media-width 900px"],
-    "answers": [0],
+    "options": [
+      "@media (min-width: 900px)",
+      "@media min 900px",
+      "@screen (width >= 900)",
+      "@media-width 900px"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "min-width cible les largeurs superieures ou egales au seuil donne.",
-    "references": ["responsive", "media-queries"]
+    "references": [
+      "responsive",
+      "media-queries"
+    ]
   },
   {
     "id": "css-transition-001",
@@ -198,10 +356,20 @@
     "level": 3,
     "type": "single",
     "question": "Quelle propriete anime progressivement le changement d'opacite ?",
-    "options": ["transition: opacity 200ms ease;", "animate: opacity 200ms;", "opacity-transition: 200ms;", "keyframe: opacity;"],
-    "answers": [0],
+    "options": [
+      "transition: opacity 200ms ease;",
+      "animate: opacity 200ms;",
+      "opacity-transition: 200ms;",
+      "keyframe: opacity;"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "transition definit une interpolation entre deux valeurs d'une propriete.",
-    "references": ["transitions", "animations"]
+    "references": [
+      "transitions",
+      "animations"
+    ]
   },
   {
     "id": "css-z-index-001",
@@ -210,10 +378,20 @@
     "level": 4,
     "type": "single",
     "question": "Quand z-index a-t-il un effet sur un element ?",
-    "options": ["Quand l'element participe a un contexte de positionnement ou d'empilement", "Uniquement sur les images", "Uniquement sur display: block", "Toujours, meme sans contexte"],
-    "answers": [0],
+    "options": [
+      "Quand l'element participe a un contexte de positionnement ou d'empilement",
+      "Uniquement sur les images",
+      "Uniquement sur display: block",
+      "Toujours, meme sans contexte"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "z-index agit dans un contexte d'empilement, souvent avec un element positionne.",
-    "references": ["position", "stacking"]
+    "references": [
+      "position",
+      "stacking"
+    ]
   },
   {
     "id": "css-calc-001",
@@ -223,10 +401,20 @@
     "type": "code-output",
     "question": "Que permet cette declaration CSS ?",
     "code": ".panel { width: calc(100% - 2rem); }",
-    "options": ["Calculer une largeur avec une operation CSS", "Creer une variable JavaScript", "Forcer une largeur fixe de 2rem", "Desactiver le box model"],
-    "answers": [0],
+    "options": [
+      "Calculer une largeur avec une operation CSS",
+      "Creer une variable JavaScript",
+      "Forcer une largeur fixe de 2rem",
+      "Desactiver le box model"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "calc() permet de combiner des unites CSS dans une expression.",
-    "references": ["layout", "calc"]
+    "references": [
+      "layout",
+      "calc"
+    ]
   },
   {
     "id": "archive-css-class-selector-001",
@@ -235,10 +423,20 @@
     "level": 1,
     "type": "single",
     "question": "Quel selecteur CSS cible les elements qui ont class=\"alert\" ?",
-    "options": [".alert", "#alert", "alert", "*alert"],
-    "answers": [0],
+    "options": [
+      ".alert",
+      "#alert",
+      "alert",
+      "*alert"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "Le point cible une classe. Le diese cible un identifiant.",
-    "references": ["selectors", "classes"]
+    "references": [
+      "selectors",
+      "classes"
+    ]
   },
   {
     "id": "archive-css-font-weight-001",
@@ -247,10 +445,20 @@
     "level": 1,
     "type": "single",
     "question": "Quelle valeur CSS rend un texte en gras ?",
-    "options": ["font-weight: bold;", "font-style: bold;", "text-decoration: bold;", "font-bold: true;"],
-    "answers": [0],
+    "options": [
+      "font-weight: bold;",
+      "font-style: bold;",
+      "text-decoration: bold;",
+      "font-bold: true;"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "font-weight controle l'epaisseur du texte.",
-    "references": ["typography", "font-weight"]
+    "references": [
+      "typography",
+      "font-weight"
+    ]
   },
   {
     "id": "archive-css-comment-001",
@@ -259,10 +467,20 @@
     "level": 1,
     "type": "single",
     "question": "Quel commentaire est valide en CSS ?",
-    "options": ["// commentaire", "<!-- commentaire -->", "/* commentaire */", "# commentaire"],
-    "answers": [2],
+    "options": [
+      "// commentaire",
+      "<!-- commentaire -->",
+      "/* commentaire */",
+      "# commentaire"
+    ],
+    "answers": [
+      2
+    ],
     "explanation": "Les commentaires CSS s'ecrivent entre /* et */.",
-    "references": ["syntax", "comments"]
+    "references": [
+      "syntax",
+      "comments"
+    ]
   },
   {
     "id": "archive-css-text-align-001",
@@ -271,10 +489,20 @@
     "level": 1,
     "type": "single",
     "question": "Quelle propriete CSS centre le texte horizontalement ?",
-    "options": ["text-align: center;", "font-align: center;", "align-text: middle;", "center: text;"],
-    "answers": [0],
+    "options": [
+      "text-align: center;",
+      "font-align: center;",
+      "align-text: middle;",
+      "center: text;"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "text-align controle l'alignement du contenu textuel inline.",
-    "references": ["typography", "text-align"]
+    "references": [
+      "typography",
+      "text-align"
+    ]
   },
   {
     "id": "archive-css-visibility-001",
@@ -283,10 +511,20 @@
     "level": 1,
     "type": "single",
     "question": "Quelle valeur CSS rend un element invisible sans le retirer du flux de mise en page ?",
-    "options": ["display: none;", "visibility: hidden;", "opacity: none;", "hidden: true;"],
-    "answers": [1],
+    "options": [
+      "display: none;",
+      "visibility: hidden;",
+      "opacity: none;",
+      "hidden: true;"
+    ],
+    "answers": [
+      1
+    ],
     "explanation": "visibility: hidden masque l'element mais conserve son espace.",
-    "references": ["visibility", "display"]
+    "references": [
+      "visibility",
+      "display"
+    ]
   },
   {
     "id": "archive-css-var-fallback-001",
@@ -295,10 +533,20 @@
     "level": 3,
     "type": "single",
     "question": "Quelle syntaxe fournit une valeur de secours a une variable CSS ?",
-    "options": ["color: var(--accent, blue);", "color: fallback(--accent blue);", "color: --accent || blue;", "color: variable(--accent, blue);"],
-    "answers": [0],
+    "options": [
+      "color: var(--accent, blue);",
+      "color: fallback(--accent blue);",
+      "color: --accent || blue;",
+      "color: variable(--accent, blue);"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "Le deuxieme argument de var() sert de valeur de secours.",
-    "references": ["variables", "fallback"]
+    "references": [
+      "variables",
+      "fallback"
+    ]
   },
   {
     "id": "archive-css-where-specificity-001",
@@ -307,10 +555,20 @@
     "level": 5,
     "type": "single",
     "question": "Quelle est la specificite de :where(.card #title) ?",
-    "options": ["La meme que #title", "La meme que .card", "Zero", "La meme qu'un style inline"],
-    "answers": [2],
+    "options": [
+      "La meme que #title",
+      "La meme que .card",
+      "Zero",
+      "La meme qu'un style inline"
+    ],
+    "answers": [
+      2
+    ],
     "explanation": ":where() a toujours une specificite nulle, meme si son contenu contient des selecteurs specifiques.",
-    "references": ["specificity", "where"]
+    "references": [
+      "specificity",
+      "where"
+    ]
   },
   {
     "id": "archive-css-reduced-motion-001",
@@ -319,10 +577,21 @@
     "level": 4,
     "type": "single",
     "question": "Quelle media query respecte les utilisateurs qui demandent moins d'animations ?",
-    "options": ["@media (prefers-reduced-motion: reduce)", "@media (animation: none)", "@media (motion-safe: false)", "@media (user-animation: low)"],
-    "answers": [0],
+    "options": [
+      "@media (prefers-reduced-motion: reduce)",
+      "@media (animation: none)",
+      "@media (motion-safe: false)",
+      "@media (user-animation: low)"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "prefers-reduced-motion permet d'adapter ou de desactiver les animations.",
-    "references": ["media-queries", "accessibility", "animations"]
+    "references": [
+      "media-queries",
+      "accessibility",
+      "animations"
+    ]
   },
   {
     "id": "archive-css-layer-001",
@@ -331,10 +600,20 @@
     "level": 5,
     "type": "single",
     "question": "Quelle affirmation est vraie sur les @layer CSS ?",
-    "options": ["Elles permettent d'organiser la cascade en couches.", "Elles remplacent HTML.", "Elles rendent toutes les regles !important.", "Elles fonctionnent uniquement avec JavaScript."],
-    "answers": [0],
+    "options": [
+      "Elles permettent d'organiser la cascade en couches.",
+      "Elles remplacent HTML.",
+      "Elles rendent toutes les regles !important.",
+      "Elles fonctionnent uniquement avec JavaScript."
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "@layer donne un controle supplementaire sur l'ordre de priorite des groupes de styles.",
-    "references": ["cascade", "layers"]
+    "references": [
+      "cascade",
+      "layers"
+    ]
   },
   {
     "id": "archive-css-container-query-001",
@@ -343,10 +622,20 @@
     "level": 5,
     "type": "single",
     "question": "Quelle regle active les container queries sur un conteneur ?",
-    "options": ["container-type: inline-size;", "query-container: true;", "media-container: block;", "responsive-parent: yes;"],
-    "answers": [0],
+    "options": [
+      "container-type: inline-size;",
+      "query-container: true;",
+      "media-container: block;",
+      "responsive-parent: yes;"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "container-type permet a un element de devenir un conteneur interrogeable.",
-    "references": ["container-queries", "responsive"]
+    "references": [
+      "container-queries",
+      "responsive"
+    ]
   },
   {
     "id": "archive-css-selectors-fix-001",
@@ -358,9 +647,18 @@
     "code": "titre {\n  font-size: 2rem;\n  color: navy;\n}\n\n#panel {\n  background: #f5f5f5;\n  padding: 1rem;\n}",
     "solution": "#titre {\n  font-size: 2rem;\n  color: navy;\n}\n\n.panel {\n  background: #f5f5f5;\n  padding: 1rem;\n}",
     "checks": [
-      { "label": "#titre cible correctement l'identifiant.", "contains": "#titre" },
-      { "label": ".panel cible correctement la classe.", "contains": ".panel" },
-      { "label": "Le faux selecteur #panel n'est plus la.", "absent": "#panel {" }
+      {
+        "label": "#titre cible correctement l'identifiant.",
+        "contains": "#titre"
+      },
+      {
+        "label": ".panel cible correctement la classe.",
+        "contains": ".panel"
+      },
+      {
+        "label": "Le faux selecteur #panel n'est plus la.",
+        "absent": "#panel {"
+      }
     ],
     "tests": [
       {
@@ -368,13 +666,25 @@
         "label": "Les styles s'appliquent aux bons elements.",
         "fixture": "<h1 id=\"titre\">Titre</h1><section class=\"panel\">Panel</section>",
         "assertions": [
-          { "selector": "#titre", "computed": "font-size", "equals": "32px" },
-          { "selector": ".panel", "computed": "background-color", "equals": "rgb(245, 245, 245)" }
+          {
+            "selector": "#titre",
+            "computed": "font-size",
+            "equals": "32px"
+          },
+          {
+            "selector": ".panel",
+            "computed": "background-color",
+            "equals": "rgb(245, 245, 245)"
+          }
         ]
       }
     ],
     "explanation": "# cible un identifiant, . cible une classe.",
-    "references": ["selectors", "classes", "ids"]
+    "references": [
+      "selectors",
+      "classes",
+      "ids"
+    ]
   },
   {
     "id": "archive-css-media-query-fix-001",
@@ -386,9 +696,18 @@
     "code": ".grid {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n}\n\n@media max-width: 768px {\n  .grid {\n    grid-template-column: 1fr;\n  }\n}",
     "solution": ".grid {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n}\n\n@media (max-width: 768px) {\n  .grid {\n    grid-template-columns: 1fr;\n  }\n}",
     "checks": [
-      { "label": "La media query utilise des parentheses.", "contains": "@media (max-width: 768px)" },
-      { "label": "grid-template-columns est au pluriel.", "contains": "grid-template-columns: 1fr;" },
-      { "label": "La syntaxe incorrecte n'est plus presente.", "absent": "grid-template-column:" }
+      {
+        "label": "La media query utilise des parentheses.",
+        "contains": "@media (max-width: 768px)"
+      },
+      {
+        "label": "grid-template-columns est au pluriel.",
+        "contains": "grid-template-columns: 1fr;"
+      },
+      {
+        "label": "La syntaxe incorrecte n'est plus presente.",
+        "absent": "grid-template-column:"
+      }
     ],
     "tests": [
       {
@@ -396,12 +715,648 @@
         "label": "La grille devient une seule colonne dans une petite zone.",
         "fixture": "<div class=\"grid\"><span>A</span><span>B</span></div>",
         "assertions": [
-          { "selector": ".grid", "computed": "display", "equals": "grid" },
-          { "selector": ".grid", "computed": "grid-template-columns", "matches": "^[0-9.]+px$" }
+          {
+            "selector": ".grid",
+            "computed": "display",
+            "equals": "grid"
+          },
+          {
+            "selector": ".grid",
+            "computed": "grid-template-columns",
+            "matches": "^[0-9.]+px$"
+          }
         ]
       }
     ],
     "explanation": "Les conditions media query s'ecrivent entre parentheses et la propriete Grid est au pluriel.",
-    "references": ["responsive", "media-queries", "grid"]
+    "references": [
+      "responsive",
+      "media-queries",
+      "grid"
+    ]
+  },
+  {
+    "id": "extra-css-units-multiple-001",
+    "domain": "css",
+    "topic": "units",
+    "level": 1,
+    "type": "multiple",
+    "question": "Quelles declarations CSS utilisent une unite valide pour une longueur non nulle ?",
+    "options": [
+      "margin: 12px;",
+      "font-size: 1rem;",
+      "padding: 2;",
+      "width: 50%;"
+    ],
+    "answers": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "Une longueur non nulle doit avoir une unite, sauf quelques proprietes unitless specifiques.",
+    "references": [
+      "units",
+      "box-model"
+    ]
+  },
+  {
+    "id": "extra-css-selectors-multiple-001",
+    "domain": "css",
+    "topic": "selectors",
+    "level": 2,
+    "type": "multiple",
+    "question": "Quels selecteurs ciblent une classe appelee card ?",
+    "options": [
+      ".card",
+      "article.card",
+      "#card",
+      "[class~=\"card\"]"
+    ],
+    "answers": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "#card cible un id. Les autres propositions peuvent cibler une classe card.",
+    "references": [
+      "selectors",
+      "classes"
+    ]
+  },
+  {
+    "id": "extra-css-flex-multiple-001",
+    "domain": "css",
+    "topic": "flexbox",
+    "level": 3,
+    "type": "multiple",
+    "question": "Quelles proprietes sont associees a Flexbox ?",
+    "options": [
+      "display: flex;",
+      "justify-content",
+      "align-items",
+      "grid-template-columns"
+    ],
+    "answers": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "grid-template-columns appartient a CSS Grid.",
+    "references": [
+      "flexbox",
+      "layout"
+    ]
+  },
+  {
+    "id": "extra-css-grid-multiple-001",
+    "domain": "css",
+    "topic": "grid",
+    "level": 4,
+    "type": "multiple",
+    "question": "Quelles declarations participent a une grille responsive ?",
+    "options": [
+      "display: grid;",
+      "repeat(auto-fit, minmax(220px, 1fr))",
+      "gap: 1rem;",
+      "float: left;"
+    ],
+    "answers": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "float n'est pas l'outil moderne pour une grille responsive.",
+    "references": [
+      "grid",
+      "responsive"
+    ]
+  },
+  {
+    "id": "extra-css-cascade-multiple-001",
+    "domain": "css",
+    "topic": "cascade",
+    "level": 5,
+    "type": "multiple",
+    "question": "Quels facteurs interviennent dans le choix final d'une declaration CSS ?",
+    "options": [
+      "Importance",
+      "Specificite",
+      "Ordre dans la source",
+      "Nom du fichier uniquement"
+    ],
+    "answers": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "La cascade tient compte notamment de l'importance, de la specificite et de l'ordre.",
+    "references": [
+      "cascade",
+      "specificity"
+    ]
+  },
+  {
+    "id": "extra-css-display-match-001",
+    "domain": "css",
+    "topic": "display",
+    "level": 1,
+    "type": "match",
+    "question": "Associe chaque valeur de display a son effet principal.",
+    "items": [
+      {
+        "prompt": "block",
+        "answer": "Occupe la ligne disponible"
+      },
+      {
+        "prompt": "inline",
+        "answer": "S'insere dans le flux du texte"
+      },
+      {
+        "prompt": "none",
+        "answer": "Retire l'element du rendu"
+      }
+    ],
+    "choices": [
+      "S'insere dans le flux du texte",
+      "Retire l'element du rendu",
+      "Occupe la ligne disponible"
+    ],
+    "explanation": "display controle le type de boite generee par l'element.",
+    "references": [
+      "display"
+    ]
+  },
+  {
+    "id": "extra-css-box-match-001",
+    "domain": "css",
+    "topic": "box-model",
+    "level": 2,
+    "type": "match",
+    "question": "Associe chaque partie du modele de boite a sa description.",
+    "items": [
+      {
+        "prompt": "padding",
+        "answer": "Espace interne"
+      },
+      {
+        "prompt": "border",
+        "answer": "Contour de la boite"
+      },
+      {
+        "prompt": "margin",
+        "answer": "Espace externe"
+      }
+    ],
+    "choices": [
+      "Espace externe",
+      "Contour de la boite",
+      "Espace interne"
+    ],
+    "explanation": "Le modele de boite organise contenu, padding, bordure et marge.",
+    "references": [
+      "box-model"
+    ]
+  },
+  {
+    "id": "extra-css-position-match-001",
+    "domain": "css",
+    "topic": "position",
+    "level": 3,
+    "type": "match",
+    "question": "Associe chaque position CSS a son comportement.",
+    "items": [
+      {
+        "prompt": "relative",
+        "answer": "Decale l'element depuis sa position normale"
+      },
+      {
+        "prompt": "absolute",
+        "answer": "Se place par rapport a un ancetre positionne"
+      },
+      {
+        "prompt": "fixed",
+        "answer": "Reste relatif a la fenetre"
+      }
+    ],
+    "choices": [
+      "Reste relatif a la fenetre",
+      "Se place par rapport a un ancetre positionne",
+      "Decale l'element depuis sa position normale"
+    ],
+    "explanation": "Chaque mode de positionnement change le referentiel utilise.",
+    "references": [
+      "position"
+    ]
+  },
+  {
+    "id": "extra-css-responsive-match-001",
+    "domain": "css",
+    "topic": "responsive",
+    "level": 4,
+    "type": "match",
+    "question": "Associe chaque technique responsive a son usage.",
+    "items": [
+      {
+        "prompt": "@media",
+        "answer": "Appliquer des styles selon une condition"
+      },
+      {
+        "prompt": "minmax()",
+        "answer": "Definir une taille flexible bornee"
+      },
+      {
+        "prompt": "max-width: 100%",
+        "answer": "Limiter un media a son conteneur"
+      }
+    ],
+    "choices": [
+      "Limiter un media a son conteneur",
+      "Definir une taille flexible bornee",
+      "Appliquer des styles selon une condition"
+    ],
+    "explanation": "Ces outils aident a adapter la page aux tailles d'ecran.",
+    "references": [
+      "responsive",
+      "grid"
+    ]
+  },
+  {
+    "id": "extra-css-cascade-order-001",
+    "domain": "css",
+    "topic": "cascade",
+    "level": 3,
+    "type": "order",
+    "question": "Remets ces criteres de cascade du plus fort au plus faible dans un cas simple.",
+    "options": [
+      "Ordre de declaration",
+      "Importance !important",
+      "Specificite",
+      "Heritage"
+    ],
+    "answers": [
+      1,
+      2,
+      0,
+      3
+    ],
+    "explanation": "Dans une lecture simplifiee, l'importance domine, puis la specificite, puis l'ordre.",
+    "references": [
+      "cascade",
+      "specificity"
+    ]
+  },
+  {
+    "id": "extra-css-mobile-order-001",
+    "domain": "css",
+    "topic": "responsive",
+    "level": 4,
+    "type": "order",
+    "question": "Remets une demarche responsive mobile-first dans l'ordre.",
+    "options": [
+      "Ajouter des ameliorations en media query",
+      "Ecrire une base lisible mobile",
+      "Tester a plusieurs largeurs",
+      "Corriger les debordements"
+    ],
+    "answers": [
+      1,
+      0,
+      2,
+      3
+    ],
+    "explanation": "On part d'une base mobile, on enrichit, puis on teste et corrige.",
+    "references": [
+      "responsive",
+      "mobile-first"
+    ]
+  },
+  {
+    "id": "extra-css-selector-fix-001",
+    "domain": "css",
+    "topic": "selectors",
+    "level": 2,
+    "type": "code-fix",
+    "question": "Corrige ce selecteur pour cibler la classe notice.",
+    "code": "notice {\n  color: red;\n}",
+    "solution": ".notice {\n  color: red;\n}",
+    "checks": [
+      {
+        "label": "La classe notice est ciblee avec un point.",
+        "contains": ".notice",
+        "absent": "notice {"
+      }
+    ],
+    "tests": [
+      {
+        "type": "css",
+        "label": "Le style s'applique a la classe notice.",
+        "fixture": "<p class=\"notice\">Attention</p>",
+        "assertions": [
+          {
+            "selector": ".notice",
+            "computed": "color",
+            "equals": "rgb(255, 0, 0)"
+          }
+        ]
+      }
+    ],
+    "explanation": "Un selecteur de classe commence par un point.",
+    "references": [
+      "selectors",
+      "classes"
+    ]
+  },
+  {
+    "id": "extra-css-unit-fix-001",
+    "domain": "css",
+    "topic": "units",
+    "level": 3,
+    "type": "code-fix",
+    "question": "Corrige la largeur pour qu'elle soit valide.",
+    "code": ".card {\n  width: 320;\n}",
+    "solution": ".card {\n  width: 320px;\n}",
+    "checks": [
+      {
+        "label": "La largeur possede une unite.",
+        "contains": "width: 320px",
+        "absent": "width: 320;"
+      }
+    ],
+    "tests": [
+      {
+        "type": "css",
+        "label": "La carte recoit une largeur de 320px.",
+        "fixture": "<article class=\"card\"></article>",
+        "assertions": [
+          {
+            "selector": ".card",
+            "computed": "width",
+            "equals": "320px"
+          }
+        ]
+      }
+    ],
+    "explanation": "Une longueur non nulle comme width doit porter une unite.",
+    "references": [
+      "units",
+      "box-model"
+    ]
+  },
+  {
+    "id": "extra-css-flex-fix-001",
+    "domain": "css",
+    "topic": "flexbox",
+    "level": 4,
+    "type": "code-fix",
+    "question": "Corrige cette declaration Flexbox.",
+    "code": ".toolbar {\n  display: flexbox;\n  justify-content: center;\n}",
+    "solution": ".toolbar {\n  display: flex;\n  justify-content: center;\n}",
+    "checks": [
+      {
+        "label": "display utilise flex.",
+        "contains": "display: flex",
+        "absent": "display: flexbox"
+      }
+    ],
+    "tests": [
+      {
+        "type": "css",
+        "label": "La barre devient un conteneur flex.",
+        "fixture": "<div class=\"toolbar\"><button>A</button></div>",
+        "assertions": [
+          {
+            "selector": ".toolbar",
+            "computed": "display",
+            "equals": "flex"
+          }
+        ]
+      }
+    ],
+    "explanation": "La valeur correcte est flex, pas flexbox.",
+    "references": [
+      "flexbox",
+      "layout"
+    ]
+  },
+  {
+    "id": "extra-css-color-output-001",
+    "domain": "css",
+    "topic": "colors",
+    "level": 1,
+    "type": "code-output",
+    "question": "Quelle couleur est appliquee au paragraphe ?",
+    "code": "p {\n  color: red;\n}",
+    "options": [
+      "Rouge",
+      "Bleu",
+      "Transparent",
+      "Aucune couleur possible"
+    ],
+    "answers": [
+      0
+    ],
+    "explanation": "La propriete color definit la couleur du texte.",
+    "references": [
+      "colors",
+      "text"
+    ]
+  },
+  {
+    "id": "extra-css-font-output-001",
+    "domain": "css",
+    "topic": "typography",
+    "level": 2,
+    "type": "code-output",
+    "question": "Quel effet produit cette declaration ?",
+    "code": ".lead {\n  font-weight: bold;\n}",
+    "options": [
+      "Texte en gras",
+      "Texte masque",
+      "Texte centre",
+      "Texte souligne"
+    ],
+    "answers": [
+      0
+    ],
+    "explanation": "font-weight: bold rend le texte plus epais.",
+    "references": [
+      "typography",
+      "font-weight"
+    ]
+  },
+  {
+    "id": "extra-css-zero-fix-001",
+    "domain": "css",
+    "topic": "units",
+    "level": 1,
+    "type": "code-fix",
+    "question": "Corrige cette marge pour supprimer l'unite inutile.",
+    "code": "body {\n  margin: 0px;\n}",
+    "solution": "body {\n  margin: 0;\n}",
+    "checks": [
+      {
+        "label": "La marge zero est ecrite simplement.",
+        "contains": "margin: 0",
+        "absent": "0px"
+      }
+    ],
+    "tests": [
+      {
+        "type": "css",
+        "label": "La marge calculee est nulle.",
+        "fixture": "<main>Contenu</main>",
+        "assertions": [
+          {
+            "selector": "body",
+            "computed": "margin-top",
+            "equals": "0px"
+          }
+        ]
+      }
+    ],
+    "explanation": "La valeur 0 n'a pas besoin d'unite.",
+    "references": [
+      "units",
+      "box-model"
+    ]
+  },
+  {
+    "id": "extra-css-grid-match-001",
+    "domain": "css",
+    "topic": "grid",
+    "level": 5,
+    "type": "match",
+    "question": "Associe chaque notion Grid a son role.",
+    "items": [
+      {
+        "prompt": "grid-template-columns",
+        "answer": "Definir les colonnes"
+      },
+      {
+        "prompt": "gap",
+        "answer": "Espacer les pistes"
+      },
+      {
+        "prompt": "grid-area",
+        "answer": "Nommer ou placer une zone"
+      }
+    ],
+    "choices": [
+      "Espacer les pistes",
+      "Nommer ou placer une zone",
+      "Definir les colonnes"
+    ],
+    "explanation": "Grid se pilote avec des pistes, des espacements et des zones.",
+    "references": [
+      "grid",
+      "layout"
+    ]
+  },
+  {
+    "id": "extra-css-specificity-order-001",
+    "domain": "css",
+    "topic": "specificity",
+    "level": 5,
+    "type": "order",
+    "question": "Classe ces selecteurs du moins specifique au plus specifique.",
+    "options": [
+      "#hero .title",
+      ".card .title",
+      "h1",
+      ".title"
+    ],
+    "answers": [
+      2,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Un id pese plus qu'une classe, qui pese plus qu'un selecteur de type.",
+    "references": [
+      "specificity",
+      "selectors"
+    ]
+  },
+  {
+    "id": "extra-css-animation-order-001",
+    "domain": "css",
+    "topic": "animations",
+    "level": 5,
+    "type": "order",
+    "question": "Remets les etapes d'une animation CSS simple dans l'ordre.",
+    "options": [
+      "Definir @keyframes",
+      "Respecter prefers-reduced-motion",
+      "Appliquer animation sur l'element",
+      "Tester la fluidite"
+    ],
+    "answers": [
+      0,
+      2,
+      1,
+      3
+    ],
+    "explanation": "On definit l'animation, on l'applique, puis on tient compte de l'accessibilite et on teste.",
+    "references": [
+      "animations",
+      "accessibility"
+    ]
+  },
+  {
+    "id": "extra-css-media-match-001",
+    "domain": "css",
+    "topic": "media-queries",
+    "level": 5,
+    "type": "match",
+    "question": "Associe chaque condition media a son intention.",
+    "items": [
+      {
+        "prompt": "max-width",
+        "answer": "Cibler les largeurs inferieures"
+      },
+      {
+        "prompt": "min-width",
+        "answer": "Cibler les largeurs superieures"
+      },
+      {
+        "prompt": "prefers-reduced-motion",
+        "answer": "Respecter la reduction d'animations"
+      }
+    ],
+    "choices": [
+      "Respecter la reduction d'animations",
+      "Cibler les largeurs inferieures",
+      "Cibler les largeurs superieures"
+    ],
+    "explanation": "Les media queries adaptent la mise en page et certaines preferences utilisateur.",
+    "references": [
+      "media-queries",
+      "accessibility"
+    ]
+  },
+  {
+    "id": "extra-css-layout-order-001",
+    "domain": "css",
+    "topic": "layout",
+    "level": 3,
+    "type": "order",
+    "question": "Remets les decisions de mise en page dans un ordre sain.",
+    "options": [
+      "Choisir Grid ou Flex",
+      "Identifier le contenu",
+      "Tester le responsive",
+      "Ajuster les espacements"
+    ],
+    "answers": [
+      1,
+      0,
+      3,
+      2
+    ],
+    "explanation": "On part du contenu, puis on choisit la technique, on espace et on teste.",
+    "references": [
+      "layout",
+      "responsive"
+    ]
   }
 ]

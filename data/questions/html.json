@@ -6,10 +6,20 @@
     "level": 1,
     "type": "single",
     "question": "Quelle declaration place un document en mode standard HTML5 ?",
-    "options": ["<!doctype html>", "<html5>", "<doctype>", "<?html version=\"5\">"],
-    "answers": [0],
+    "options": [
+      "<!doctype html>",
+      "<html5>",
+      "<doctype>",
+      "<?html version=\"5\">"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "<!doctype html> indique au navigateur d'utiliser le mode standard HTML5.",
-    "references": ["doctype", "html5"]
+    "references": [
+      "doctype",
+      "html5"
+    ]
   },
   {
     "id": "html-body-001",
@@ -18,10 +28,20 @@
     "level": 1,
     "type": "single",
     "question": "Dans quelle balise place-t-on le contenu visible par l'utilisateur ?",
-    "options": ["<head>", "<body>", "<meta>", "<title>"],
-    "answers": [1],
+    "options": [
+      "<head>",
+      "<body>",
+      "<meta>",
+      "<title>"
+    ],
+    "answers": [
+      1
+    ],
     "explanation": "Le contenu affiche dans la page se place dans <body>.",
-    "references": ["body", "structure"]
+    "references": [
+      "body",
+      "structure"
+    ]
   },
   {
     "id": "html-label-001",
@@ -30,10 +50,21 @@
     "level": 2,
     "type": "single",
     "question": "Comment relier un label au champ <input id=\"email\"> ?",
-    "options": ["<label name=\"email\">Email</label>", "<label for=\"email\">Email</label>", "<label target=\"email\">Email</label>", "<label input=\"email\">Email</label>"],
-    "answers": [1],
+    "options": [
+      "<label name=\"email\">Email</label>",
+      "<label for=\"email\">Email</label>",
+      "<label target=\"email\">Email</label>",
+      "<label input=\"email\">Email</label>"
+    ],
+    "answers": [
+      1
+    ],
     "explanation": "L'attribut for du label doit correspondre a l'id du champ.",
-    "references": ["label", "forms", "accessibility"]
+    "references": [
+      "label",
+      "forms",
+      "accessibility"
+    ]
   },
   {
     "id": "html-semantics-001",
@@ -42,10 +73,22 @@
     "level": 2,
     "type": "multiple",
     "question": "Quelles balises sont semantiques pour structurer les grandes zones d'une page ?",
-    "options": ["<header>", "<main>", "<div>", "<footer>"],
-    "answers": [0, 1, 3],
+    "options": [
+      "<header>",
+      "<main>",
+      "<div>",
+      "<footer>"
+    ],
+    "answers": [
+      0,
+      1,
+      3
+    ],
     "explanation": "<div> est neutre. Les autres balises decrivent une zone de page.",
-    "references": ["semantics", "landmarks"]
+    "references": [
+      "semantics",
+      "landmarks"
+    ]
   },
   {
     "id": "html-form-validation-001",
@@ -54,10 +97,20 @@
     "level": 3,
     "type": "single",
     "question": "Quel attribut desactive la validation HTML5 sur tout un formulaire ?",
-    "options": ["disabled", "readonly", "novalidate", "formnovalidate"],
-    "answers": [2],
+    "options": [
+      "disabled",
+      "readonly",
+      "novalidate",
+      "formnovalidate"
+    ],
+    "answers": [
+      2
+    ],
     "explanation": "novalidate se place sur <form> et desactive la validation native du formulaire.",
-    "references": ["forms", "validation"]
+    "references": [
+      "forms",
+      "validation"
+    ]
   },
   {
     "id": "html-table-001",
@@ -67,13 +120,29 @@
     "type": "match",
     "question": "Associe chaque balise de tableau a son role.",
     "items": [
-      { "prompt": "<thead>", "answer": "Groupe les en-tetes" },
-      { "prompt": "<tbody>", "answer": "Groupe les lignes de donnees" },
-      { "prompt": "<caption>", "answer": "Donne un titre au tableau" }
+      {
+        "prompt": "<thead>",
+        "answer": "Groupe les en-tetes"
+      },
+      {
+        "prompt": "<tbody>",
+        "answer": "Groupe les lignes de donnees"
+      },
+      {
+        "prompt": "<caption>",
+        "answer": "Donne un titre au tableau"
+      }
     ],
-    "choices": ["Groupe les lignes de donnees", "Donne un titre au tableau", "Groupe les en-tetes"],
+    "choices": [
+      "Groupe les lignes de donnees",
+      "Donne un titre au tableau",
+      "Groupe les en-tetes"
+    ],
     "explanation": "Ces balises ameliorent la structure et la comprehension des tableaux.",
-    "references": ["tables", "semantics"]
+    "references": [
+      "tables",
+      "semantics"
+    ]
   },
   {
     "id": "html-accessibility-001",
@@ -82,10 +151,22 @@
     "level": 5,
     "type": "multiple",
     "question": "Quelles pratiques ameliorent l'accessibilite d'un formulaire ?",
-    "options": ["Associer chaque label a son champ", "Utiliser un placeholder comme seul nom de champ", "Grouper des radios avec fieldset et legend", "Conserver un ordre de tabulation logique"],
-    "answers": [0, 2, 3],
+    "options": [
+      "Associer chaque label a son champ",
+      "Utiliser un placeholder comme seul nom de champ",
+      "Grouper des radios avec fieldset et legend",
+      "Conserver un ordre de tabulation logique"
+    ],
+    "answers": [
+      0,
+      2,
+      3
+    ],
     "explanation": "Le placeholder ne remplace pas un nom accessible persistant.",
-    "references": ["forms", "accessibility"]
+    "references": [
+      "forms",
+      "accessibility"
+    ]
   },
   {
     "id": "html-media-001",
@@ -94,10 +175,20 @@
     "level": 2,
     "type": "single",
     "question": "Quel attribut fournit une alternative textuelle a une image informative ?",
-    "options": ["title", "alt", "href", "aria-hidden"],
-    "answers": [1],
+    "options": [
+      "title",
+      "alt",
+      "href",
+      "aria-hidden"
+    ],
+    "answers": [
+      1
+    ],
     "explanation": "alt donne une alternative textuelle utile quand l'image porte une information.",
-    "references": ["images", "accessibility"]
+    "references": [
+      "images",
+      "accessibility"
+    ]
   },
   {
     "id": "html-link-target-001",
@@ -106,10 +197,23 @@
     "level": 3,
     "type": "multiple",
     "question": "Quelles affirmations sont correctes pour un lien ouvrant un nouvel onglet ?",
-    "options": ["target=\"_blank\" ouvre un nouvel onglet ou une nouvelle fenetre", "rel=\"noopener\" limite l'acces a la page d'origine", "href est inutile avec target", "Le texte du lien doit rester explicite"],
-    "answers": [0, 1, 3],
+    "options": [
+      "target=\"_blank\" ouvre un nouvel onglet ou une nouvelle fenetre",
+      "rel=\"noopener\" limite l'acces a la page d'origine",
+      "href est inutile avec target",
+      "Le texte du lien doit rester explicite"
+    ],
+    "answers": [
+      0,
+      1,
+      3
+    ],
     "explanation": "Un lien externe en nouvel onglet doit garder une destination claire et limiter les risques avec rel.",
-    "references": ["links", "security", "accessibility"]
+    "references": [
+      "links",
+      "security",
+      "accessibility"
+    ]
   },
   {
     "id": "html-button-type-001",
@@ -118,10 +222,20 @@
     "level": 4,
     "type": "single",
     "question": "Pourquoi definir type=\"button\" sur un bouton place dans un formulaire ?",
-    "options": ["Pour eviter une soumission implicite", "Pour desactiver le bouton", "Pour transformer le bouton en lien", "Pour rendre le CSS obligatoire"],
-    "answers": [0],
+    "options": [
+      "Pour eviter une soumission implicite",
+      "Pour desactiver le bouton",
+      "Pour transformer le bouton en lien",
+      "Pour rendre le CSS obligatoire"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "Dans un formulaire, un bouton sans type explicite agit souvent comme submit.",
-    "references": ["forms", "buttons"]
+    "references": [
+      "forms",
+      "buttons"
+    ]
   },
   {
     "id": "html-form-attributes-match-001",
@@ -131,9 +245,18 @@
     "type": "match",
     "question": "Associe chaque attribut de formulaire a son role.",
     "items": [
-      { "prompt": "formmethod", "answer": "Definit la methode d'envoi pour un bouton" },
-      { "prompt": "formenctype", "answer": "Definit l'encodage d'envoi pour un bouton" },
-      { "prompt": "formnovalidate", "answer": "Desactive la validation pour ce bouton" }
+      {
+        "prompt": "formmethod",
+        "answer": "Definit la methode d'envoi pour un bouton"
+      },
+      {
+        "prompt": "formenctype",
+        "answer": "Definit l'encodage d'envoi pour un bouton"
+      },
+      {
+        "prompt": "formnovalidate",
+        "answer": "Desactive la validation pour ce bouton"
+      }
     ],
     "choices": [
       "Definit l'encodage d'envoi pour un bouton",
@@ -141,7 +264,10 @@
       "Definit la methode d'envoi pour un bouton"
     ],
     "explanation": "Ces attributs peuvent surcharger le comportement du formulaire depuis un bouton de soumission.",
-    "references": ["forms", "validation"]
+    "references": [
+      "forms",
+      "validation"
+    ]
   },
   {
     "id": "html-section-article-001",
@@ -156,9 +282,15 @@
       "Quand on veut rendre le texte rouge",
       "Quand la zone ne contient aucun titre"
     ],
-    "answers": [0],
+    "answers": [
+      0
+    ],
     "explanation": "<article> represente un contenu autonome, comme une carte d'actualite ou un billet.",
-    "references": ["semantics", "article", "section"]
+    "references": [
+      "semantics",
+      "article",
+      "section"
+    ]
   },
   {
     "id": "html-video-controls-001",
@@ -167,10 +299,20 @@
     "level": 2,
     "type": "single",
     "question": "Quel attribut affiche les controles natifs d'une video HTML ?",
-    "options": ["controls", "autoplay", "poster", "preload"],
-    "answers": [0],
+    "options": [
+      "controls",
+      "autoplay",
+      "poster",
+      "preload"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "controls affiche les controles de lecture fournis par le navigateur.",
-    "references": ["media", "video"]
+    "references": [
+      "media",
+      "video"
+    ]
   },
   {
     "id": "html-input-required-001",
@@ -179,10 +321,20 @@
     "level": 1,
     "type": "single",
     "question": "Quel attribut rend un champ obligatoire avant soumission ?",
-    "options": ["required", "checked", "selected", "autofocus"],
-    "answers": [0],
+    "options": [
+      "required",
+      "checked",
+      "selected",
+      "autofocus"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "required active une contrainte de validation native sur le champ.",
-    "references": ["forms", "validation"]
+    "references": [
+      "forms",
+      "validation"
+    ]
   },
   {
     "id": "html-table-scope-001",
@@ -191,10 +343,20 @@
     "level": 3,
     "type": "single",
     "question": "Quel attribut precise qu'un <th> est l'en-tete d'une colonne ?",
-    "options": ["scope=\"col\"", "headers=\"row\"", "role=\"cell\"", "axis=\"column\""],
-    "answers": [0],
+    "options": [
+      "scope=\"col\"",
+      "headers=\"row\"",
+      "role=\"cell\"",
+      "axis=\"column\""
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "scope=\"col\" relie l'en-tete aux cellules de sa colonne.",
-    "references": ["tables", "accessibility"]
+    "references": [
+      "tables",
+      "accessibility"
+    ]
   },
   {
     "id": "html-icon-button-001",
@@ -203,10 +365,20 @@
     "level": 3,
     "type": "single",
     "question": "Quel attribut donne un nom accessible a un bouton compose seulement d'une icone ?",
-    "options": ["aria-label", "alt", "href", "placeholder"],
-    "answers": [0],
+    "options": [
+      "aria-label",
+      "alt",
+      "href",
+      "placeholder"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "aria-label fournit un nom accessible quand le texte visible est absent.",
-    "references": ["accessibility", "aria"]
+    "references": [
+      "accessibility",
+      "aria"
+    ]
   },
   {
     "id": "html-picture-match-001",
@@ -216,9 +388,18 @@
     "type": "match",
     "question": "Associe chaque element image responsive a son role.",
     "items": [
-      { "prompt": "<picture>", "answer": "Conteneur de sources alternatives" },
-      { "prompt": "<source>", "answer": "Propose une source selon une condition" },
-      { "prompt": "<img>", "answer": "Image de repli obligatoire" }
+      {
+        "prompt": "<picture>",
+        "answer": "Conteneur de sources alternatives"
+      },
+      {
+        "prompt": "<source>",
+        "answer": "Propose une source selon une condition"
+      },
+      {
+        "prompt": "<img>",
+        "answer": "Image de repli obligatoire"
+      }
     ],
     "choices": [
       "Image de repli obligatoire",
@@ -226,7 +407,11 @@
       "Propose une source selon une condition"
     ],
     "explanation": "picture permet de proposer plusieurs sources, mais img reste necessaire comme repli.",
-    "references": ["media", "responsive", "images"]
+    "references": [
+      "media",
+      "responsive",
+      "images"
+    ]
   },
   {
     "id": "archive-html-href-001",
@@ -235,10 +420,20 @@
     "level": 1,
     "type": "single",
     "question": "Quel attribut indique l'adresse cible d'un lien <a> ?",
-    "options": ["src", "href", "alt", "target"],
-    "answers": [1],
+    "options": [
+      "src",
+      "href",
+      "alt",
+      "target"
+    ],
+    "answers": [
+      1
+    ],
     "explanation": "href contient l'URL ou l'ancre vers laquelle le lien pointe.",
-    "references": ["links", "href"]
+    "references": [
+      "links",
+      "href"
+    ]
   },
   {
     "id": "archive-html-lang-001",
@@ -247,10 +442,20 @@
     "level": 1,
     "type": "single",
     "question": "Quel attribut de <html> indique la langue principale de la page ?",
-    "options": ["lang", "language", "charset", "locale"],
-    "answers": [0],
+    "options": [
+      "lang",
+      "language",
+      "charset",
+      "locale"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "Exemple : <html lang=\"fr\"> indique que la page est en francais.",
-    "references": ["lang", "accessibility"]
+    "references": [
+      "lang",
+      "accessibility"
+    ]
   },
   {
     "id": "archive-html-charset-001",
@@ -259,10 +464,20 @@
     "level": 1,
     "type": "single",
     "question": "Quelle balise definit l'encodage des caracteres en UTF-8 ?",
-    "options": ["<meta charset=\"utf-8\">", "<html charset=\"utf-8\">", "<encoding utf=\"8\">", "<title charset=\"utf-8\">"],
-    "answers": [0],
+    "options": [
+      "<meta charset=\"utf-8\">",
+      "<html charset=\"utf-8\">",
+      "<encoding utf=\"8\">",
+      "<title charset=\"utf-8\">"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "La balise meta charset se place dans <head>.",
-    "references": ["meta", "charset"]
+    "references": [
+      "meta",
+      "charset"
+    ]
   },
   {
     "id": "archive-html-list-001",
@@ -271,10 +486,20 @@
     "level": 1,
     "type": "single",
     "question": "Quelle balise HTML cree une liste non ordonnee ?",
-    "options": ["<ol>", "<ul>", "<li>", "<list>"],
-    "answers": [1],
+    "options": [
+      "<ol>",
+      "<ul>",
+      "<li>",
+      "<list>"
+    ],
+    "answers": [
+      1
+    ],
     "explanation": "<ul> cree une liste a puces. Les elements de liste sont des <li>.",
-    "references": ["lists", "ul"]
+    "references": [
+      "lists",
+      "ul"
+    ]
   },
   {
     "id": "archive-html-nav-001",
@@ -283,10 +508,20 @@
     "level": 4,
     "type": "single",
     "question": "Quelle balise fournit une zone de navigation principale dans une page ?",
-    "options": ["<navigation>", "<nav>", "<menu-main>", "<links>"],
-    "answers": [1],
+    "options": [
+      "<navigation>",
+      "<nav>",
+      "<menu-main>",
+      "<links>"
+    ],
+    "answers": [
+      1
+    ],
     "explanation": "<nav> represente une section de navigation.",
-    "references": ["semantics", "navigation"]
+    "references": [
+      "semantics",
+      "navigation"
+    ]
   },
   {
     "id": "archive-html-navigation-fix-001",
@@ -298,22 +533,827 @@
     "code": "<nav>\n  <ul>\n    <li><a href=\"index.html\">Accueil</a>\n    <li><a href=\"about.html\">A propos</a>\n    <li><a href=\"contact.html\">Contact</a>\n  </ul>\n</nav>",
     "solution": "<nav>\n  <ul>\n    <li><a href=\"index.html\">Accueil</a></li>\n    <li><a href=\"about.html\">A propos</a></li>\n    <li><a href=\"contact.html\">Contact</a></li>\n  </ul>\n</nav>",
     "checks": [
-      { "label": "Accueil est dans un li ferme.", "contains": "<li><a href=\"index.html\">Accueil</a></li>" },
-      { "label": "A propos est dans un li ferme.", "contains": "<li><a href=\"about.html\">A propos</a></li>" },
-      { "label": "Contact est dans un li ferme.", "contains": "<li><a href=\"contact.html\">Contact</a></li>" }
+      {
+        "label": "Accueil est dans un li ferme.",
+        "contains": "<li><a href=\"index.html\">Accueil</a></li>"
+      },
+      {
+        "label": "A propos est dans un li ferme.",
+        "contains": "<li><a href=\"about.html\">A propos</a></li>"
+      },
+      {
+        "label": "Contact est dans un li ferme.",
+        "contains": "<li><a href=\"contact.html\">Contact</a></li>"
+      }
     ],
     "tests": [
       {
         "type": "html",
         "label": "La navigation contient trois items de liste.",
         "assertions": [
-          { "selector": "nav ul li", "count": true, "equals": "3" },
-          { "selector": "nav li:first-child a", "attribute": "href", "contains": "index.html" },
-          { "selector": "nav li:last-child a", "attribute": "href", "contains": "contact.html" }
+          {
+            "selector": "nav ul li",
+            "count": true,
+            "equals": "3"
+          },
+          {
+            "selector": "nav li:first-child a",
+            "attribute": "href",
+            "contains": "index.html"
+          },
+          {
+            "selector": "nav li:last-child a",
+            "attribute": "href",
+            "contains": "contact.html"
+          }
         ]
       }
     ],
     "explanation": "Les navigateurs tolerent parfois les <li> non fermes, mais l'examen teste la rigueur de la syntaxe.",
-    "references": ["lists", "navigation", "html"]
+    "references": [
+      "lists",
+      "navigation",
+      "html"
+    ]
+  },
+  {
+    "id": "extra-html-document-multiple-001",
+    "domain": "html",
+    "topic": "document",
+    "level": 1,
+    "type": "multiple",
+    "question": "Quels elements appartiennent a la structure minimale d'un document HTML ?",
+    "options": [
+      "<!doctype html>",
+      "<html>",
+      "<body>",
+      "<database>"
+    ],
+    "answers": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Un document HTML minimal utilise le doctype, html, head et body. <database> n'existe pas en HTML.",
+    "references": [
+      "document",
+      "structure"
+    ]
+  },
+  {
+    "id": "extra-html-links-multiple-001",
+    "domain": "html",
+    "topic": "links",
+    "level": 2,
+    "type": "multiple",
+    "question": "Quels attributs peuvent etre pertinents sur un lien externe ?",
+    "options": [
+      "href",
+      "rel=\"noopener\"",
+      "target=\"_blank\"",
+      "src"
+    ],
+    "answers": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "href donne la destination, target peut ouvrir un onglet, rel limite certains risques. src n'est pas l'attribut d'un lien.",
+    "references": [
+      "links",
+      "security"
+    ]
+  },
+  {
+    "id": "extra-html-forms-multiple-001",
+    "domain": "html",
+    "topic": "forms",
+    "level": 3,
+    "type": "multiple",
+    "question": "Quels attributs ameliorent un champ e-mail de formulaire ?",
+    "options": [
+      "type=\"email\"",
+      "required",
+      "autocomplete=\"email\"",
+      "href=\"email\""
+    ],
+    "answers": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "type, required et autocomplete aident la saisie et la validation. href ne concerne pas un input.",
+    "references": [
+      "forms",
+      "validation"
+    ]
+  },
+  {
+    "id": "extra-html-media-multiple-001",
+    "domain": "html",
+    "topic": "media",
+    "level": 4,
+    "type": "multiple",
+    "question": "Quelles pratiques rendent une image plus robuste ?",
+    "options": [
+      "Ajouter un alt adapte",
+      "Declarer width et height",
+      "Utiliser loading=\"lazy\" si l'image est hors ecran",
+      "Mettre l'image dans <title>"
+    ],
+    "answers": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "alt, dimensions et lazy loading peuvent ameliorer accessibilite, stabilite et performance.",
+    "references": [
+      "images",
+      "performance",
+      "accessibility"
+    ]
+  },
+  {
+    "id": "extra-html-aria-multiple-001",
+    "domain": "html",
+    "topic": "accessibility",
+    "level": 5,
+    "type": "multiple",
+    "question": "Quelles affirmations sur les noms accessibles sont correctes ?",
+    "options": [
+      "Un bouton texte a souvent deja un nom accessible",
+      "aria-label peut nommer un bouton icone",
+      "alt nomme une image informative",
+      "placeholder remplace toujours label"
+    ],
+    "answers": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Le placeholder ne remplace pas un label persistant. Les autres propositions contribuent au nom accessible.",
+    "references": [
+      "accessibility",
+      "aria",
+      "forms"
+    ]
+  },
+  {
+    "id": "extra-html-head-match-001",
+    "domain": "html",
+    "topic": "metadata",
+    "level": 1,
+    "type": "match",
+    "question": "Associe chaque element de head a son role.",
+    "items": [
+      {
+        "prompt": "<title>",
+        "answer": "Titre de l'onglet"
+      },
+      {
+        "prompt": "<meta charset>",
+        "answer": "Encodage du document"
+      },
+      {
+        "prompt": "<link rel=\"stylesheet\">",
+        "answer": "Feuille de style externe"
+      }
+    ],
+    "choices": [
+      "Feuille de style externe",
+      "Titre de l'onglet",
+      "Encodage du document"
+    ],
+    "explanation": "Ces elements de head decrivent le document ou chargent une ressource.",
+    "references": [
+      "head",
+      "metadata"
+    ]
+  },
+  {
+    "id": "extra-html-list-match-001",
+    "domain": "html",
+    "topic": "lists",
+    "level": 2,
+    "type": "match",
+    "question": "Associe chaque balise de liste a son usage.",
+    "items": [
+      {
+        "prompt": "<ul>",
+        "answer": "Liste non ordonnee"
+      },
+      {
+        "prompt": "<ol>",
+        "answer": "Liste ordonnee"
+      },
+      {
+        "prompt": "<li>",
+        "answer": "Element de liste"
+      }
+    ],
+    "choices": [
+      "Element de liste",
+      "Liste ordonnee",
+      "Liste non ordonnee"
+    ],
+    "explanation": "ul et ol portent le type de liste, li represente chaque item.",
+    "references": [
+      "lists"
+    ]
+  },
+  {
+    "id": "extra-html-form-match-001",
+    "domain": "html",
+    "topic": "forms",
+    "level": 3,
+    "type": "match",
+    "question": "Associe chaque element de formulaire a son role.",
+    "items": [
+      {
+        "prompt": "<label>",
+        "answer": "Nom visible d'un champ"
+      },
+      {
+        "prompt": "<input>",
+        "answer": "Champ de saisie"
+      },
+      {
+        "prompt": "<fieldset>",
+        "answer": "Groupe de champs lies"
+      }
+    ],
+    "choices": [
+      "Champ de saisie",
+      "Groupe de champs lies",
+      "Nom visible d'un champ"
+    ],
+    "explanation": "Ces elements structurent et rendent les formulaires plus accessibles.",
+    "references": [
+      "forms",
+      "accessibility"
+    ]
+  },
+  {
+    "id": "extra-html-media-match-001",
+    "domain": "html",
+    "topic": "media",
+    "level": 4,
+    "type": "match",
+    "question": "Associe chaque attribut media a son effet.",
+    "items": [
+      {
+        "prompt": "alt",
+        "answer": "Alternative textuelle"
+      },
+      {
+        "prompt": "srcset",
+        "answer": "Sources d'image candidates"
+      },
+      {
+        "prompt": "loading",
+        "answer": "Strategie de chargement"
+      }
+    ],
+    "choices": [
+      "Strategie de chargement",
+      "Alternative textuelle",
+      "Sources d'image candidates"
+    ],
+    "explanation": "Ces attributs aident a adapter les images au contexte utilisateur.",
+    "references": [
+      "images",
+      "responsive"
+    ]
+  },
+  {
+    "id": "extra-html-landmarks-order-001",
+    "domain": "html",
+    "topic": "semantics",
+    "level": 2,
+    "type": "order",
+    "question": "Remets ces grandes zones dans un ordre courant de page.",
+    "options": [
+      "<main>",
+      "<footer>",
+      "<header>",
+      "<nav>"
+    ],
+    "answers": [
+      2,
+      3,
+      0,
+      1
+    ],
+    "explanation": "Une page commence souvent par header/nav, puis main, puis footer.",
+    "references": [
+      "semantics",
+      "landmarks"
+    ]
+  },
+  {
+    "id": "extra-html-form-order-001",
+    "domain": "html",
+    "topic": "forms",
+    "level": 3,
+    "type": "order",
+    "question": "Remets les etapes d'un champ accessible dans le bon ordre.",
+    "options": [
+      "Ajouter l'input avec id",
+      "Creer le label",
+      "Faire correspondre for et id",
+      "Ajouter une aide si necessaire"
+    ],
+    "answers": [
+      1,
+      0,
+      2,
+      3
+    ],
+    "explanation": "Le label et l'input doivent etre relies avant d'ajouter des aides complementaires.",
+    "references": [
+      "forms",
+      "accessibility"
+    ]
+  },
+  {
+    "id": "extra-html-table-order-001",
+    "domain": "html",
+    "topic": "tables",
+    "level": 4,
+    "type": "order",
+    "question": "Remets ces parties de tableau dans un ordre logique.",
+    "options": [
+      "<tbody>",
+      "<caption>",
+      "<table>",
+      "<thead>"
+    ],
+    "answers": [
+      2,
+      1,
+      3,
+      0
+    ],
+    "explanation": "Le tableau contient d'abord son titre, puis les zones d'en-tete et de corps.",
+    "references": [
+      "tables",
+      "semantics"
+    ]
+  },
+  {
+    "id": "extra-html-img-fix-001",
+    "domain": "html",
+    "topic": "media",
+    "level": 1,
+    "type": "code-fix",
+    "question": "Corrige cette image pour utiliser le bon attribut de source.",
+    "code": "<img href=\"logo.png\">",
+    "solution": "<img src=\"logo.png\" alt=\"Logo\">",
+    "checks": [
+      {
+        "label": "L'image utilise src.",
+        "contains": "src=\"logo.png\"",
+        "absent": "href=\"logo.png\""
+      },
+      {
+        "label": "L'image possede un alt.",
+        "contains": "alt="
+      }
+    ],
+    "tests": [
+      {
+        "type": "html",
+        "label": "L'image est chargeable et nommee.",
+        "assertions": [
+          {
+            "selector": "img",
+            "attribute": "src",
+            "contains": "logo.png"
+          },
+          {
+            "selector": "img",
+            "attribute": "alt",
+            "matches": ".+"
+          }
+        ]
+      }
+    ],
+    "explanation": "Une image utilise src pour sa source et alt pour son alternative.",
+    "references": [
+      "images",
+      "accessibility"
+    ]
+  },
+  {
+    "id": "extra-html-link-fix-001",
+    "domain": "html",
+    "topic": "links",
+    "level": 2,
+    "type": "code-fix",
+    "question": "Corrige ce lien pour qu'il pointe vers la bonne page.",
+    "code": "<a src=\"contact.html\">Contact</a>",
+    "solution": "<a href=\"contact.html\">Contact</a>",
+    "checks": [
+      {
+        "label": "Le lien utilise href.",
+        "contains": "href=\"contact.html\"",
+        "absent": "src=\"contact.html\""
+      }
+    ],
+    "tests": [
+      {
+        "type": "html",
+        "label": "Le lien possede une destination.",
+        "assertions": [
+          {
+            "selector": "a",
+            "attribute": "href",
+            "contains": "contact.html"
+          }
+        ]
+      }
+    ],
+    "explanation": "Un lien utilise href. src sert aux ressources comme img ou script.",
+    "references": [
+      "links"
+    ]
+  },
+  {
+    "id": "extra-html-button-fix-001",
+    "domain": "html",
+    "topic": "forms",
+    "level": 3,
+    "type": "code-fix",
+    "question": "Corrige ce bouton pour eviter une soumission implicite.",
+    "code": "<form>\n  <button>Verifier</button>\n</form>",
+    "solution": "<form>\n  <button type=\"button\">Verifier</button>\n</form>",
+    "checks": [
+      {
+        "label": "Le bouton est de type button.",
+        "contains": "type=\"button\""
+      }
+    ],
+    "tests": [
+      {
+        "type": "html",
+        "label": "Le bouton ne soumet pas par defaut.",
+        "assertions": [
+          {
+            "selector": "button",
+            "attribute": "type",
+            "equals": "button"
+          }
+        ]
+      }
+    ],
+    "explanation": "Dans un formulaire, un button sans type se comporte comme submit.",
+    "references": [
+      "forms",
+      "buttons"
+    ]
+  },
+  {
+    "id": "extra-html-tag-output-001",
+    "domain": "html",
+    "topic": "document",
+    "level": 1,
+    "type": "code-output",
+    "question": "Quel texte visible produit ce fragment ?",
+    "code": "<h1>Bienvenue</h1>",
+    "options": [
+      "Bienvenue",
+      "<h1>",
+      "Rien",
+      "Une erreur JavaScript"
+    ],
+    "answers": [
+      0
+    ],
+    "explanation": "Le contenu textuel du titre est affiche par le navigateur.",
+    "references": [
+      "headings",
+      "html"
+    ]
+  },
+  {
+    "id": "extra-html-paragraph-output-001",
+    "domain": "html",
+    "topic": "text",
+    "level": 1,
+    "type": "code-output",
+    "question": "Quel texte le navigateur affiche-t-il ?",
+    "code": "<p>HTML</p>\n<p>CSS</p>",
+    "options": [
+      "HTML puis CSS",
+      "HTMLCSS dans une balise",
+      "p puis p",
+      "Rien"
+    ],
+    "answers": [
+      0
+    ],
+    "explanation": "Chaque paragraphe affiche son contenu dans le flux du document.",
+    "references": [
+      "paragraphs",
+      "text"
+    ]
+  },
+  {
+    "id": "extra-html-lang-fix-001",
+    "domain": "html",
+    "topic": "document",
+    "level": 1,
+    "type": "code-fix",
+    "question": "Corrige la langue du document.",
+    "code": "<html>\n  <body>Bonjour</body>\n</html>",
+    "solution": "<html lang=\"fr\">\n  <body>Bonjour</body>\n</html>",
+    "checks": [
+      {
+        "label": "La langue francaise est indiquee.",
+        "contains": "lang=\"fr\""
+      }
+    ],
+    "tests": [
+      {
+        "type": "html",
+        "label": "La balise html porte lang=fr.",
+        "assertions": [
+          {
+            "selector": "html",
+            "attribute": "lang",
+            "equals": "fr"
+          }
+        ]
+      }
+    ],
+    "explanation": "lang aide les navigateurs et technologies d'assistance a interpreter la langue.",
+    "references": [
+      "lang",
+      "accessibility"
+    ]
+  },
+  {
+    "id": "extra-html-input-fix-001",
+    "domain": "html",
+    "topic": "forms",
+    "level": 2,
+    "type": "code-fix",
+    "question": "Corrige ce champ pour accepter une adresse e-mail.",
+    "code": "<input name=\"email\" type=\"text\">",
+    "solution": "<input name=\"email\" type=\"email\">",
+    "checks": [
+      {
+        "label": "Le type email est utilise.",
+        "contains": "type=\"email\""
+      }
+    ],
+    "tests": [
+      {
+        "type": "html",
+        "label": "Le champ est de type email.",
+        "assertions": [
+          {
+            "selector": "input",
+            "attribute": "type",
+            "equals": "email"
+          }
+        ]
+      }
+    ],
+    "explanation": "type=email active une validation et un clavier adaptes.",
+    "references": [
+      "forms",
+      "input"
+    ]
+  },
+  {
+    "id": "extra-html-basic-match-001",
+    "domain": "html",
+    "topic": "structure",
+    "level": 1,
+    "type": "match",
+    "question": "Associe chaque balise de base a son contenu.",
+    "items": [
+      {
+        "prompt": "<head>",
+        "answer": "Metadonnees"
+      },
+      {
+        "prompt": "<body>",
+        "answer": "Contenu visible"
+      },
+      {
+        "prompt": "<h1>",
+        "answer": "Titre principal"
+      }
+    ],
+    "choices": [
+      "Titre principal",
+      "Contenu visible",
+      "Metadonnees"
+    ],
+    "explanation": "Ces balises forment les bases d'une page HTML.",
+    "references": [
+      "structure",
+      "head",
+      "body"
+    ]
+  },
+  {
+    "id": "extra-html-link-match-001",
+    "domain": "html",
+    "topic": "links",
+    "level": 2,
+    "type": "match",
+    "question": "Associe chaque attribut de lien a son role.",
+    "items": [
+      {
+        "prompt": "href",
+        "answer": "Destination du lien"
+      },
+      {
+        "prompt": "target",
+        "answer": "Contexte d'ouverture"
+      },
+      {
+        "prompt": "rel",
+        "answer": "Relation et securite"
+      }
+    ],
+    "choices": [
+      "Relation et securite",
+      "Destination du lien",
+      "Contexte d'ouverture"
+    ],
+    "explanation": "Ces attributs decrivent ou securisent la navigation.",
+    "references": [
+      "links",
+      "security"
+    ]
+  },
+  {
+    "id": "extra-html-a11y-match-001",
+    "domain": "html",
+    "topic": "accessibility",
+    "level": 5,
+    "type": "match",
+    "question": "Associe chaque pratique HTML a son benefice accessibilite.",
+    "items": [
+      {
+        "prompt": "alt pertinent",
+        "answer": "Comprendre une image informative"
+      },
+      {
+        "prompt": "legend",
+        "answer": "Nommer un groupe de champs"
+      },
+      {
+        "prompt": "ordre logique",
+        "answer": "Faciliter la navigation clavier"
+      }
+    ],
+    "choices": [
+      "Faciliter la navigation clavier",
+      "Nommer un groupe de champs",
+      "Comprendre une image informative"
+    ],
+    "explanation": "L'accessibilite depend de la semantique, des noms et de l'ordre de lecture.",
+    "references": [
+      "accessibility",
+      "forms",
+      "images"
+    ]
+  },
+  {
+    "id": "extra-html-document-order-001",
+    "domain": "html",
+    "topic": "document",
+    "level": 1,
+    "type": "order",
+    "question": "Remets les elements d'un document HTML minimal dans l'ordre.",
+    "options": [
+      "<body>",
+      "<!doctype html>",
+      "<head>",
+      "<html>"
+    ],
+    "answers": [
+      1,
+      3,
+      2,
+      0
+    ],
+    "explanation": "Le doctype precede html, qui contient head puis body.",
+    "references": [
+      "document",
+      "structure"
+    ]
+  },
+  {
+    "id": "extra-html-list-order-001",
+    "domain": "html",
+    "topic": "lists",
+    "level": 1,
+    "type": "order",
+    "question": "Remets la structure d'une liste non ordonnee dans l'ordre.",
+    "options": [
+      "</ul>",
+      "<li>Premier</li>",
+      "<ul>",
+      "<li>Second</li>"
+    ],
+    "answers": [
+      2,
+      1,
+      3,
+      0
+    ],
+    "explanation": "Les elements li se placent a l'interieur de ul.",
+    "references": [
+      "lists"
+    ]
+  },
+  {
+    "id": "extra-html-image-order-001",
+    "domain": "html",
+    "topic": "media",
+    "level": 2,
+    "type": "order",
+    "question": "Remets une image figuree accessible dans l'ordre.",
+    "options": [
+      "<figcaption>Legende</figcaption>",
+      "<figure>",
+      "<img src=\"photo.jpg\" alt=\"Description\">",
+      "</figure>"
+    ],
+    "answers": [
+      1,
+      2,
+      0,
+      3
+    ],
+    "explanation": "figure enveloppe l'image et sa legende.",
+    "references": [
+      "images",
+      "figure"
+    ]
+  },
+  {
+    "id": "extra-html-seo-match-001",
+    "domain": "html",
+    "topic": "metadata",
+    "level": 4,
+    "type": "match",
+    "question": "Associe chaque metadonnee a son utilite.",
+    "items": [
+      {
+        "prompt": "description",
+        "answer": "Resume de la page"
+      },
+      {
+        "prompt": "viewport",
+        "answer": "Adaptation mobile"
+      },
+      {
+        "prompt": "charset",
+        "answer": "Encodage des caracteres"
+      }
+    ],
+    "choices": [
+      "Adaptation mobile",
+      "Encodage des caracteres",
+      "Resume de la page"
+    ],
+    "explanation": "Les metadonnees aident le navigateur, les moteurs et l'affichage mobile.",
+    "references": [
+      "metadata",
+      "seo",
+      "responsive"
+    ]
+  },
+  {
+    "id": "extra-html-validation-order-001",
+    "domain": "html",
+    "topic": "validation",
+    "level": 5,
+    "type": "order",
+    "question": "Remets une verification HTML dans l'ordre.",
+    "options": [
+      "Corriger les erreurs restantes",
+      "Valider le document",
+      "Tester au clavier",
+      "Verifier les noms accessibles"
+    ],
+    "answers": [
+      1,
+      0,
+      3,
+      2
+    ],
+    "explanation": "La validation syntaxique vient avant les controles d'accessibilite et d'usage.",
+    "references": [
+      "validation",
+      "accessibility"
+    ]
   }
 ]

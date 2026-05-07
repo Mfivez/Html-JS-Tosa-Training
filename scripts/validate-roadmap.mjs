@@ -57,6 +57,23 @@ for (const question of bank) {
   validateQuestionShape(question);
 }
 
+const minimumByType = {
+  multiple: 30,
+  "code-output": 30,
+  "code-fix": 30,
+  match: 30,
+  order: 30
+};
+const typeCounts = bank.reduce((counts, question) => {
+  counts[question.type] = (counts[question.type] ?? 0) + 1;
+  return counts;
+}, {});
+for (const [type, minimum] of Object.entries(minimumByType)) {
+  if ((typeCounts[type] ?? 0) < minimum) {
+    throw new Error(`Banque insuffisante pour ${type}: ${typeCounts[type] ?? 0} au lieu de ${minimum} minimum.`);
+  }
+}
+
 const fallbackExam = domains.flatMap(([domain, quota]) =>
   bank.filter((question) => question.domain === domain).slice(0, quota)
 );

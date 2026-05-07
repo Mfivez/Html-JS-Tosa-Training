@@ -6,10 +6,20 @@
     "level": 1,
     "type": "single",
     "question": "Quelle methode selectionne le premier element correspondant a un selecteur CSS ?",
-    "options": ["document.querySelector()", "document.selectAll()", "document.findFirst()", "document.getStyle()"],
-    "answers": [0],
+    "options": [
+      "document.querySelector()",
+      "document.selectAll()",
+      "document.findFirst()",
+      "document.getStyle()"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "querySelector() retourne le premier element correspondant au selecteur fourni.",
-    "references": ["dom", "selectors"]
+    "references": [
+      "dom",
+      "selectors"
+    ]
   },
   {
     "id": "dom-listener-001",
@@ -18,10 +28,19 @@
     "level": 2,
     "type": "single",
     "question": "Quelle syntaxe ecoute un clic sur un bouton stocke dans button ?",
-    "options": ["button.on(\"click\", run)", "button.addEventListener(\"click\", run)", "button.clickEvent(run)", "button.listen(\"click\", run)"],
-    "answers": [1],
+    "options": [
+      "button.on(\"click\", run)",
+      "button.addEventListener(\"click\", run)",
+      "button.clickEvent(run)",
+      "button.listen(\"click\", run)"
+    ],
+    "answers": [
+      1
+    ],
     "explanation": "addEventListener() associe une fonction a un evenement.",
-    "references": ["events"]
+    "references": [
+      "events"
+    ]
   },
   {
     "id": "dom-prevent-default-001",
@@ -30,10 +49,20 @@
     "level": 3,
     "type": "single",
     "question": "A quoi sert event.preventDefault() dans un gestionnaire d'evenement ?",
-    "options": ["A arreter JavaScript", "A empecher le comportement par defaut du navigateur", "A supprimer l'element clique", "A creer un nouvel evenement"],
-    "answers": [1],
+    "options": [
+      "A arreter JavaScript",
+      "A empecher le comportement par defaut du navigateur",
+      "A supprimer l'element clique",
+      "A creer un nouvel evenement"
+    ],
+    "answers": [
+      1
+    ],
     "explanation": "On l'utilise par exemple pour empecher l'envoi automatique d'un formulaire.",
-    "references": ["events", "forms"]
+    "references": [
+      "events",
+      "forms"
+    ]
   },
   {
     "id": "dom-textcontent-001",
@@ -42,10 +71,20 @@
     "level": 4,
     "type": "single",
     "question": "Quelle propriete modifie le texte sans interpreter de HTML ?",
-    "options": ["innerHTML", "textContent", "outerHTML", "styleText"],
-    "answers": [1],
+    "options": [
+      "innerHTML",
+      "textContent",
+      "outerHTML",
+      "styleText"
+    ],
+    "answers": [
+      1
+    ],
     "explanation": "textContent remplace du texte brut. innerHTML interprete la chaine comme du HTML.",
-    "references": ["dom", "security"]
+    "references": [
+      "dom",
+      "security"
+    ]
   },
   {
     "id": "dom-delegation-001",
@@ -54,10 +93,22 @@
     "level": 5,
     "type": "multiple",
     "question": "Quelles affirmations decrivent correctement la delegation d'evenements ?",
-    "options": ["On place un listener sur un ancetre", "On inspecte event.target pour identifier l'element source", "Elle oblige a ajouter un listener sur chaque enfant", "Elle aide avec les elements ajoutes dynamiquement"],
-    "answers": [0, 1, 3],
+    "options": [
+      "On place un listener sur un ancetre",
+      "On inspecte event.target pour identifier l'element source",
+      "Elle oblige a ajouter un listener sur chaque enfant",
+      "Elle aide avec les elements ajoutes dynamiquement"
+    ],
+    "answers": [
+      0,
+      1,
+      3
+    ],
     "explanation": "La delegation exploite la propagation des evenements vers un ancetre commun.",
-    "references": ["events", "delegation"]
+    "references": [
+      "events",
+      "delegation"
+    ]
   },
   {
     "id": "dom-classlist-001",
@@ -66,10 +117,20 @@
     "level": 2,
     "type": "single",
     "question": "Quelle methode ajoute une classe CSS a un element ?",
-    "options": ["element.classList.add(\"active\")", "element.style.add(\"active\")", "element.className.add(\"active\")", "document.addClass(element)"],
-    "answers": [0],
+    "options": [
+      "element.classList.add(\"active\")",
+      "element.style.add(\"active\")",
+      "element.className.add(\"active\")",
+      "document.addClass(element)"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "classList.add() ajoute une classe sans ecraser les autres classes.",
-    "references": ["dom", "classList"]
+    "references": [
+      "dom",
+      "classList"
+    ]
   },
   {
     "id": "dom-stop-propagation-001",
@@ -78,10 +139,20 @@
     "level": 4,
     "type": "single",
     "question": "A quoi sert event.stopPropagation() ?",
-    "options": ["A empecher l'evenement de remonter aux ancetres", "A annuler le comportement par defaut", "A supprimer le listener", "A recharger la page"],
-    "answers": [0],
+    "options": [
+      "A empecher l'evenement de remonter aux ancetres",
+      "A annuler le comportement par defaut",
+      "A supprimer le listener",
+      "A recharger la page"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "stopPropagation limite la propagation dans l'arbre DOM, sans remplacer preventDefault.",
-    "references": ["events", "propagation"]
+    "references": [
+      "events",
+      "propagation"
+    ]
   },
   {
     "id": "dom-dataset-001",
@@ -90,10 +161,20 @@
     "level": 3,
     "type": "single",
     "question": "Comment lire data-user-id=\"42\" sur un element stocke dans item ?",
-    "options": ["item.dataset.userId", "item.data.user-id", "item.getData(\"user-id\")", "item.attr.dataset"],
-    "answers": [0],
+    "options": [
+      "item.dataset.userId",
+      "item.data.user-id",
+      "item.getData(\"user-id\")",
+      "item.attr.dataset"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "dataset convertit data-user-id en propriete camelCase userId.",
-    "references": ["dataset", "dom"]
+    "references": [
+      "dataset",
+      "dom"
+    ]
   },
   {
     "id": "dom-event-flow-match-001",
@@ -103,9 +184,18 @@
     "type": "match",
     "question": "Associe chaque notion d'evenement DOM a sa definition.",
     "items": [
-      { "prompt": "target", "answer": "Element source de l'evenement" },
-      { "prompt": "currentTarget", "answer": "Element qui execute le listener" },
-      { "prompt": "bubbling", "answer": "Remontee vers les ancetres" }
+      {
+        "prompt": "target",
+        "answer": "Element source de l'evenement"
+      },
+      {
+        "prompt": "currentTarget",
+        "answer": "Element qui execute le listener"
+      },
+      {
+        "prompt": "bubbling",
+        "answer": "Remontee vers les ancetres"
+      }
     ],
     "choices": [
       "Remontee vers les ancetres",
@@ -113,7 +203,10 @@
       "Element qui execute le listener"
     ],
     "explanation": "Ces notions sont essentielles pour comprendre la delegation d'evenements.",
-    "references": ["events", "delegation"]
+    "references": [
+      "events",
+      "delegation"
+    ]
   },
   {
     "id": "dom-getelementbyid-001",
@@ -122,10 +215,20 @@
     "level": 1,
     "type": "single",
     "question": "Quelle methode selectionne un element par son identifiant exact ?",
-    "options": ["document.getElementById()", "document.getElementsByClassName()", "document.queryAll()", "document.id()"],
-    "answers": [0],
+    "options": [
+      "document.getElementById()",
+      "document.getElementsByClassName()",
+      "document.queryAll()",
+      "document.id()"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "getElementById() retourne l'element qui porte l'id donne.",
-    "references": ["dom", "selection"]
+    "references": [
+      "dom",
+      "selection"
+    ]
   },
   {
     "id": "dom-innerhtml-risk-001",
@@ -140,9 +243,15 @@
       "Cela empeche tous les styles CSS",
       "Cela supprime automatiquement le DOM"
     ],
-    "answers": [0],
+    "answers": [
+      0
+    ],
     "explanation": "innerHTML interprete la chaine comme du HTML ; textContent est plus sur pour du texte brut.",
-    "references": ["dom", "innerHTML", "security"]
+    "references": [
+      "dom",
+      "innerHTML",
+      "security"
+    ]
   },
   {
     "id": "dom-create-element-001",
@@ -151,10 +260,20 @@
     "level": 2,
     "type": "single",
     "question": "Quelle methode cree un nouvel element <li> en JavaScript ?",
-    "options": ["document.createElement('li')", "document.new('li')", "document.makeElement('li')", "li.create()"],
-    "answers": [0],
+    "options": [
+      "document.createElement('li')",
+      "document.new('li')",
+      "document.makeElement('li')",
+      "li.create()"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "createElement cree un element DOM qui peut ensuite etre insere dans la page.",
-    "references": ["dom", "createElement"]
+    "references": [
+      "dom",
+      "createElement"
+    ]
   },
   {
     "id": "dom-closest-001",
@@ -163,10 +282,21 @@
     "level": 3,
     "type": "single",
     "question": "Que fait element.closest('.card') ?",
-    "options": ["Cherche l'ancetre le plus proche correspondant au selecteur", "Selectionne tous les enfants .card", "Cree une nouvelle carte", "Supprime la classe card"],
-    "answers": [0],
+    "options": [
+      "Cherche l'ancetre le plus proche correspondant au selecteur",
+      "Selectionne tous les enfants .card",
+      "Cree une nouvelle carte",
+      "Supprime la classe card"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "closest remonte dans les ancetres jusqu'au premier element qui correspond au selecteur.",
-    "references": ["dom", "selectors", "delegation"]
+    "references": [
+      "dom",
+      "selectors",
+      "delegation"
+    ]
   },
   {
     "id": "dom-remove-listener-001",
@@ -175,10 +305,20 @@
     "level": 4,
     "type": "single",
     "question": "Quelle condition est necessaire pour retirer un listener avec removeEventListener ?",
-    "options": ["Utiliser la meme reference de fonction que lors de l'ajout", "Utiliser toujours une fonction flechee inline", "Supprimer l'element du DOM", "Ajouter preventDefault"],
-    "answers": [0],
+    "options": [
+      "Utiliser la meme reference de fonction que lors de l'ajout",
+      "Utiliser toujours une fonction flechee inline",
+      "Supprimer l'element du DOM",
+      "Ajouter preventDefault"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "removeEventListener doit recevoir la meme fonction que addEventListener.",
-    "references": ["events", "listeners"]
+    "references": [
+      "events",
+      "listeners"
+    ]
   },
   {
     "id": "dom-formdata-001",
@@ -187,10 +327,20 @@
     "level": 3,
     "type": "single",
     "question": "A quoi sert new FormData(form) ?",
-    "options": ["A lire les donnees d'un formulaire", "A styliser automatiquement les champs", "A creer une media query", "A desactiver JavaScript"],
-    "answers": [0],
+    "options": [
+      "A lire les donnees d'un formulaire",
+      "A styliser automatiquement les champs",
+      "A creer une media query",
+      "A desactiver JavaScript"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "FormData permet de recuperer les paires nom/valeur d'un formulaire.",
-    "references": ["forms", "dom"]
+    "references": [
+      "forms",
+      "dom"
+    ]
   },
   {
     "id": "archive-dom-aria-live-001",
@@ -199,10 +349,21 @@
     "level": 4,
     "type": "single",
     "question": "A quoi sert aria-live ?",
-    "options": ["A annoncer des mises a jour dynamiques aux technologies d'assistance.", "A rendre un element cliquable.", "A charger une video en direct.", "A rendre une image responsive."],
-    "answers": [0],
+    "options": [
+      "A annoncer des mises a jour dynamiques aux technologies d'assistance.",
+      "A rendre un element cliquable.",
+      "A charger une video en direct.",
+      "A rendre une image responsive."
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "aria-live signale qu'une zone peut etre annoncee lorsqu'elle change.",
-    "references": ["aria", "accessibility", "dynamic-content"]
+    "references": [
+      "aria",
+      "accessibility",
+      "dynamic-content"
+    ]
   },
   {
     "id": "archive-dom-remove-event-001",
@@ -211,10 +372,20 @@
     "level": 4,
     "type": "single",
     "question": "Quelle methode supprime un ecouteur ajoute avec addEventListener ?",
-    "options": ["removeEventListener()", "deleteEvent()", "offEventListener()", "clearListener()"],
-    "answers": [0],
+    "options": [
+      "removeEventListener()",
+      "deleteEvent()",
+      "offEventListener()",
+      "clearListener()"
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "Il faut passer a removeEventListener la meme reference de fonction que celle ajoutee.",
-    "references": ["events", "listeners"]
+    "references": [
+      "events",
+      "listeners"
+    ]
   },
   {
     "id": "archive-dom-stop-propagation-risk-001",
@@ -223,10 +394,21 @@
     "level": 5,
     "type": "single",
     "question": "Pourquoi event.stopPropagation() doit-il etre utilise avec prudence ?",
-    "options": ["Il empeche l'evenement de remonter vers les ancetres, ce qui peut casser d'autres gestionnaires.", "Il supprime l'element du DOM.", "Il bloque tous les evenements du site definitivement.", "Il force le rechargement de la page."],
-    "answers": [0],
+    "options": [
+      "Il empeche l'evenement de remonter vers les ancetres, ce qui peut casser d'autres gestionnaires.",
+      "Il supprime l'element du DOM.",
+      "Il bloque tous les evenements du site definitivement.",
+      "Il force le rechargement de la page."
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "stopPropagation() interrompt la phase de propagation, ce qui peut gener la delegation d'evenements.",
-    "references": ["events", "propagation", "delegation"]
+    "references": [
+      "events",
+      "propagation",
+      "delegation"
+    ]
   },
   {
     "id": "archive-dom-shadow-dom-001",
@@ -235,10 +417,20 @@
     "level": 5,
     "type": "single",
     "question": "Quelle affirmation decrit le mieux le Shadow DOM ?",
-    "options": ["Un DOM encapsule attache a un composant.", "Une copie automatique de toute la page.", "Une facon de cacher JavaScript au navigateur.", "Une alternative a HTTP."],
-    "answers": [0],
+    "options": [
+      "Un DOM encapsule attache a un composant.",
+      "Une copie automatique de toute la page.",
+      "Une facon de cacher JavaScript au navigateur.",
+      "Une alternative a HTTP."
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "Le Shadow DOM encapsule une structure et des styles dans certains composants web.",
-    "references": ["shadow-dom", "web-components"]
+    "references": [
+      "shadow-dom",
+      "web-components"
+    ]
   },
   {
     "id": "archive-dom-textcontent-xss-001",
@@ -247,10 +439,21 @@
     "level": 5,
     "type": "single",
     "question": "Quelle pratique reduit le risque XSS lors de l'insertion de texte utilisateur ?",
-    "options": ["Utiliser textContent quand on insere du texte brut.", "Toujours utiliser innerHTML.", "Mettre le texte dans un commentaire CSS.", "Changer la couleur du texte."],
-    "answers": [0],
+    "options": [
+      "Utiliser textContent quand on insere du texte brut.",
+      "Toujours utiliser innerHTML.",
+      "Mettre le texte dans un commentaire CSS.",
+      "Changer la couleur du texte."
+    ],
+    "answers": [
+      0
+    ],
     "explanation": "textContent n'interprete pas la chaine comme du HTML.",
-    "references": ["security", "xss", "textContent"]
+    "references": [
+      "security",
+      "xss",
+      "textContent"
+    ]
   },
   {
     "id": "archive-dom-event-listener-fix-001",
@@ -262,9 +465,18 @@
     "code": "const btn = document.querySelector(\"#submit\");\nconst status = document.querySelector(\"#status\");\n\nbtn.on(\"click\", () => {\n  status.value = \"Envoye !\";\n});",
     "solution": "const btn = document.querySelector(\"#submit\");\nconst status = document.querySelector(\"#status\");\n\nbtn.addEventListener(\"click\", () => {\n  status.textContent = \"Envoye !\";\n});",
     "checks": [
-      { "label": "addEventListener est utilise.", "contains": "addEventListener" },
-      { "label": "btn.on n'est plus utilise.", "absent": "btn.on(" },
-      { "label": "textContent ou innerHTML met a jour le statut.", "regex": "status\\.(textContent|innerHTML)" }
+      {
+        "label": "addEventListener est utilise.",
+        "contains": "addEventListener"
+      },
+      {
+        "label": "btn.on n'est plus utilise.",
+        "absent": "btn.on("
+      },
+      {
+        "label": "textContent ou innerHTML met a jour le statut.",
+        "regex": "status\\.(textContent|innerHTML)"
+      }
     ],
     "tests": [
       {
@@ -272,14 +484,527 @@
         "label": "Le clic met a jour le statut dans le DOM.",
         "fixture": "<button id=\"submit\">Envoyer</button><p id=\"status\"></p>",
         "actions": [
-          { "click": "#submit" }
+          {
+            "click": "#submit"
+          }
         ],
         "assertions": [
-          { "selector": "#status", "property": "textContent", "equals": "Envoye !" }
+          {
+            "selector": "#status",
+            "property": "textContent",
+            "equals": "Envoye !"
+          }
         ]
       }
     ],
     "explanation": "Les elements <p> ou <span> n'ont pas de propriete value. On utilise textContent.",
-    "references": ["events", "textContent", "debug"]
+    "references": [
+      "events",
+      "textContent",
+      "debug"
+    ]
+  },
+  {
+    "id": "extra-dom-select-multiple-001",
+    "domain": "dom",
+    "topic": "selectors",
+    "level": 1,
+    "type": "multiple",
+    "question": "Quelles methodes peuvent selectionner des elements dans le DOM ?",
+    "options": [
+      "document.querySelector",
+      "document.getElementById",
+      "document.querySelectorAll",
+      "document.fetchElement"
+    ],
+    "answers": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "fetchElement n'est pas une API DOM standard.",
+    "references": [
+      "dom",
+      "selectors"
+    ]
+  },
+  {
+    "id": "extra-dom-events-multiple-001",
+    "domain": "dom",
+    "topic": "events",
+    "level": 3,
+    "type": "multiple",
+    "question": "Quelles informations peut-on exploiter dans un objet event ?",
+    "options": [
+      "event.target",
+      "event.type",
+      "event.preventDefault()",
+      "event.database"
+    ],
+    "answers": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "event.database n'est pas une propriete standard de l'evenement.",
+    "references": [
+      "events"
+    ]
+  },
+  {
+    "id": "extra-dom-security-multiple-001",
+    "domain": "dom",
+    "topic": "security",
+    "level": 5,
+    "type": "multiple",
+    "question": "Quelles pratiques limitent les risques lors d'une insertion utilisateur ?",
+    "options": [
+      "Utiliser textContent pour du texte brut",
+      "Eviter innerHTML avec du contenu non fiable",
+      "Sanitizer le HTML si innerHTML est necessaire",
+      "Concatener directement une saisie dans un script"
+    ],
+    "answers": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Concatener directement une saisie dans du script augmente le risque XSS.",
+    "references": [
+      "security",
+      "xss",
+      "textContent"
+    ]
+  },
+  {
+    "id": "extra-dom-select-output-001",
+    "domain": "dom",
+    "topic": "selectors",
+    "level": 2,
+    "type": "code-output",
+    "question": "Que contient text apres ce code ?",
+    "code": "const el = { textContent: 'OK' };\nconst text = el.textContent;\nconsole.log(text);",
+    "options": [
+      "OK",
+      "textContent",
+      "undefined",
+      "el"
+    ],
+    "answers": [
+      0
+    ],
+    "explanation": "La propriete textContent contient la chaine OK.",
+    "references": [
+      "textContent",
+      "dom"
+    ]
+  },
+  {
+    "id": "extra-dom-classlist-output-001",
+    "domain": "dom",
+    "topic": "classes",
+    "level": 3,
+    "type": "code-output",
+    "question": "Qu'affiche ce code ?",
+    "code": "const classes = new Set(['card']);\nclasses.add('is-active');\nconsole.log(classes.has('is-active'));",
+    "options": [
+      "true",
+      "false",
+      "undefined",
+      "card"
+    ],
+    "answers": [
+      0
+    ],
+    "explanation": "Cet exemple modelise l'ajout d'une classe active.",
+    "references": [
+      "classList",
+      "state"
+    ]
+  },
+  {
+    "id": "extra-dom-event-output-001",
+    "domain": "dom",
+    "topic": "events",
+    "level": 4,
+    "type": "code-output",
+    "question": "Qu'affiche ce code ?",
+    "code": "const event = { type: 'click', target: { id: 'save' } };\nconsole.log(event.type + ':' + event.target.id);",
+    "options": [
+      "click:save",
+      "save:click",
+      "undefined",
+      "event:target"
+    ],
+    "answers": [
+      0
+    ],
+    "explanation": "On lit le type de l'evenement et l'id de la cible.",
+    "references": [
+      "events",
+      "target"
+    ]
+  },
+  {
+    "id": "extra-dom-methods-match-001",
+    "domain": "dom",
+    "topic": "selectors",
+    "level": 1,
+    "type": "match",
+    "question": "Associe chaque methode DOM a son resultat.",
+    "items": [
+      {
+        "prompt": "querySelector",
+        "answer": "Premier element correspondant"
+      },
+      {
+        "prompt": "querySelectorAll",
+        "answer": "Liste statique d'elements"
+      },
+      {
+        "prompt": "getElementById",
+        "answer": "Element par identifiant"
+      }
+    ],
+    "choices": [
+      "Element par identifiant",
+      "Liste statique d'elements",
+      "Premier element correspondant"
+    ],
+    "explanation": "Ces methodes permettent de recuperer des elements du document.",
+    "references": [
+      "selectors",
+      "dom"
+    ]
+  },
+  {
+    "id": "extra-dom-events-match-001",
+    "domain": "dom",
+    "topic": "events",
+    "level": 2,
+    "type": "match",
+    "question": "Associe chaque notion d'evenement a son role.",
+    "items": [
+      {
+        "prompt": "addEventListener",
+        "answer": "Enregistrer un gestionnaire"
+      },
+      {
+        "prompt": "preventDefault",
+        "answer": "Bloquer l'action native"
+      },
+      {
+        "prompt": "target",
+        "answer": "Element source de l'evenement"
+      }
+    ],
+    "choices": [
+      "Bloquer l'action native",
+      "Element source de l'evenement",
+      "Enregistrer un gestionnaire"
+    ],
+    "explanation": "Ces notions reviennent souvent dans les interactions de formulaire.",
+    "references": [
+      "events",
+      "forms"
+    ]
+  },
+  {
+    "id": "extra-dom-content-match-001",
+    "domain": "dom",
+    "topic": "content",
+    "level": 4,
+    "type": "match",
+    "question": "Associe chaque API de contenu a son usage prudent.",
+    "items": [
+      {
+        "prompt": "textContent",
+        "answer": "Inserer du texte brut"
+      },
+      {
+        "prompt": "innerHTML",
+        "answer": "Inserer du HTML controle"
+      },
+      {
+        "prompt": "setAttribute",
+        "answer": "Modifier un attribut"
+      }
+    ],
+    "choices": [
+      "Modifier un attribut",
+      "Inserer du texte brut",
+      "Inserer du HTML controle"
+    ],
+    "explanation": "Le choix de l'API depend du type de contenu et du risque de securite.",
+    "references": [
+      "dom",
+      "security"
+    ]
+  },
+  {
+    "id": "extra-dom-query-order-001",
+    "domain": "dom",
+    "topic": "dom",
+    "level": 2,
+    "type": "order",
+    "question": "Remets les etapes d'une interaction DOM simple dans l'ordre.",
+    "options": [
+      "Modifier l'interface",
+      "Selectionner l'element",
+      "Ecouter l'evenement",
+      "Lire l'etat si besoin"
+    ],
+    "answers": [
+      1,
+      2,
+      3,
+      0
+    ],
+    "explanation": "On selectionne, on ecoute, puis au declenchement on lit l'etat et on met a jour.",
+    "references": [
+      "dom",
+      "events"
+    ]
+  },
+  {
+    "id": "extra-dom-form-order-001",
+    "domain": "dom",
+    "topic": "forms",
+    "level": 4,
+    "type": "order",
+    "question": "Remets les etapes d'une soumission JS controlee.",
+    "options": [
+      "Appeler preventDefault",
+      "Ecouter submit",
+      "Lire les donnees",
+      "Afficher le message"
+    ],
+    "answers": [
+      1,
+      0,
+      2,
+      3
+    ],
+    "explanation": "Le submit est intercepte avant de lire les donnees et d'afficher un retour.",
+    "references": [
+      "forms",
+      "events"
+    ]
+  },
+  {
+    "id": "extra-dom-text-fix-001",
+    "domain": "dom",
+    "topic": "content",
+    "level": 3,
+    "type": "code-fix",
+    "question": "Corrige la mise a jour du texte.",
+    "code": "const status = document.querySelector('#status');\nstatus.value = 'Pret';",
+    "solution": "const status = document.querySelector('#status');\nstatus.textContent = 'Pret';",
+    "checks": [
+      {
+        "label": "textContent met a jour le texte.",
+        "contains": "status.textContent",
+        "absent": "status.value"
+      }
+    ],
+    "tests": [
+      {
+        "type": "dom",
+        "label": "Le paragraphe affiche Pret.",
+        "fixture": "<p id=\"status\"></p>",
+        "assertions": [
+          {
+            "selector": "#status",
+            "property": "textContent",
+            "equals": "Pret"
+          }
+        ]
+      }
+    ],
+    "explanation": "Un paragraphe se met a jour avec textContent, pas value.",
+    "references": [
+      "textContent",
+      "dom"
+    ]
+  },
+  {
+    "id": "extra-dom-class-fix-001",
+    "domain": "dom",
+    "topic": "classes",
+    "level": 4,
+    "type": "code-fix",
+    "question": "Corrige ce code pour ajouter une classe active.",
+    "code": "const panel = document.querySelector('#panel');\npanel.class = 'active';",
+    "solution": "const panel = document.querySelector('#panel');\npanel.classList.add('active');",
+    "checks": [
+      {
+        "label": "classList.add est utilise.",
+        "contains": "classList.add",
+        "absent": "panel.class ="
+      }
+    ],
+    "tests": [
+      {
+        "type": "dom",
+        "label": "La classe active est ajoutee.",
+        "fixture": "<section id=\"panel\"></section>",
+        "assertions": [
+          {
+            "selector": "#panel",
+            "property": "className",
+            "contains": "active"
+          }
+        ]
+      }
+    ],
+    "explanation": "classList permet de manipuler les classes sans ecraser tout l'attribut.",
+    "references": [
+      "classList",
+      "classes"
+    ]
+  },
+  {
+    "id": "extra-dom-create-fix-001",
+    "domain": "dom",
+    "topic": "create-elements",
+    "level": 5,
+    "type": "code-fix",
+    "question": "Corrige l'ajout de cet element dans la liste.",
+    "code": "const list = document.querySelector('#items');\nconst li = document.createElement('li');\nli.textContent = 'HTML';\nlist.append('li');",
+    "solution": "const list = document.querySelector('#items');\nconst li = document.createElement('li');\nli.textContent = 'HTML';\nlist.append(li);",
+    "checks": [
+      {
+        "label": "L'element li est ajoute, pas la chaine.",
+        "contains": "list.append(li)",
+        "absent": "list.append('li')"
+      }
+    ],
+    "tests": [
+      {
+        "type": "dom",
+        "label": "La liste contient un item HTML.",
+        "fixture": "<ul id=\"items\"></ul>",
+        "assertions": [
+          {
+            "selector": "#items li",
+            "property": "textContent",
+            "equals": "HTML"
+          }
+        ]
+      }
+    ],
+    "explanation": "append doit recevoir le noeud cree, pas une chaine contenant son nom.",
+    "references": [
+      "createElement",
+      "append"
+    ]
+  },
+  {
+    "id": "extra-dom-ready-order-001",
+    "domain": "dom",
+    "topic": "loading",
+    "level": 1,
+    "type": "order",
+    "question": "Remets les etapes pour manipuler un element sans erreur de chargement.",
+    "options": [
+      "Selectionner l'element",
+      "Attendre que le DOM soit pret",
+      "Ajouter le gestionnaire",
+      "Tester le clic"
+    ],
+    "answers": [
+      1,
+      0,
+      2,
+      3
+    ],
+    "explanation": "Le DOM doit etre disponible avant la selection.",
+    "references": [
+      "dom",
+      "loading"
+    ]
+  },
+  {
+    "id": "extra-dom-delegation-order-001",
+    "domain": "dom",
+    "topic": "events",
+    "level": 5,
+    "type": "order",
+    "question": "Remets les etapes d'une delegation d'evenement.",
+    "options": [
+      "Tester si target correspond",
+      "Ecouter le parent",
+      "Executer l'action",
+      "Laisser les enfants declencher l'evenement"
+    ],
+    "answers": [
+      1,
+      3,
+      0,
+      2
+    ],
+    "explanation": "Le parent ecoute, l'evenement remonte depuis l'enfant, puis target est filtre.",
+    "references": [
+      "events",
+      "delegation"
+    ]
+  },
+  {
+    "id": "extra-dom-storage-match-001",
+    "domain": "dom",
+    "topic": "storage",
+    "level": 5,
+    "type": "match",
+    "question": "Associe chaque stockage navigateur a son usage typique.",
+    "items": [
+      {
+        "prompt": "localStorage",
+        "answer": "Preference persistante simple"
+      },
+      {
+        "prompt": "sessionStorage",
+        "answer": "Donnee limitee a l'onglet"
+      },
+      {
+        "prompt": "cookie",
+        "answer": "Petite donnee envoyable au serveur"
+      }
+    ],
+    "choices": [
+      "Donnee limitee a l'onglet",
+      "Petite donnee envoyable au serveur",
+      "Preference persistante simple"
+    ],
+    "explanation": "Le choix du stockage depend de la duree et du contexte d'utilisation.",
+    "references": [
+      "storage",
+      "browser"
+    ]
+  },
+  {
+    "id": "extra-dom-access-order-001",
+    "domain": "dom",
+    "topic": "accessibility",
+    "level": 5,
+    "type": "order",
+    "question": "Remets une mise a jour accessible dans l'ordre.",
+    "options": [
+      "Mettre a jour le texte",
+      "Selectionner la zone aria-live",
+      "Declencher l'action utilisateur",
+      "Verifier l'annonce"
+    ],
+    "answers": [
+      1,
+      2,
+      0,
+      3
+    ],
+    "explanation": "La zone existe, l'action arrive, le texte change, puis on controle l'annonce.",
+    "references": [
+      "aria-live",
+      "accessibility",
+      "events"
+    ]
   }
 ]
