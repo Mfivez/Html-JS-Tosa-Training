@@ -1355,5 +1355,201 @@
       "validation",
       "accessibility"
     ]
+  },
+  {
+    "id": "advanced-html-forms-multiple-001",
+    "domain": "html",
+    "topic": "forms",
+    "level": 4,
+    "type": "multiple",
+    "question": "Quels attributs de contrainte native peuvent participer a la validation d'un input ?",
+    "options": [
+      "pattern",
+      "min",
+      "max",
+      "onclick"
+    ],
+    "answers": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "pattern, min et max sont des contraintes natives. onclick est un gestionnaire d'evenement.",
+    "references": [
+      "forms",
+      "validation"
+    ]
+  },
+  {
+    "id": "advanced-html-aria-multiple-001",
+    "domain": "html",
+    "topic": "accessibility",
+    "level": 5,
+    "type": "multiple",
+    "question": "Quelles affirmations ARIA sont prudentes ?",
+    "options": [
+      "Preferer le HTML natif quand il existe",
+      "Ajouter role=\"button\" impose aussi un comportement clavier",
+      "aria-label peut nommer un bouton icone",
+      "ARIA corrige automatiquement une mauvaise interaction"
+    ],
+    "answers": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "ARIA complete la semantique, mais ne cree pas automatiquement les comportements attendus.",
+    "references": [
+      "aria",
+      "accessibility"
+    ]
+  },
+  {
+    "id": "advanced-html-pattern-output-001",
+    "domain": "html",
+    "topic": "forms",
+    "level": 4,
+    "type": "code-output",
+    "question": "Quelle contrainte exprime ce champ ?",
+    "code": "<input type=\"number\" min=\"1\" max=\"5\" step=\"1\">",
+    "options": [
+      "Un entier de 1 a 5",
+      "Un texte libre",
+      "Un email obligatoire",
+      "Une date future"
+    ],
+    "answers": [
+      0
+    ],
+    "explanation": "type number, min, max et step bornent la saisie numerique.",
+    "references": [
+      "forms",
+      "validation"
+    ]
+  },
+  {
+    "id": "advanced-html-form-fix-001",
+    "domain": "html",
+    "topic": "forms",
+    "level": 5,
+    "type": "code-fix",
+    "question": "Corrige ce champ numerique pour accepter uniquement des pas de 5 entre 0 et 100.",
+    "code": "<input type=\"number\" min=\"0\" max=\"100\">",
+    "solution": "<input type=\"number\" min=\"0\" max=\"100\" step=\"5\">",
+    "checks": [
+      {
+        "label": "Le pas de 5 est defini.",
+        "contains": "step=\"5\""
+      }
+    ],
+    "tests": [
+      {
+        "type": "html",
+        "label": "Le champ possede la contrainte step.",
+        "assertions": [
+          {
+            "selector": "input",
+            "attribute": "step",
+            "equals": "5"
+          }
+        ]
+      }
+    ],
+    "explanation": "step controle les increments acceptes pour un champ numerique.",
+    "references": [
+      "forms",
+      "validation",
+      "step"
+    ]
+  },
+  {
+    "id": "advanced-html-aria-match-001",
+    "domain": "html",
+    "topic": "accessibility",
+    "level": 5,
+    "type": "match",
+    "question": "Associe chaque attribut ARIA a son usage legitime.",
+    "items": [
+      {
+        "prompt": "aria-expanded",
+        "answer": "Etat ouvert/ferme d'un controle"
+      },
+      {
+        "prompt": "aria-describedby",
+        "answer": "Description supplementaire"
+      },
+      {
+        "prompt": "aria-live",
+        "answer": "Annonce de mise a jour dynamique"
+      }
+    ],
+    "choices": [
+      "Annonce de mise a jour dynamique",
+      "Etat ouvert/ferme d'un controle",
+      "Description supplementaire"
+    ],
+    "explanation": "ARIA doit decrire un etat ou une relation utile aux technologies d'assistance.",
+    "references": [
+      "aria",
+      "accessibility"
+    ]
+  },
+  {
+    "id": "advanced-html-form-match-001",
+    "domain": "html",
+    "topic": "forms",
+    "level": 4,
+    "type": "match",
+    "question": "Associe chaque attribut de formulaire a son effet.",
+    "items": [
+      {
+        "prompt": "required",
+        "answer": "Rend la saisie obligatoire"
+      },
+      {
+        "prompt": "pattern",
+        "answer": "Impose une expression reguliere"
+      },
+      {
+        "prompt": "autocomplete",
+        "answer": "Aide le remplissage automatique"
+      }
+    ],
+    "choices": [
+      "Aide le remplissage automatique",
+      "Impose une expression reguliere",
+      "Rend la saisie obligatoire"
+    ],
+    "explanation": "Ces attributs renforcent la qualite de saisie sans JavaScript.",
+    "references": [
+      "forms",
+      "validation"
+    ]
+  },
+  {
+    "id": "advanced-html-a11y-order-001",
+    "domain": "html",
+    "topic": "accessibility",
+    "level": 5,
+    "type": "order",
+    "question": "Remets une demarche d'accessibilite HTML dans l'ordre.",
+    "options": [
+      "Ajouter ARIA seulement si necessaire",
+      "Choisir une balise native adaptee",
+      "Verifier le clavier",
+      "Nommer clairement le controle"
+    ],
+    "answers": [
+      1,
+      3,
+      0,
+      2
+    ],
+    "explanation": "Le HTML natif et les noms clairs passent avant ARIA. Le clavier confirme l'usage reel.",
+    "references": [
+      "accessibility",
+      "aria",
+      "semantics"
+    ]
   }
 ]

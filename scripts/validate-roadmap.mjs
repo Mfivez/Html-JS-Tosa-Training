@@ -68,6 +68,13 @@ const typeCounts = bank.reduce((counts, question) => {
   counts[question.type] = (counts[question.type] ?? 0) + 1;
   return counts;
 }, {});
+if (bank.length < 280) {
+  throw new Error(`Banque de questions trop courte: ${bank.length} au lieu de 280 minimum.`);
+}
+const advancedCount = bank.filter((question) => question.level >= 4).length;
+if (advancedCount < 150) {
+  throw new Error(`Banque avancee insuffisante: ${advancedCount} questions niveau 4/5 au lieu de 150 minimum.`);
+}
 for (const [type, minimum] of Object.entries(minimumByType)) {
   if ((typeCounts[type] ?? 0) < minimum) {
     throw new Error(`Banque insuffisante pour ${type}: ${typeCounts[type] ?? 0} au lieu de ${minimum} minimum.`);

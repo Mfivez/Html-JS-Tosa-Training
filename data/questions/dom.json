@@ -1006,5 +1006,299 @@
       "accessibility",
       "events"
     ]
+  },
+  {
+    "id": "advanced-dom-propagation-multiple-001",
+    "domain": "dom",
+    "topic": "events",
+    "level": 4,
+    "type": "multiple",
+    "question": "Quelles affirmations sur la propagation d'evenements sont correctes ?",
+    "options": [
+      "La capture descend vers la cible",
+      "Le bubbling remonte vers les ancetres",
+      "stopPropagation peut bloquer la delegation",
+      "currentTarget vaut toujours target"
+    ],
+    "answers": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "currentTarget est l'element qui porte le gestionnaire, pas toujours la cible reelle.",
+    "references": [
+      "events",
+      "propagation",
+      "delegation"
+    ]
+  },
+  {
+    "id": "advanced-dom-xss-multiple-001",
+    "domain": "dom",
+    "topic": "security",
+    "level": 5,
+    "type": "multiple",
+    "question": "Quelles pratiques reduisent un risque XSS dans le DOM ?",
+    "options": [
+      "Utiliser textContent pour du texte utilisateur",
+      "Sanitizer un HTML indispensable",
+      "Construire les noeuds avec createElement",
+      "Injecter directement une saisie dans innerHTML"
+    ],
+    "answers": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "innerHTML avec une saisie non fiable peut introduire du HTML dangereux.",
+    "references": [
+      "security",
+      "xss",
+      "innerHTML"
+    ]
+  },
+  {
+    "id": "advanced-dom-current-target-output-001",
+    "domain": "dom",
+    "topic": "events",
+    "level": 4,
+    "type": "code-output",
+    "question": "Qu'affiche ce gestionnaire simplifie ?",
+    "code": "const event = {\n  target: { id: 'child' },\n  currentTarget: { id: 'parent' }\n};\nconsole.log(event.target.id + '/' + event.currentTarget.id);",
+    "options": [
+      "child/parent",
+      "parent/child",
+      "child/child",
+      "parent/parent"
+    ],
+    "answers": [
+      0
+    ],
+    "explanation": "target est la source reelle, currentTarget est l'element qui execute le gestionnaire.",
+    "references": [
+      "events",
+      "target",
+      "currentTarget"
+    ]
+  },
+  {
+    "id": "advanced-dom-dataset-output-001",
+    "domain": "dom",
+    "topic": "dataset",
+    "level": 4,
+    "type": "code-output",
+    "question": "Qu'affiche ce code ?",
+    "code": "const button = { dataset: { action: 'save' } };\nconsole.log(button.dataset.action);",
+    "options": [
+      "save",
+      "data-action",
+      "button",
+      "undefined"
+    ],
+    "answers": [
+      0
+    ],
+    "explanation": "dataset expose les attributs data-* en proprietes camelCase.",
+    "references": [
+      "dataset",
+      "dom"
+    ]
+  },
+  {
+    "id": "advanced-dom-delegation-fix-001",
+    "domain": "dom",
+    "topic": "events",
+    "level": 4,
+    "type": "code-fix",
+    "question": "Corrige cette delegation pour ignorer les clics hors bouton.",
+    "code": "const list = document.querySelector('#list');\nlist.addEventListener('click', (event) => {\n  console.log(event.currentTarget.dataset.id);\n});",
+    "solution": "const list = document.querySelector('#list');\nlist.addEventListener('click', (event) => {\n  const button = event.target.closest('button[data-id]');\n  if (!button) return;\n  console.log(button.dataset.id);\n});",
+    "checks": [
+      {
+        "label": "La cible est filtree avec closest.",
+        "contains": "closest('button[data-id]')"
+      },
+      {
+        "label": "Le code ignore les clics hors bouton.",
+        "contains": "if (!button) return"
+      }
+    ],
+    "tests": [
+      {
+        "type": "dom",
+        "label": "Le clic sur le bouton affiche son id.",
+        "fixture": "<div id=\"list\"><button data-id=\"42\"><span>Supprimer</span></button></div>",
+        "actions": [
+          {
+            "click": "button span"
+          }
+        ],
+        "assertions": [
+          {
+            "selector": "button",
+            "attribute": "data-id",
+            "equals": "42"
+          }
+        ]
+      }
+    ],
+    "explanation": "En delegation, il faut remonter depuis event.target vers l'element attendu.",
+    "references": [
+      "events",
+      "delegation",
+      "closest"
+    ]
+  },
+  {
+    "id": "advanced-dom-safe-render-fix-001",
+    "domain": "dom",
+    "topic": "security",
+    "level": 5,
+    "type": "code-fix",
+    "question": "Corrige le rendu pour inserer du texte utilisateur sans HTML.",
+    "code": "const output = document.querySelector('#output');\nconst name = '<img src=x onerror=alert(1)>';\noutput.innerHTML = name;",
+    "solution": "const output = document.querySelector('#output');\nconst name = '<img src=x onerror=alert(1)>';\noutput.textContent = name;",
+    "checks": [
+      {
+        "label": "textContent est utilise.",
+        "contains": "output.textContent",
+        "absent": "output.innerHTML"
+      }
+    ],
+    "tests": [
+      {
+        "type": "dom",
+        "label": "Le contenu reste du texte brut.",
+        "fixture": "<p id=\"output\"></p>",
+        "assertions": [
+          {
+            "selector": "#output",
+            "property": "textContent",
+            "contains": "<img"
+          }
+        ]
+      }
+    ],
+    "explanation": "textContent n'interprete pas la chaine comme du HTML.",
+    "references": [
+      "security",
+      "xss",
+      "textContent"
+    ]
+  },
+  {
+    "id": "advanced-dom-phases-match-001",
+    "domain": "dom",
+    "topic": "events",
+    "level": 4,
+    "type": "match",
+    "question": "Associe chaque phase d'evenement a sa description.",
+    "items": [
+      {
+        "prompt": "capture",
+        "answer": "Descend des ancetres vers la cible"
+      },
+      {
+        "prompt": "target",
+        "answer": "Arrive sur l'element cible"
+      },
+      {
+        "prompt": "bubble",
+        "answer": "Remonte vers les ancetres"
+      }
+    ],
+    "choices": [
+      "Remonte vers les ancetres",
+      "Arrive sur l'element cible",
+      "Descend des ancetres vers la cible"
+    ],
+    "explanation": "Le cycle complet peut passer par capture, cible puis bubbling.",
+    "references": [
+      "events",
+      "propagation"
+    ]
+  },
+  {
+    "id": "advanced-dom-template-match-001",
+    "domain": "dom",
+    "topic": "templates",
+    "level": 5,
+    "type": "match",
+    "question": "Associe chaque API de rendu dynamique a son usage.",
+    "items": [
+      {
+        "prompt": "template.content",
+        "answer": "Fragment modele a cloner"
+      },
+      {
+        "prompt": "cloneNode(true)",
+        "answer": "Copie profonde d'un noeud"
+      },
+      {
+        "prompt": "append",
+        "answer": "Insertion dans le DOM"
+      }
+    ],
+    "choices": [
+      "Insertion dans le DOM",
+      "Fragment modele a cloner",
+      "Copie profonde d'un noeud"
+    ],
+    "explanation": "Les templates evitent de reconstruire du HTML a la main avec des chaines.",
+    "references": [
+      "templates",
+      "dom"
+    ]
+  },
+  {
+    "id": "advanced-dom-propagation-order-001",
+    "domain": "dom",
+    "topic": "events",
+    "level": 4,
+    "type": "order",
+    "question": "Remets les phases d'un evenement complet dans l'ordre.",
+    "options": [
+      "Bubbling",
+      "Capture",
+      "Cible",
+      "Gestionnaire du document en capture"
+    ],
+    "answers": [
+      3,
+      1,
+      2,
+      0
+    ],
+    "explanation": "Un gestionnaire document en capture passe tot, puis l'evenement descend, atteint la cible et remonte.",
+    "references": [
+      "events",
+      "propagation"
+    ]
+  },
+  {
+    "id": "advanced-dom-secure-render-order-001",
+    "domain": "dom",
+    "topic": "security",
+    "level": 5,
+    "type": "order",
+    "question": "Remets une insertion utilisateur securisee dans l'ordre.",
+    "options": [
+      "Assigner avec textContent",
+      "Recuperer la saisie",
+      "Selectionner le conteneur",
+      "Tester une saisie contenant du HTML"
+    ],
+    "answers": [
+      2,
+      1,
+      0,
+      3
+    ],
+    "explanation": "Le conteneur est selectionne, la saisie est lue, puis inseree comme texte et testee.",
+    "references": [
+      "security",
+      "xss",
+      "textContent"
+    ]
   }
 ]

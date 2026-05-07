@@ -1598,5 +1598,430 @@
       "import",
       "export"
     ]
+  },
+  {
+    "id": "advanced-js-event-loop-multiple-001",
+    "domain": "javascript",
+    "topic": "event-loop",
+    "level": 4,
+    "type": "multiple",
+    "question": "Quelles affirmations sur l'event loop sont correctes ?",
+    "options": [
+      "Le code synchrone s'execute avant les microtaches deja planifiees",
+      "Les callbacks de Promise passent par la file des microtaches",
+      "setTimeout(..., 0) s'execute toujours avant Promise.then",
+      "Une longue boucle synchrone bloque le rendu"
+    ],
+    "answers": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "Les microtaches Promise passent apres le code synchrone courant et avant les macrotaches comme setTimeout.",
+    "references": [
+      "event-loop",
+      "promises",
+      "performance"
+    ]
+  },
+  {
+    "id": "advanced-js-mutation-multiple-001",
+    "domain": "javascript",
+    "topic": "objects",
+    "level": 4,
+    "type": "multiple",
+    "question": "Quelles operations creent une copie superficielle d'un objet ou tableau ?",
+    "options": [
+      "{ ...user }",
+      "items.slice()",
+      "const copy = user",
+      "[...items]"
+    ],
+    "answers": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "L'affectation directe garde la meme reference. Les autres creent une copie superficielle.",
+    "references": [
+      "objects",
+      "arrays",
+      "references"
+    ]
+  },
+  {
+    "id": "advanced-js-modules-multiple-001",
+    "domain": "javascript",
+    "topic": "modules",
+    "level": 5,
+    "type": "multiple",
+    "question": "Quelles affirmations sur les modules JavaScript sont correctes ?",
+    "options": [
+      "Les imports statiques doivent etre au niveau du module",
+      "Les modules sont executes en mode strict",
+      "export default autorise un import sans accolades",
+      "Un module partage automatiquement toutes ses variables globales"
+    ],
+    "answers": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Les modules ont leur propre scope. On exporte explicitement ce qui doit etre consomme ailleurs.",
+    "references": [
+      "modules",
+      "import",
+      "export",
+      "strict-mode"
+    ]
+  },
+  {
+    "id": "advanced-js-event-loop-output-001",
+    "domain": "javascript",
+    "topic": "event-loop",
+    "level": 5,
+    "type": "code-output",
+    "question": "Quel est l'ordre d'affichage ?",
+    "code": "console.log('sync');\nsetTimeout(() => console.log('timeout'), 0);\nPromise.resolve().then(() => console.log('promise'));\nconsole.log('end');",
+    "options": [
+      "sync end promise timeout",
+      "sync promise end timeout",
+      "promise sync end timeout",
+      "sync end timeout promise"
+    ],
+    "answers": [
+      0
+    ],
+    "explanation": "Le synchrone passe d'abord, puis les microtaches Promise, puis le timeout.",
+    "references": [
+      "event-loop",
+      "promises",
+      "setTimeout"
+    ]
+  },
+  {
+    "id": "advanced-js-closure-output-001",
+    "domain": "javascript",
+    "topic": "closures",
+    "level": 5,
+    "type": "code-output",
+    "question": "Qu'affiche ce code ?",
+    "code": "function makeAdder(base) {\n  return (value) => base + value;\n}\nconst add10 = makeAdder(10);\nconsole.log(add10(5));",
+    "options": [
+      "5",
+      "10",
+      "15",
+      "undefined"
+    ],
+    "answers": [
+      2
+    ],
+    "explanation": "La fonction retournee garde acces a base grace a la closure.",
+    "references": [
+      "closures",
+      "functions",
+      "scope"
+    ]
+  },
+  {
+    "id": "advanced-js-this-detach-output-001",
+    "domain": "javascript",
+    "topic": "this",
+    "level": 5,
+    "type": "code-output",
+    "question": "Que produit ce code en mode strict ?",
+    "code": "'use strict';\nconst user = { name: 'Ada', getName() { return this.name; } };\nconst getName = user.getName;\nconsole.log(getName());",
+    "options": [
+      "Ada",
+      "undefined",
+      "TypeError",
+      "getName"
+    ],
+    "answers": [
+      2
+    ],
+    "explanation": "La methode detachee perd son receveur. En strict mode, this vaut undefined.",
+    "references": [
+      "this",
+      "strict-mode",
+      "objects"
+    ]
+  },
+  {
+    "id": "advanced-js-copy-fix-001",
+    "domain": "javascript",
+    "topic": "references",
+    "level": 4,
+    "type": "code-fix",
+    "question": "Corrige ce code pour ne pas modifier l'objet original.",
+    "code": "const user = { name: 'Lin' };\nconst copy = user;\ncopy.name = 'Ada';\nconsole.log(user.name);",
+    "solution": "const user = { name: 'Lin' };\nconst copy = { ...user };\ncopy.name = 'Ada';\nconsole.log(user.name);",
+    "checks": [
+      {
+        "label": "La copie utilise le spread objet.",
+        "contains": "{ ...user }",
+        "absent": "const copy = user"
+      }
+    ],
+    "tests": [
+      {
+        "type": "console",
+        "label": "L'objet original garde le nom Lin.",
+        "expectedLogs": [
+          "Lin"
+        ]
+      }
+    ],
+    "explanation": "Avec const copy = user, les deux variables pointent vers le meme objet.",
+    "references": [
+      "objects",
+      "references",
+      "spread"
+    ]
+  },
+  {
+    "id": "advanced-js-async-trycatch-fix-001",
+    "domain": "javascript",
+    "topic": "async",
+    "level": 5,
+    "type": "code-fix",
+    "question": "Corrige cette fonction pour capturer une erreur async.",
+    "code": "async function loadUser() {\n  const response = await fetch('/user.json');\n  const user = await response.json();\n  return user;\n}",
+    "solution": "async function loadUser() {\n  try {\n    const response = await fetch('/user.json');\n    const user = await response.json();\n    return user;\n  } catch (error) {\n    console.log('erreur');\n    return null;\n  }\n}",
+    "checks": [
+      {
+        "label": "La fonction utilise try/catch.",
+        "contains": [
+          "try",
+          "catch"
+        ]
+      },
+      {
+        "label": "Une valeur de repli est retournee.",
+        "contains": "return null"
+      }
+    ],
+    "tests": [
+      {
+        "type": "console",
+        "label": "Une erreur fetch est capturee.",
+        "before": "globalThis.fetch = async () => { throw new Error('offline'); };",
+        "after": "return loadUser();",
+        "expectedLogs": [
+          "erreur"
+        ]
+      }
+    ],
+    "explanation": "Un rejet de Promise doit etre capture avec try/catch dans une fonction async.",
+    "references": [
+      "async-await",
+      "errors",
+      "fetch"
+    ]
+  },
+  {
+    "id": "advanced-js-this-bind-fix-001",
+    "domain": "javascript",
+    "topic": "this",
+    "level": 5,
+    "type": "code-fix",
+    "question": "Corrige l'appel pour conserver le bon this.",
+    "code": "const button = {\n  label: 'Save',\n  click() { console.log(this.label); }\n};\nconst run = button.click;\nrun();",
+    "solution": "const button = {\n  label: 'Save',\n  click() { console.log(this.label); }\n};\nconst run = button.click.bind(button);\nrun();",
+    "checks": [
+      {
+        "label": "La methode est liee a button.",
+        "contains": ".bind(button)"
+      }
+    ],
+    "tests": [
+      {
+        "type": "console",
+        "label": "Le code affiche Save.",
+        "expectedLogs": [
+          "Save"
+        ]
+      }
+    ],
+    "explanation": "bind fixe explicitement la valeur de this pour l'appel ulterieur.",
+    "references": [
+      "this",
+      "bind",
+      "objects"
+    ]
+  },
+  {
+    "id": "advanced-js-promise-match-001",
+    "domain": "javascript",
+    "topic": "promises",
+    "level": 4,
+    "type": "match",
+    "question": "Associe chaque etat de Promise a sa signification.",
+    "items": [
+      {
+        "prompt": "pending",
+        "answer": "En attente"
+      },
+      {
+        "prompt": "fulfilled",
+        "answer": "Resolue avec une valeur"
+      },
+      {
+        "prompt": "rejected",
+        "answer": "Terminee en erreur"
+      }
+    ],
+    "choices": [
+      "Terminee en erreur",
+      "En attente",
+      "Resolue avec une valeur"
+    ],
+    "explanation": "Une Promise finit soit resolue, soit rejetee.",
+    "references": [
+      "promises",
+      "async"
+    ]
+  },
+  {
+    "id": "advanced-js-modules-match-001",
+    "domain": "javascript",
+    "topic": "modules",
+    "level": 5,
+    "type": "match",
+    "question": "Associe chaque syntaxe de module a son role.",
+    "items": [
+      {
+        "prompt": "export",
+        "answer": "Exposer une valeur nommee"
+      },
+      {
+        "prompt": "export default",
+        "answer": "Exposer une valeur principale"
+      },
+      {
+        "prompt": "import { x }",
+        "answer": "Importer une valeur nommee"
+      }
+    ],
+    "choices": [
+      "Importer une valeur nommee",
+      "Exposer une valeur principale",
+      "Exposer une valeur nommee"
+    ],
+    "explanation": "Les exports nommes et par defaut ne se consomment pas avec la meme syntaxe.",
+    "references": [
+      "modules",
+      "import",
+      "export"
+    ]
+  },
+  {
+    "id": "advanced-js-copy-match-001",
+    "domain": "javascript",
+    "topic": "immutability",
+    "level": 4,
+    "type": "match",
+    "question": "Associe chaque intention a une technique JavaScript.",
+    "items": [
+      {
+        "prompt": "Copier un tableau",
+        "answer": "[...items]"
+      },
+      {
+        "prompt": "Copier un objet",
+        "answer": "{ ...user }"
+      },
+      {
+        "prompt": "Fusionner sans muter",
+        "answer": "Object.assign({}, a, b)"
+      }
+    ],
+    "choices": [
+      "{ ...user }",
+      "Object.assign({}, a, b)",
+      "[...items]"
+    ],
+    "explanation": "Ces techniques creent des copies superficielles.",
+    "references": [
+      "spread",
+      "immutability",
+      "objects"
+    ]
+  },
+  {
+    "id": "advanced-js-event-loop-order-001",
+    "domain": "javascript",
+    "topic": "event-loop",
+    "level": 4,
+    "type": "order",
+    "question": "Classe l'execution de ces actions dans un tour d'event loop.",
+    "options": [
+      "Callback setTimeout",
+      "Code synchrone",
+      "Callback Promise.then",
+      "Rendu possible du navigateur"
+    ],
+    "answers": [
+      1,
+      2,
+      3,
+      0
+    ],
+    "explanation": "Le synchrone passe avant les microtaches. Le navigateur peut rendre avant les macrotaches suivantes.",
+    "references": [
+      "event-loop",
+      "rendering"
+    ]
+  },
+  {
+    "id": "advanced-js-fetch-order-001",
+    "domain": "javascript",
+    "topic": "fetch",
+    "level": 5,
+    "type": "order",
+    "question": "Remets une fonction fetch robuste dans l'ordre.",
+    "options": [
+      "Parser le JSON",
+      "Verifier response.ok",
+      "Appeler fetch avec await",
+      "Retourner les donnees"
+    ],
+    "answers": [
+      2,
+      1,
+      0,
+      3
+    ],
+    "explanation": "On attend la reponse, on verifie le statut, on parse, puis on retourne.",
+    "references": [
+      "fetch",
+      "async-await",
+      "errors"
+    ]
+  },
+  {
+    "id": "advanced-js-module-order-002",
+    "domain": "javascript",
+    "topic": "modules",
+    "level": 5,
+    "type": "order",
+    "question": "Remets les etapes d'extraction d'un module utilitaire.",
+    "options": [
+      "Importer dans le fichier consommateur",
+      "Ecrire la fonction pure",
+      "Exporter la fonction",
+      "Remplacer le code duplique"
+    ],
+    "answers": [
+      1,
+      2,
+      0,
+      3
+    ],
+    "explanation": "On isole d'abord le comportement, on l'exporte, on l'importe, puis on remplace les usages.",
+    "references": [
+      "modules",
+      "refactoring"
+    ]
   }
 ]

@@ -999,5 +999,249 @@
       "exam",
       "practice"
     ]
+  },
+  {
+    "id": "advanced-integration-debug-multiple-001",
+    "domain": "integration",
+    "topic": "debug",
+    "level": 4,
+    "type": "multiple",
+    "question": "Quels controles font sens quand une page GitHub Pages n'affiche pas les donnees JSON ?",
+    "options": [
+      "Verifier le statut HTTP du JSON",
+      "Verifier que le dossier data est dans l'artifact",
+      "Regarder la console navigateur",
+      "Renommer index.html au hasard"
+    ],
+    "answers": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Les pannes statiques se diagnostiquent avec le reseau, l'artifact et la console.",
+    "references": [
+      "github-pages",
+      "debug",
+      "fetch"
+    ]
+  },
+  {
+    "id": "advanced-integration-a11y-multiple-001",
+    "domain": "integration",
+    "topic": "accessibility",
+    "level": 5,
+    "type": "multiple",
+    "question": "Quels points verifier sur un composant interactif custom ?",
+    "options": [
+      "Nom accessible",
+      "Interaction clavier",
+      "Etat aria si necessaire",
+      "Couleur aleatoire a chaque clic"
+    ],
+    "answers": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Un composant custom doit rester comprehensible et utilisable sans souris.",
+    "references": [
+      "accessibility",
+      "aria",
+      "components"
+    ]
+  },
+  {
+    "id": "advanced-integration-form-output-001",
+    "domain": "integration",
+    "topic": "forms",
+    "level": 4,
+    "type": "code-output",
+    "question": "Qu'affiche ce code de normalisation ?",
+    "code": "const email = ' ADA@EXAMPLE.COM '.trim().toLowerCase();\nconsole.log(email);",
+    "options": [
+      "ADA@EXAMPLE.COM",
+      "ada@example.com",
+      " ADA@EXAMPLE.COM ",
+      "undefined"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "trim retire les espaces autour, puis toLowerCase met en minuscules.",
+    "references": [
+      "forms",
+      "strings",
+      "validation"
+    ]
+  },
+  {
+    "id": "advanced-integration-cache-output-001",
+    "domain": "integration",
+    "topic": "cache",
+    "level": 5,
+    "type": "code-output",
+    "question": "Quelle URL contourne le plus probablement un cache d'ancien app.js ?",
+    "code": "<script src=\"app.js?v=3\"></script>",
+    "options": [
+      "app.js?v=3",
+      "app.js sans changement",
+      "style.css",
+      "manifest.json uniquement"
+    ],
+    "answers": [
+      0
+    ],
+    "explanation": "Changer la query string force souvent le navigateur a demander une nouvelle ressource.",
+    "references": [
+      "cache",
+      "deployment"
+    ]
+  },
+  {
+    "id": "advanced-integration-page-fix-001",
+    "domain": "integration",
+    "topic": "html-css",
+    "level": 4,
+    "type": "code-fix",
+    "question": "Corrige cette carte pour que le CSS cible bien le HTML.",
+    "code": "<article class=\"product-card\">\n  <h2>Produit</h2>\n</article>\n\n#product-card {\n  padding: 24px;\n}",
+    "solution": "<article class=\"product-card\">\n  <h2>Produit</h2>\n</article>\n\n.product-card {\n  padding: 24px;\n}",
+    "checks": [
+      {
+        "label": "Le CSS cible la classe.",
+        "contains": ".product-card",
+        "absent": "#product-card"
+      }
+    ],
+    "tests": [
+      {
+        "type": "page",
+        "mode": "html-css",
+        "label": "La carte recoit le padding attendu.",
+        "assertions": [
+          {
+            "selector": ".product-card",
+            "computed": "padding-top",
+            "equals": "24px"
+          }
+        ]
+      }
+    ],
+    "explanation": "class se cible avec un point. # cible un id.",
+    "references": [
+      "selectors",
+      "integration"
+    ]
+  },
+  {
+    "id": "advanced-integration-js-state-fix-001",
+    "domain": "integration",
+    "topic": "components",
+    "level": 5,
+    "type": "code-fix",
+    "question": "Corrige ce composant pour alterner l'etat ouvert.",
+    "code": "<button id=\"toggle\" aria-expanded=\"false\">Menu</button>\n<nav id=\"menu\"></nav>\n\ntoggle.addEventListener('click', () => {\n  menu.classList.add('open');\n  toggle.setAttribute('aria-expanded', 'true');\n});",
+    "solution": "<button id=\"toggle\" aria-expanded=\"false\">Menu</button>\n<nav id=\"menu\"></nav>\n\ntoggle.addEventListener('click', () => {\n  const open = menu.classList.toggle('open');\n  toggle.setAttribute('aria-expanded', String(open));\n});",
+    "checks": [
+      {
+        "label": "classList.toggle est utilise.",
+        "contains": "classList.toggle"
+      },
+      {
+        "label": "aria-expanded suit l'etat.",
+        "contains": "setAttribute('aria-expanded'"
+      }
+    ],
+    "tests": [
+      {
+        "type": "page",
+        "mode": "html-js",
+        "label": "Deux clics ouvrent puis referment le menu.",
+        "actions": [
+          {
+            "click": "#toggle"
+          },
+          {
+            "click": "#toggle"
+          }
+        ],
+        "assertions": [
+          {
+            "selector": "#toggle",
+            "attribute": "aria-expanded",
+            "equals": "false"
+          },
+          {
+            "selector": "#menu",
+            "property": "className",
+            "equals": ""
+          }
+        ]
+      }
+    ],
+    "explanation": "Un composant toggle doit pouvoir ouvrir et fermer, pas seulement ouvrir.",
+    "references": [
+      "components",
+      "aria",
+      "state"
+    ]
+  },
+  {
+    "id": "advanced-integration-deploy-match-001",
+    "domain": "integration",
+    "topic": "deployment",
+    "level": 4,
+    "type": "match",
+    "question": "Associe chaque fichier deploye a son role dans l'app.",
+    "items": [
+      {
+        "prompt": "manifest.json",
+        "answer": "Liste les parcours actifs"
+      },
+      {
+        "prompt": "data/questions/*.json",
+        "answer": "Alimente examen et entrainement"
+      },
+      {
+        "prompt": "app.js",
+        "answer": "Rend l'interface SPA"
+      }
+    ],
+    "choices": [
+      "Rend l'interface SPA",
+      "Alimente examen et entrainement",
+      "Liste les parcours actifs"
+    ],
+    "explanation": "Ces fichiers doivent tous etre presents dans l'artifact Pages.",
+    "references": [
+      "deployment",
+      "github-pages"
+    ]
+  },
+  {
+    "id": "advanced-integration-quality-order-001",
+    "domain": "integration",
+    "topic": "quality",
+    "level": 5,
+    "type": "order",
+    "question": "Remets un controle de regression front dans l'ordre.",
+    "options": [
+      "Corriger les erreurs detectees",
+      "Tester les routes clefs",
+      "Lancer la validation",
+      "Verifier le site publie"
+    ],
+    "answers": [
+      2,
+      1,
+      0,
+      3
+    ],
+    "explanation": "On valide, on teste localement, on corrige, puis on controle le publie.",
+    "references": [
+      "quality",
+      "deployment",
+      "testing"
+    ]
   }
 ]

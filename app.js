@@ -729,7 +729,9 @@ function runCodeTest(code, test) {
 
     iframe.srcdoc = `
       <!doctype html>
-      <meta charset="utf-8">
+      <html>
+      <head><meta charset="utf-8"></head>
+      <body>
       <script>
         (async () => {
           const runId = ${serializeForScript(runId)};
@@ -771,11 +773,27 @@ function runCodeTest(code, test) {
             const returned = new Function(executable)();
             if (returned && typeof returned.then === "function") await returned;
           };
+          const applyHtml = (source) => {
+            if (/<html[\\s>]/i.test(source)) {
+              const parsed = new DOMParser().parseFromString(source, "text/html");
+              const lang = parsed.documentElement.getAttribute("lang");
+              if (lang) document.documentElement.setAttribute("lang", lang);
+              document.head.innerHTML = parsed.head.innerHTML;
+              document.body.innerHTML = parsed.body.innerHTML;
+              return;
+            }
+            document.body.innerHTML = source;
+          };
+          const ensureDocumentShell = () => {
+            if (!document.head) document.documentElement.prepend(document.createElement("head"));
+            if (!document.body) document.documentElement.appendChild(document.createElement("body"));
+          };
 
           try {
+            ensureDocumentShell();
             document.body.innerHTML = test.fixture || "";
             if (test.type === "html") {
-              document.body.innerHTML = userCode;
+              applyHtml(userCode);
             } else if (test.type === "css") {
               const style = document.createElement("style");
               style.textContent = userCode;
@@ -850,6 +868,8 @@ function runCodeTest(code, test) {
           }
         })();
       <\/script>
+      </body>
+      </html>
     `;
   });
 }
