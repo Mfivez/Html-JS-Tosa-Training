@@ -6,8 +6,10 @@ Application statique pour entraîner des apprenants au TOSA Web HTML / CSS / Jav
 
 - Affiche un parcours d'entraînement depuis `courses/`.
 - Propose des QCM simples et multi-réponses.
-- Propose une banque de questions en 5 niveaux de difficulté.
+- Propose un examen blanc TOSA Web de 35 questions, piochées aléatoirement dans la banque.
+- Propose une banque de questions en 5 niveaux de difficulté, avec historique local des essais.
 - Propose des zones de code modifiables pour trouver et corriger des erreurs.
+- Teste les exercices code avec un runner sandbox quand un test exécutable est défini.
 - Propose des exercices d'association : balise, attribut, propriété, rôle.
 - Reste 100 % statique : aucun backend, aucune base de données, compatible GitHub Pages public.
 - Génère `manifest.json` via `scripts/build-manifest.mjs`.
@@ -33,20 +35,44 @@ Dans un fichier `.md`, ajoute un bloc JSON dans une clôture dédiée.
 
 ### Code à corriger
 
+Le format recommandé est d'ajouter `tests`. Quand ils existent, ils sont prioritaires sur les `checks` textuels. Les `checks` restent un fallback simple.
+
 ````md
 ```tosa-code
 {
-  "title": "Corrige l'image.",
-  "instructions": "L'image doit être accessible.",
-  "codeLines": ["<img href=\"photo.jpg\">"],
-  "checks": [
-    { "label": "L'image utilise src.", "contains": "src=\"photo.jpg\"" },
-    { "label": "L'image possède alt.", "contains": "alt=" }
+  "title": "Corrige la boucle.",
+  "instructions": "Chaque élément doit être affiché une seule fois.",
+  "codeLines": [
+    "const items = ['html', 'css', 'js'];",
+    "for (let i = 0; i <= items.length; i++) {",
+    "  console.log(item[i]);",
+    "}"
   ],
-  "solutionLines": ["<img src=\"photo.jpg\" alt=\"Description utile\">"]
+  "tests": [
+    {
+      "type": "console",
+      "label": "Le code affiche html, css puis js.",
+      "expectedLogs": ["html", "css", "js"]
+    }
+  ],
+  "checks": [
+    { "label": "La boucle ne dépasse pas la longueur.", "contains": "i < items.length" }
+  ],
+  "solutionLines": [
+    "const items = ['html', 'css', 'js'];",
+    "items.forEach((item) => console.log(item));"
+  ]
 }
 ```
 ````
+
+Types de tests disponibles :
+
+- `console` : compare les logs attendus.
+- `dom` : injecte un HTML de test, exécute le JS, simule des actions puis vérifie le DOM.
+- `html` : analyse la structure HTML proposée.
+- `css` : injecte le CSS et vérifie le rendu calculé.
+- `page` : sépare une réponse HTML+CSS ou HTML+JS en deux blocs, puis vérifie le résultat intégré.
 
 ### Association
 
@@ -74,11 +100,13 @@ Dans un fichier `.md`, ajoute un bloc JSON dans une clôture dédiée.
 ├── courses/
 │   └── html-css/
 │       ├── course.json
-│       ├── 01_mode_examen_tosa.md
-│       ├── 02_qcm_html_css.md
-│       └── ...
+│       ├── exercices/
+│       │   ├── exo_00_installation.md
+│       │   └── ...
+│       └── _archive/
 ├── scripts/
-│   └── build-manifest.mjs
+│   ├── build-manifest.mjs
+│   └── validate-roadmap.mjs
 └── .github/
     └── workflows/
         └── pages.yml
@@ -128,8 +156,9 @@ Crée un dossier dans `courses/` :
 ```txt
 courses/mon-cours/
   course.json
-  01-diagnostic.md
-  02-qcm.md
+  exercices/
+    01-diagnostic.md
+    02-qcm.md
 ```
 
 Exemple de `course.json` :

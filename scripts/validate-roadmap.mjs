@@ -114,6 +114,34 @@ if (css.includes("@media print")) {
   throw new Error("CSS d'impression hors perimetre detecte dans style.css.");
 }
 
+const workflow = await readFile(".github/workflows/pages.yml", "utf8");
+if (!workflow.includes("cp -r data _site/")) {
+  throw new Error("Le workflow GitHub Pages doit deployer le dossier data/ pour l'examen.");
+}
+if (!workflow.includes("cp -r courses _site/")) {
+  throw new Error("Le workflow GitHub Pages doit deployer le dossier courses/.");
+}
+
+const indexHtml = await readFile("index.html", "utf8");
+if (!indexHtml.includes("style.css?v=") || !indexHtml.includes("app.js?v=")) {
+  throw new Error("index.html doit cache-buster style.css et app.js apres les changements applicatifs.");
+}
+
+const manifest = JSON.parse(await readFile("manifest.json", "utf8"));
+if (!Array.isArray(manifest.courses) || manifest.courses.length === 0) {
+  throw new Error("Le manifest ne contient aucun parcours actif.");
+}
+manifest.courses.forEach((course) => {
+  if (!Array.isArray(course.chapters) || course.chapters.length === 0) {
+    throw new Error(`Le parcours ${course.id} ne contient aucun chapitre actif.`);
+  }
+  course.chapters.forEach((chapter) => {
+    if (chapter.file.includes("/_archive/")) {
+      throw new Error(`Chapitre archive present dans le manifest: ${chapter.file}`);
+    }
+  });
+});
+
 console.log(`Roadmap OK: ${bank.length} questions, ${ids.size} IDs uniques, examen 35 questions aleatoire valide.`);
 
 function generateRandomExam(questionBank) {
@@ -255,9 +283,10 @@ function validateQuestionShape(question) {
         throw new Error(`Question ${question.id}: check code-fix invalide.`);
       }
     });
-    if (question.tests !== undefined) {
-      validateCodeTests(question);
+    if (question.tests === undefined) {
+      throw new Error(`Question ${question.id}: code-fix doit avoir des tests executables.`);
     }
+    validateCodeTests(question);
   } else {
     throw new Error(`Question ${question.id}: type inconnu ${question.type}.`);
   }
@@ -269,13 +298,21 @@ function validateCodeTests(question) {
   }
 
   question.tests.forEach((test) => {
-    if (!test.type || !["console", "dom", "html", "css"].includes(test.type)) {
+    if (!test.type || !["console", "dom", "html", "css", "page"].includes(test.type)) {
       throw new Error(`Question ${question.id}: type de test executable invalide.`);
     }
+    if (test.type === "page" && !["html-css", "html-js"].includes(test.mode)) {
+      throw new Error(`Question ${question.id}: test page doit avoir un mode html-css ou html-js.`);
+    }
+    ["before", "after"].forEach((field) => {
+      if (test[field] !== undefined && typeof test[field] !== "string") {
+        throw new Error(`Question ${question.id}: ${field} doit etre une chaine.`);
+      }
+    });
     if (test.type === "console" && (!Array.isArray(test.expectedLogs) || test.expectedLogs.some((log) => typeof log !== "string"))) {
       throw new Error(`Question ${question.id}: test console doit avoir expectedLogs en chaines.`);
     }
-    if (["dom", "html", "css"].includes(test.type)) {
+    if (["dom", "html", "css", "page"].includes(test.type)) {
       if ((test.type === "dom" || test.type === "css") && typeof test.fixture !== "string") {
         throw new Error(`Question ${question.id}: test ${test.type} doit avoir fixture.`);
       }

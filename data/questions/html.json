@@ -302,6 +302,17 @@
       { "label": "A propos est dans un li ferme.", "contains": "<li><a href=\"about.html\">A propos</a></li>" },
       { "label": "Contact est dans un li ferme.", "contains": "<li><a href=\"contact.html\">Contact</a></li>" }
     ],
+    "tests": [
+      {
+        "type": "html",
+        "label": "La navigation contient trois items de liste.",
+        "assertions": [
+          { "selector": "nav ul li", "count": true, "equals": "3" },
+          { "selector": "nav li:first-child a", "attribute": "href", "contains": "index.html" },
+          { "selector": "nav li:last-child a", "attribute": "href", "contains": "contact.html" }
+        ]
+      }
+    ],
     "explanation": "Les navigateurs tolerent parfois les <li> non fermes, mais l'examen teste la rigueur de la syntaxe.",
     "references": ["lists", "navigation", "html"]
   }

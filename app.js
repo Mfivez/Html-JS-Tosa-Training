@@ -266,9 +266,6 @@ async function renderContent(course, chapter, route) {
   fixRelativeUrls(els.content, course, chapter);
   addHeadingAnchors(els.content);
   initTosaActivities(els.content);
-  if (chapter.id === "06_mini_examen_mixte") {
-    initExamRotation(els.content);
-  }
   els.content.focus({ preventScroll: true });
 }
 
@@ -475,33 +472,6 @@ function initTosaActivities(container) {
       renderTosaMatch(activity, config);
     }
   });
-}
-
-function initExamRotation(container) {
-  const STORAGE_KEY = "tosa-exam-rotation";
-  const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
-  const types = ["quiz", "code", "match"];
-
-  types.forEach((type) => {
-    const activities = Array.from(container.querySelectorAll(`.tosa-activity[data-kind="${type}"]`));
-    if (activities.length <= 1) return;
-
-    const prevIndex = stored[type] ?? -1;
-    const nextIndex = (prevIndex + 1) % activities.length;
-    stored[type] = nextIndex;
-
-    activities.forEach((act, i) => {
-      act.hidden = i !== nextIndex;
-    });
-  });
-
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(stored));
-
-  const serieNums = types.map((t) => (stored[t] ?? 0) + 1);
-  const banner = document.createElement("p");
-  banner.className = "exam-rotation-banner";
-  banner.textContent = `Série ${serieNums[0]} / ${Array.from(container.querySelectorAll('.tosa-activity[data-kind="quiz"]')).length}`;
-  container.insertBefore(banner, container.firstChild);
 }
 
 function renderTosaQuiz(activity, config) {
@@ -790,6 +760,17 @@ function runCodeTest(code, test) {
             if (assertion.matches !== undefined) return new RegExp(assertion.matches, assertion.flags || "").test(actual);
             return false;
           };
+          const splitPageCode = () => {
+            const match = userCode.match(/\\n\\s*\\n/);
+            if (!match) return ["", userCode];
+            const index = match.index;
+            return [userCode.slice(0, index), userCode.slice(index + match[0].length)];
+          };
+          const executeScript = async (source) => {
+            const executable = [test.before || "", source, test.after || ""].join("\\n");
+            const returned = new Function(executable)();
+            if (returned && typeof returned.then === "function") await returned;
+          };
 
           try {
             document.body.innerHTML = test.fixture || "";
@@ -799,9 +780,18 @@ function runCodeTest(code, test) {
               const style = document.createElement("style");
               style.textContent = userCode;
               document.head.appendChild(style);
+            } else if (test.type === "page") {
+              const [markup, behavior] = splitPageCode();
+              document.body.innerHTML = markup;
+              if (test.mode === "html-css") {
+                const style = document.createElement("style");
+                style.textContent = behavior;
+                document.head.appendChild(style);
+              } else if (test.mode === "html-js") {
+                await executeScript(behavior);
+              }
             } else {
-              const returned = new Function(userCode)();
-              if (returned && typeof returned.then === "function") await returned;
+              await executeScript(userCode);
             }
 
             for (const action of test.actions || []) {
@@ -825,7 +815,7 @@ function runCodeTest(code, test) {
                 pass: JSON.stringify(logs) === JSON.stringify(expected),
                 details: "Attendu: " + expected.join(", ") + " | Obtenu: " + logs.join(", ")
               });
-            } else if (["dom", "html", "css"].includes(test.type)) {
+            } else if (["dom", "html", "css", "page"].includes(test.type)) {
               for (const assertion of test.assertions || []) {
                 const element = document.querySelector(assertion.selector);
                 const actual = readValue(element, assertion);
@@ -869,6 +859,7 @@ function getCodeTestLabel(test) {
   if (test.type === "dom") return "Comportement DOM attendu.";
   if (test.type === "html") return "Structure HTML attendue.";
   if (test.type === "css") return "Rendu CSS attendu.";
+  if (test.type === "page") return "Page integree attendue.";
   return "Test executable.";
 }
 

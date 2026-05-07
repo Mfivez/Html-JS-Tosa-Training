@@ -390,6 +390,17 @@
       { "label": "grid-template-columns est au pluriel.", "contains": "grid-template-columns: 1fr;" },
       { "label": "La syntaxe incorrecte n'est plus presente.", "absent": "grid-template-column:" }
     ],
+    "tests": [
+      {
+        "type": "css",
+        "label": "La grille devient une seule colonne dans une petite zone.",
+        "fixture": "<div class=\"grid\"><span>A</span><span>B</span></div>",
+        "assertions": [
+          { "selector": ".grid", "computed": "display", "equals": "grid" },
+          { "selector": ".grid", "computed": "grid-template-columns", "matches": "^[0-9.]+px$" }
+        ]
+      }
+    ],
     "explanation": "Les conditions media query s'ecrivent entre parentheses et la propriete Grid est au pluriel.",
     "references": ["responsive", "media-queries", "grid"]
   }

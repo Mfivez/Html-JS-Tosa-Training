@@ -1,4 +1,91 @@
 {
-  "generatedAt": "2026-05-07T14:05:06.879Z",
-  "courses": []
+  "generatedAt": "2026-05-07T14:17:09.222Z",
+  "courses": [
+    {
+      "id": "html-css",
+      "title": "Prépa TOSA Web - HTML / CSS / JS",
+      "description": "Entraînement au format test : QCM, multi-réponses, code à corriger, associations et banque de questions en 5 niveaux.",
+      "order": 2,
+      "chapters": [
+        {
+          "id": "exo_00_installation",
+          "title": "Exo 00 - Installation et premier dossier web",
+          "file": "courses/html-css/exercices/exo_00_installation.md",
+          "order": 1
+        },
+        {
+          "id": "exo_01_page_html_minimale",
+          "title": "Exo 01 - Creer une vraie page HTML minimale",
+          "file": "courses/html-css/exercices/exo_01_page_html_minimale.md",
+          "order": 2
+        },
+        {
+          "id": "exo_02_texte_listes",
+          "title": "Exo 02 - Organiser du texte et creer des listes",
+          "file": "courses/html-css/exercices/exo_02_texte_listes.md",
+          "order": 3
+        },
+        {
+          "id": "exo_03_liens_images_ancres",
+          "title": "Exo 03 - Ajouter des liens, des images et des ancres",
+          "file": "courses/html-css/exercices/exo_03_liens_images_ancres.md",
+          "order": 4
+        },
+        {
+          "id": "exo_04_structure_semantique",
+          "title": "Exo 04 - Structurer une page avec les balises semantiques",
+          "file": "courses/html-css/exercices/exo_04_structure_semantique.md",
+          "order": 5
+        },
+        {
+          "id": "exo_05_css_selecteurs",
+          "title": "Exo 05 - Relier CSS et utiliser les premiers selecteurs",
+          "file": "courses/html-css/exercices/exo_05_css_selecteurs.md",
+          "order": 6
+        },
+        {
+          "id": "exo_06_typographie_couleurs_fonds",
+          "title": "Exo 06 - Typographie, couleurs et arriere-plans",
+          "file": "courses/html-css/exercices/exo_06_typographie_couleurs_fonds.md",
+          "order": 7
+        },
+        {
+          "id": "exo_07_box_model_cartes",
+          "title": "Exo 07 - Comprendre les marges, paddings, bordures et cartes",
+          "file": "courses/html-css/exercices/exo_07_box_model_cartes.md",
+          "order": 8
+        },
+        {
+          "id": "exo_08_pseudo_classes_menu",
+          "title": "Exo 08 - Ajouter des effets avec les pseudo-classes",
+          "file": "courses/html-css/exercices/exo_08_pseudo_classes_menu.md",
+          "order": 9
+        },
+        {
+          "id": "exo_09_formulaire_contact",
+          "title": "Exo 09 - Creer un formulaire de contact",
+          "file": "courses/html-css/exercices/exo_09_formulaire_contact.md",
+          "order": 10
+        },
+        {
+          "id": "exo_10_tableau_horaires",
+          "title": "Exo 10 - Creer et styliser un tableau d'horaires",
+          "file": "courses/html-css/exercices/exo_10_tableau_horaires.md",
+          "order": 11
+        },
+        {
+          "id": "exo_11_responsive",
+          "title": "Exo 11 - Rendre la page lisible sur mobile",
+          "file": "courses/html-css/exercices/exo_11_responsive.md",
+          "order": 12
+        },
+        {
+          "id": "exo_12_recap_site_vitrine",
+          "title": "Exo 12 - Recap final : creer un mini-site vitrine",
+          "file": "courses/html-css/exercices/exo_12_recap_site_vitrine.md",
+          "order": 13
+        }
+      ]
+    }
+  ]
 }

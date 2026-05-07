@@ -33,6 +33,27 @@ function isMarkdownChapter(fileName) {
   return fileName.toLowerCase().endsWith(".md") && !fileName.startsWith("_");
 }
 
+function getMarkdownChapters(courseDir, currentDir = courseDir) {
+  return fs
+    .readdirSync(currentDir, { withFileTypes: true })
+    .flatMap((entry) => {
+      if (entry.name.startsWith("_")) return [];
+
+      const fullPath = path.join(currentDir, entry.name);
+      if (entry.isDirectory()) {
+        return getMarkdownChapters(courseDir, fullPath);
+      }
+
+      if (!entry.isFile() || !isMarkdownChapter(entry.name)) return [];
+
+      const relativePath = path.relative(courseDir, fullPath);
+      return [{
+        file: relativePath,
+        id: path.basename(entry.name, path.extname(entry.name))
+      }];
+    });
+}
+
 if (!fs.existsSync(COURSES_DIR)) {
   fs.mkdirSync(COURSES_DIR, { recursive: true });
 }
@@ -45,17 +66,15 @@ const courses = fs
     const courseDir = path.join(COURSES_DIR, courseId);
     const meta = readJsonIfExists(path.join(courseDir, "course.json"));
 
-    const chapters = fs
-      .readdirSync(courseDir)
-      .filter(isMarkdownChapter)
-      .sort((a, b) => a.localeCompare(b, "fr", { numeric: true, sensitivity: "base" }))
-      .map((file, index) => {
-        const mdPath = path.join(courseDir, file);
+    const chapters = getMarkdownChapters(courseDir)
+      .sort((a, b) => a.file.localeCompare(b.file, "fr", { numeric: true, sensitivity: "base" }))
+      .map((chapter, index) => {
+        const mdPath = path.join(courseDir, chapter.file);
 
         return {
-          id: file.replace(/\.md$/i, ""),
-          title: getChapterTitle(mdPath, file),
-          file: `${courseDir}/${file}`.replaceAll(path.sep, "/"),
+          id: chapter.id,
+          title: getChapterTitle(mdPath, chapter.file),
+          file: `${courseDir}/${chapter.file}`.replaceAll(path.sep, "/"),
           order: index + 1
         };
       });

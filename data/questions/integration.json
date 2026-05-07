@@ -15,6 +15,19 @@
       { "label": "Le CSS cible la classe .card.", "contains": ".card", "absent": "#card" },
       { "label": "Le padding possede une unite.", "contains": "padding: 16px;" }
     ],
+    "tests": [
+      {
+        "type": "page",
+        "mode": "html-css",
+        "label": "La carte HTML/CSS est utilisable et stylee.",
+        "assertions": [
+          { "selector": ".card img", "attribute": "src", "contains": "produit.jpg" },
+          { "selector": ".card img", "attribute": "alt", "matches": ".+" },
+          { "selector": ".card a", "attribute": "href", "contains": "produit.html" },
+          { "selector": ".card", "computed": "padding-top", "equals": "16px" }
+        ]
+      }
+    ],
     "explanation": "Les attributs src/href doivent etre sur les bons elements et le CSS doit cibler .card.",
     "references": ["integration", "debug"]
   },
@@ -134,6 +147,21 @@
       { "label": "aria-expanded est gere.", "contains": "aria-expanded" },
       { "label": "L'etat CSS passe par classList.", "contains": "classList.toggle", "absent": "style.display" }
     ],
+    "tests": [
+      {
+        "type": "page",
+        "mode": "html-js",
+        "label": "Le bouton pilote un etat accessible apres clic.",
+        "actions": [
+          { "click": "#menuBtn" }
+        ],
+        "assertions": [
+          { "selector": "#menuBtn", "attribute": "aria-label", "matches": ".+" },
+          { "selector": "#menuBtn", "attribute": "aria-expanded", "equals": "true" },
+          { "selector": "#menu", "property": "className", "contains": "is-open" }
+        ]
+      }
+    ],
     "explanation": "Le bouton doit etre nomme pour les lecteurs d'ecran et JavaScript doit piloter un etat CSS.",
     "references": ["accessibility", "dom", "components"]
   },
@@ -150,6 +178,17 @@
       { "label": "La grille utilise repeat.", "contains": "repeat(" },
       { "label": "La grille utilise minmax.", "contains": "minmax(" },
       { "label": "Les trois colonnes fixes sont retirees.", "absent": "400px 400px 400px" }
+    ],
+    "tests": [
+      {
+        "type": "css",
+        "label": "La grille calcule des colonnes adaptatives.",
+        "fixture": "<div class=\"cards\"><article>A</article><article>B</article><article>C</article></div>",
+        "assertions": [
+          { "selector": ".cards", "computed": "display", "equals": "grid" },
+          { "selector": ".cards", "computed": "grid-template-columns", "matches": "^[0-9.]+px( [0-9.]+px)*$" }
+        ]
+      }
     ],
     "explanation": "auto-fit et minmax creent des colonnes adaptatives qui evitent le debordement.",
     "references": ["responsive", "grid", "integration"]
@@ -185,6 +224,15 @@
       { "label": "fetch est attendu avec await.", "contains": "await fetch" },
       { "label": "response.json() est appele.", "contains": "await response.json()" },
       { "label": "Le statut est verifie.", "contains": "response.ok" }
+    ],
+    "tests": [
+      {
+        "type": "console",
+        "label": "La fonction attend fetch et retourne le JSON.",
+        "before": "globalThis.fetch = async () => ({ ok: true, json: async () => [{ name: 'Ada' }] });",
+        "after": "return loadUsers().then((users) => console.log(users[0].name));",
+        "expectedLogs": ["Ada"]
+      }
     ],
     "explanation": "fetch et response.json() retournent des Promises, et le statut HTTP doit etre verifie.",
     "references": ["fetch", "async-await", "debug"]

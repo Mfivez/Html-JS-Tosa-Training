@@ -35,6 +35,7 @@ jobs:
           mkdir _site
           cp index.html app.js style.css manifest.json _site/
           cp -r courses _site/
+          cp -r data _site/
           touch _site/.nojekyll
 
       - name: Upload Pages artifact
