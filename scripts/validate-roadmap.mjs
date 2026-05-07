@@ -322,7 +322,7 @@ function validateCodeTests(question) {
   }
 
   question.tests.forEach((test) => {
-    if (!test.type || !["console", "dom", "html", "css", "page"].includes(test.type)) {
+    if (!test.type || !["console", "source", "dom", "html", "css", "page"].includes(test.type)) {
       throw new Error(`Question ${question.id}: type de test executable invalide.`);
     }
     if (test.type === "page" && !["html-css", "html-js"].includes(test.mode)) {
@@ -335,6 +335,16 @@ function validateCodeTests(question) {
     });
     if (test.type === "console" && (!Array.isArray(test.expectedLogs) || test.expectedLogs.some((log) => typeof log !== "string"))) {
       throw new Error(`Question ${question.id}: test console doit avoir expectedLogs en chaines.`);
+    }
+    if (test.type === "source") {
+      if (!Array.isArray(test.assertions) || test.assertions.length === 0) {
+        throw new Error(`Question ${question.id}: test source doit avoir des assertions.`);
+      }
+      test.assertions.forEach((assertion) => {
+        if (!assertion.label || (!assertion.contains && !assertion.absent && !assertion.regex)) {
+          throw new Error(`Question ${question.id}: assertion source invalide.`);
+        }
+      });
     }
     if (["dom", "html", "css", "page"].includes(test.type)) {
       if ((test.type === "dom" || test.type === "css") && typeof test.fixture !== "string") {

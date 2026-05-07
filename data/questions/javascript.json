@@ -1337,8 +1337,8 @@
     "level": 5,
     "type": "code-fix",
     "question": "Corrige cette fonction pour attendre la Promise.",
-    "code": "async function loadName() {\n  const name = Promise.resolve('Ada');\n  return name;\n}\nloadName().then((name) => console.log(name));",
-    "solution": "async function loadName() {\n  const name = await Promise.resolve('Ada');\n  return name;\n}\nloadName().then((name) => console.log(name));",
+    "code": "async function loadName() {\n  const name = Promise.resolve('Ada');\n  console.log(name);\n}\nloadName();",
+    "solution": "async function loadName() {\n  const name = await Promise.resolve('Ada');\n  console.log(name);\n}\nloadName();",
     "checks": [
       {
         "label": "La Promise est attendue.",

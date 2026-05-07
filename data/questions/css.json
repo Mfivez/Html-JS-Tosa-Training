@@ -1190,14 +1190,14 @@
     "topic": "units",
     "level": 1,
     "type": "code-fix",
-    "question": "Corrige cette marge pour supprimer l'unite inutile.",
-    "code": "body {\n  margin: 0px;\n}",
+    "question": "Corrige cette marge pour utiliser une valeur CSS valide.",
+    "code": "body {\n  margin: zero;\n}",
     "solution": "body {\n  margin: 0;\n}",
     "checks": [
       {
-        "label": "La marge zero est ecrite simplement.",
+        "label": "La marge zero est ecrite avec une valeur valide.",
         "contains": "margin: 0",
-        "absent": "0px"
+        "absent": "zero"
       }
     ],
     "tests": [
@@ -1214,7 +1214,7 @@
         ]
       }
     ],
-    "explanation": "La valeur 0 n'a pas besoin d'unite.",
+    "explanation": "zero n'est pas une valeur CSS valide. On ecrit 0.",
     "references": [
       "units",
       "box-model"
@@ -1508,6 +1508,17 @@
       }
     ],
     "tests": [
+      {
+        "type": "source",
+        "label": "clamp respecte l'ordre min, ideal, max dans la source.",
+        "assertions": [
+          {
+            "label": "La valeur minimale precede la valeur maximale.",
+            "contains": "clamp(1.5rem, 2vw, 3rem)",
+            "absent": "clamp(3rem, 2vw, 1.5rem)"
+          }
+        ]
+      },
       {
         "type": "css",
         "label": "Le titre recoit une taille calculee valide.",

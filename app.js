@@ -762,6 +762,14 @@ function runCodeTest(code, test) {
             if (assertion.matches !== undefined) return new RegExp(assertion.matches, assertion.flags || "").test(actual);
             return false;
           };
+          const compareSource = (source, assertion) => {
+            const contains = Array.isArray(assertion.contains) ? assertion.contains : assertion.contains ? [assertion.contains] : [];
+            const absent = Array.isArray(assertion.absent) ? assertion.absent : assertion.absent ? [assertion.absent] : [];
+            const containsOk = contains.every((needle) => source.includes(needle));
+            const absentOk = absent.every((needle) => !source.includes(needle));
+            const regexOk = assertion.regex ? new RegExp(assertion.regex, assertion.flags || "").test(source) : true;
+            return containsOk && absentOk && regexOk;
+          };
           const splitPageCode = () => {
             const match = userCode.match(/\\n\\s*\\n/);
             if (!match) return ["", userCode];
@@ -794,6 +802,8 @@ function runCodeTest(code, test) {
             document.body.innerHTML = test.fixture || "";
             if (test.type === "html") {
               applyHtml(userCode);
+            } else if (test.type === "source") {
+              // Source checks intentionally avoid browser HTML auto-repair.
             } else if (test.type === "css") {
               const style = document.createElement("style");
               style.textContent = userCode;
@@ -833,6 +843,13 @@ function runCodeTest(code, test) {
                 pass: JSON.stringify(logs) === JSON.stringify(expected),
                 details: "Attendu: " + expected.join(", ") + " | Obtenu: " + logs.join(", ")
               });
+            } else if (test.type === "source") {
+              for (const assertion of test.assertions || []) {
+                checks.push({
+                  pass: compareSource(userCode, assertion),
+                  details: assertion.label || "Source attendue"
+                });
+              }
             } else if (["dom", "html", "css", "page"].includes(test.type)) {
               for (const assertion of test.assertions || []) {
                 const element = document.querySelector(assertion.selector);
@@ -876,6 +893,7 @@ function runCodeTest(code, test) {
 
 function getCodeTestLabel(test) {
   if (test.type === "console") return "Sortie console attendue.";
+  if (test.type === "source") return "Source attendue.";
   if (test.type === "dom") return "Comportement DOM attendu.";
   if (test.type === "html") return "Structure HTML attendue.";
   if (test.type === "css") return "Rendu CSS attendu.";

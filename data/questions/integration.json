@@ -351,6 +351,23 @@
     ],
     "tests": [
       {
+        "type": "source",
+        "label": "La grille utilise une formule responsive dans la source.",
+        "assertions": [
+          {
+            "label": "repeat et minmax sont utilises.",
+            "contains": [
+              "repeat(",
+              "minmax("
+            ]
+          },
+          {
+            "label": "Les colonnes fixes sont retirees.",
+            "absent": "400px 400px 400px"
+          }
+        ]
+      },
+      {
         "type": "css",
         "label": "La grille calcule des colonnes adaptatives.",
         "fixture": "<div class=\"cards\"><article>A</article><article>B</article><article>C</article></div>",

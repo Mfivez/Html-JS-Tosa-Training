@@ -18,6 +18,7 @@ const executableQuestions = questions.filter((question) => Array.isArray(questio
 
 async function main() {
   let executed = 0;
+  let rejectedBrokenAnswers = 0;
   for (const question of executableQuestions) {
     const code = question.solution ?? question.code ?? "";
     for (const test of question.tests) {
@@ -27,9 +28,20 @@ async function main() {
         throw new Error(`${question.id} / ${test.label ?? test.type}: ${result.details}`);
       }
     }
+
+    if (question.type === "code-fix") {
+      const originalResults = [];
+      for (const test of question.tests) {
+        originalResults.push(await runExecutableTest(question.code ?? "", test));
+      }
+      if (originalResults.every((result) => result.pass)) {
+        throw new Error(`${question.id}: le code initial errone passe tous les tests sandbox.`);
+      }
+      rejectedBrokenAnswers += 1;
+    }
   }
 
-  console.log(`Sandbox tests OK: ${executed} test(s) executes sur ${executableQuestions.length} question(s).`);
+  console.log(`Sandbox tests OK: ${executed} test(s) executes sur ${executableQuestions.length} question(s), ${rejectedBrokenAnswers} code-fix errones rejetes.`);
 }
 
 async function runExecutableTest(userCode, test) {
@@ -43,6 +55,8 @@ async function runExecutableTest(userCode, test) {
 
     if (test.type === "html") {
       applyHtml(document, userCode);
+    } else if (test.type === "source") {
+      // Raw source checks intentionally avoid HTML parser auto-repair.
     } else if (test.type === "css") {
       applyCss(document, userCode);
     } else if (test.type === "page") {
@@ -65,6 +79,20 @@ async function runExecutableTest(userCode, test) {
       return {
         pass: JSON.stringify(logs) === JSON.stringify(expected),
         details: `Attendu: ${expected.join(", ")} | Obtenu: ${logs.join(", ")}`
+      };
+    }
+
+    if (test.type === "source") {
+      const assertions = test.assertions ?? [];
+      const failures = assertions
+        .map((assertion) => ({
+          pass: compareSource(userCode, assertion),
+          details: assertion.label ?? "Source attendue"
+        }))
+        .filter((result) => !result.pass);
+      return {
+        pass: assertions.length > 0 && failures.length === 0,
+        details: failures.map((failure) => failure.details).join(" ; ") || "OK"
       };
     }
 
@@ -152,6 +180,15 @@ function compare(actual, assertion) {
   if (assertion.contains !== undefined) return actual.includes(String(assertion.contains));
   if (assertion.matches !== undefined) return new RegExp(assertion.matches, assertion.flags || "").test(actual);
   return false;
+}
+
+function compareSource(source, assertion) {
+  const contains = Array.isArray(assertion.contains) ? assertion.contains : assertion.contains ? [assertion.contains] : [];
+  const absent = Array.isArray(assertion.absent) ? assertion.absent : assertion.absent ? [assertion.absent] : [];
+  const containsOk = contains.every((needle) => source.includes(needle));
+  const absentOk = absent.every((needle) => !source.includes(needle));
+  const regexOk = assertion.regex ? new RegExp(assertion.regex, assertion.flags ?? "").test(source) : true;
+  return containsOk && absentOk && regexOk;
 }
 
 function splitPageCode(userCode) {

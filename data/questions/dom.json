@@ -1125,6 +1125,20 @@
     ],
     "tests": [
       {
+        "type": "source",
+        "label": "La delegation filtre explicitement la cible.",
+        "assertions": [
+          {
+            "label": "closest retrouve le bouton attendu.",
+            "contains": "closest('button[data-id]')"
+          },
+          {
+            "label": "Les clics hors bouton sont ignores.",
+            "contains": "if (!button) return"
+          }
+        ]
+      },
+      {
         "type": "dom",
         "label": "Le clic sur le bouton affiche son id.",
         "fixture": "<div id=\"list\"><button data-id=\"42\"><span>Supprimer</span></button></div>",

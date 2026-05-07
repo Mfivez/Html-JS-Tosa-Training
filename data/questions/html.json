@@ -548,6 +548,24 @@
     ],
     "tests": [
       {
+        "type": "source",
+        "label": "Chaque item li est explicitement ferme dans la source.",
+        "assertions": [
+          {
+            "label": "Accueil possede </li>.",
+            "contains": "<li><a href=\"index.html\">Accueil</a></li>"
+          },
+          {
+            "label": "A propos possede </li>.",
+            "contains": "<li><a href=\"about.html\">A propos</a></li>"
+          },
+          {
+            "label": "Contact possede </li>.",
+            "contains": "<li><a href=\"contact.html\">Contact</a></li>"
+          }
+        ]
+      },
+      {
         "type": "html",
         "label": "La navigation contient trois items de liste.",
         "assertions": [
